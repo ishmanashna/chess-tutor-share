@@ -1,0 +1,650 @@
+{
+  "savedAt": "2026-10-22T10:36:05.415Z",
+  "pgn": "[Event \"Casual game (Lichess)\"]\n[Date \"2021.11.30\"]\n[White \"?\"]\n[Black \"landroam (Jordi)\"]\n[Result \"*\"]\n[ECO \"A08\"]\n[Opening \"Zukertort Opening: Reversed Grünfeld\"]\n\n1. Nf3 c5 2. g3 d5 3. Bg2 Nc6 4. d4 Nf6 5. O-O Bg4 6. c3 e6 7. Ne5 Nxe5 8. dxe5 Nd7 9. f4 Qb6 10. Qc2 h5 11. h4 Rh6 12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6 15. Bxd5 Qe3+ 16. Kg2 Qxe5 17. Bxb7 Rb8 18. Bc6 Bd6 19. Qd3 Rxb2 20. Nd2 Ke7 21. Rd1 Nb6 22. a4 c4 23. Qf3 a5 24. Kh3 Rc2 25. Qf2 Rxc3 26. Bf3 Qe3 27. Qg2 g6 28. Nf1 Qe6 29. Kh2 f4 30. g4 hxg4 31. Bxg4 f3+ 32. Kg1 fxg2 33. Bxe6 gxf1=Q+ 34. Kxf1 Kxe6 *",
+  "perspective": "ninguno",
+  "analysis": {
+    "pgn": "[Event \"Casual game (Lichess)\"]\n[Date \"2021.11.30\"]\n[White \"?\"]\n[Black \"landroam (Jordi)\"]\n[Result \"*\"]\n[ECO \"A08\"]\n[Opening \"Zukertort Opening: Reversed Grünfeld\"]\n\n1. Nf3 c5 2. g3 d5 3. Bg2 Nc6 4. d4 Nf6 5. O-O Bg4 6. c3 e6 7. Ne5 Nxe5 8. dxe5 Nd7 9. f4 Qb6 10. Qc2 h5 11. h4 Rh6 12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6 15. Bxd5 Qe3+ 16. Kg2 Qxe5 17. Bxb7 Rb8 18. Bc6 Bd6 19. Qd3 Rxb2 20. Nd2 Ke7 21. Rd1 Nb6 22. a4 c4 23. Qf3 a5 24. Kh3 Rc2 25. Qf2 Rxc3 26. Bf3 Qe3 27. Qg2 g6 28. Nf1 Qe6 29. Kh2 f4 30. g4 hxg4 31. Bxg4 f3+ 32. Kg1 fxg2 33. Bxe6 gxf1=Q+ 34. Kxf1 Kxe6 *",
+    "perspective": "ninguno",
+    "gameTreePgn": "[Event \"Casual game (Lichess)\"]\n[Site \"?\"]\n[Date \"2021.11.30\"]\n[Round \"?\"]\n[White \"?\"]\n[Black \"landroam (Jordi)\"]\n[Result \"*\"]\n[ECO \"A08\"]\n[Opening \"Zukertort Opening: Reversed Grünfeld\"]\n\n1. Nf3 c5 2. g3 d5 3. Bg2 Nc6 4. d4 Nf6 5. O-O Bg4 6. c3 e6 7. Ne5 Nxe5 8. dxe5 Nd7 9. f4 Qb6 $6 10. Qc2 $6 ( 10. c4 d4 11. a4 ) 10... h5 $6 ( 10... c4+ 11. Kh1 h5 ) 11. h4 Rh6 $6 12. f5 $6 12... Bxf5 13. Rxf5 $6 ( 13. e4 c4+ 14. Kh1 Bg6 ) 13... exf5 14. Bxh6 $6 ( 14. Bxd5 c4+ 15. Kg2 Qc5 16. Bxb7 Rb8 17. Bxh6 Rxb7 ) 14... Qxh6 15. Bxd5 Qe3+ 16. Kg2 Qxe5 17. Bxb7 Rb8 $1 18. Bc6 Bd6 19. Qd3 Rxb2 20. Nd2 Ke7 21. Rd1 Nb6 22. a4 c4 $1 23. Qf3 a5 24. Kh3 $2 ( 24. Bb5 ) 24... Rc2 $1 25. Qf2 Rxc3 26. Bf3 Qe3 27. Qg2 g6 28. Nf1 Qe6 29. Kh2 f4 30. g4 hxg4 31. Bxg4 $2 ( 31. Qxg4 Qxg4 32. Bxg4 ) 31... f3+ $1 32. Kg1 $6 ( 32. Rxd6 Qxd6 33. Qg3 fxe2 34. Qxd6+ Kxd6 ) 32... fxg2 33. Bxe6 gxf1=Q+ 34. Kxf1 Kxe6 *\n",
+    "commentaries": {
+      "corto": {
+        "text": "La partida empieza con una lucha por el centro que pronto queda desplazada por las operaciones en el flanco de rey. Las blancas consiguen espacio con sus peones, mientras las negras combinan la presión de la dama con un avance del peón h y una salida temprana de la torre. Ambos bandos emprenden acciones concretas antes de completar el desarrollo, y durante unas jugadas la posición ofrece oportunidades a los dos.\n\nLa primera liquidación parece más extravagante de lo que resulta en términos materiales: cada bando entrega una torre y un alfil. Lo importante es la posición que queda después. Las blancas recuperan peones con su alfil e igualan momentáneamente el material mediante 17. Bxb7, pero las negras aprovechan esos desplazamientos para activar la torre. Su entrada por la columna b termina convirtiéndose en una invasión por la tercera fila, mientras el caballo blanco llega tarde al juego.\n\nLa diferencia entre los reyes también acaba siendo significativa. El rey negro permanece en el centro, pero sus piezas controlan las vías de acceso; el blanco, pese a haber enrocado, pierde su protección y se expone todavía más con 24. Kh3. El remate nace de esa exposición: 31...f3+ abre la diagonal del alfil y ataca la dama con el peón. La captura de ambas damas y la coronación intermedia desembocan en una posición final con dos piezas menores de más para las negras. El registro termina ahí, sin consignar un resultado.",
+        "segments": [
+          {
+            "type": "text",
+            "text": "La partida empieza con una lucha por el centro que pronto queda desplazada por las operaciones en el flanco de rey. Las blancas consiguen espacio con sus peones, mientras las negras combinan la presión de la dama con un avance del peón h y una salida temprana de la torre. Ambos bandos emprenden acciones concretas antes de completar el desarrollo, y durante unas jugadas la posición ofrece oportunidades a los dos.\n\nLa primera liquidación parece más extravagante de lo que resulta en términos materiales: cada bando entrega una torre y un alfil. Lo importante es la posición que queda después. Las blancas recuperan peones con su alfil e igualan momentáneamente el material mediante 17. Bxb7, pero las negras aprovechan esos desplazamientos para activar la torre. Su entrada por la columna b termina convirtiéndose en una invasión por la tercera fila, mientras el caballo blanco llega tarde al juego.\n\nLa diferencia entre los reyes también acaba siendo significativa. El rey negro permanece en el centro, pero sus piezas controlan las vías de acceso; el blanco, pese a haber enrocado, pierde su protección y se expone todavía más con 24. Kh3. El remate nace de esa exposición: 31...f3+ abre la diagonal del alfil y ataca la dama con el peón. La captura de ambas damas y la coronación intermedia desembocan en una posición final con dos piezas menores de más para las negras. El registro termina ahí, sin consignar un resultado."
+          }
+        ]
+      },
+      "medio": {
+        "text": "El centro antes que los flancos\n\nDespués de 7. Ne5 Nxe5 8. dxe5 Nd7 9. f4, las blancas tienen espacio, pero todavía deben desarrollar su flanco de dama. La tensión central sigue siendo esencial: 10. c4 habría cuestionado el peón d5 y aprovechado la colocación de la dama negra en b6. Con 10. Qc2, las negras disponen a su vez de 10...c4+, que despeja la diagonal de esa dama hacia g1. La partida continúa con ...h5, h4 y ...Rh6, de modo que ambos bandos concentran esfuerzos en el flanco mientras esas posibilidades centrales siguen pendientes.\n\nEl orden de las capturas\n\nLa secuencia 12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6 elimina una torre y un alfil de cada lado. La operación no deja una torre de ventaja a las negras, pero sí una posición más cómoda para ellas. El orden blanco también importa: tras 13...exf5, 14. Bxd5 permitía recoger primero el peón central y mantener pendiente la captura de la torre. En la partida, las negras enlazan ...Qe3+ y ...Qxe5, y obligan al rey blanco a participar en la liquidación.\n\nLa torre convierte la actividad en peones\n\nCon 17. Bxb7 se restablece la igualdad material, pero 17...Rb8 gana un tiempo contra el alfil y abre una ruta de entrada. Después de ...Rxb2, ...Ke7 y ...Nb6, las piezas negras funcionan juntas: 22...c4 desplaza la dama blanca y el caballo sostiene ese peón avanzado. El rey blanco se expone con 24. Kh3, y 24...Rc2 seguido de 25...Rxc3 transforma la iniciativa en dos peones de ventaja. La torre ya presiona desde dentro de la posición blanca.\n\nLa diagonal que decide el desenlace\n\nEl avance 29...f4 prepara una amenaza que va más allá del propio peón. Después de 30. g4 hxg4 31. Bxg4, 31...f3+ descubre el ataque del alfil d6 contra el rey h2 y amenaza simultáneamente la dama g2. Existía la resistencia 32. Rxd6, eliminando el alfil que da jaque, aunque también conducía a una posición perdida. Con 32. Kg1 fxg2 33. Bxe6, las blancas capturan la dama contraria, pero 33...gxf1=Q+ gana el caballo con jaque antes de que las negras recuperen el alfil. La combinación termina con una ventaja decisiva de material negro.",
+        "segments": [
+          {
+            "type": "text",
+            "text": "El centro antes que los flancos\n\nDespués de 7. Ne5 Nxe5 8. dxe5 Nd7 9. f4, las blancas tienen espacio, pero todavía deben desarrollar su flanco de dama. La tensión central sigue siendo esencial: 10. c4 habría cuestionado el peón d5 y aprovechado la colocación de la dama negra en b6. Con 10. Qc2, las negras disponen a su vez de 10...c4+, que despeja la diagonal de esa dama hacia g1. La partida continúa con ...h5, h4 y ...Rh6, de modo que ambos bandos concentran esfuerzos en el flanco mientras esas posibilidades centrales siguen pendientes.\n\nEl orden de las capturas\n\nLa secuencia 12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6 elimina una torre y un alfil de cada lado. La operación no deja una torre de ventaja a las negras, pero sí una posición más cómoda para ellas. El orden blanco también importa: tras 13...exf5, 14. Bxd5 permitía recoger primero el peón central y mantener pendiente la captura de la torre. En la partida, las negras enlazan ...Qe3+ y ...Qxe5, y obligan al rey blanco a participar en la liquidación.\n\nLa torre convierte la actividad en peones\n\nCon 17. Bxb7 se restablece la igualdad material, pero 17...Rb8 gana un tiempo contra el alfil y abre una ruta de entrada. Después de ...Rxb2, ...Ke7 y ...Nb6, las piezas negras funcionan juntas: 22...c4 desplaza la dama blanca y el caballo sostiene ese peón avanzado. El rey blanco se expone con 24. Kh3, y 24...Rc2 seguido de 25...Rxc3 transforma la iniciativa en dos peones de ventaja. La torre ya presiona desde dentro de la posición blanca.\n\nLa diagonal que decide el desenlace\n\nEl avance 29...f4 prepara una amenaza que va más allá del propio peón. Después de 30. g4 hxg4 31. Bxg4, 31...f3+ descubre el ataque del alfil d6 contra el rey h2 y amenaza simultáneamente la dama g2. Existía la resistencia 32. Rxd6, eliminando el alfil que da jaque, aunque también conducía a una posición perdida. Con 32. Kg1 fxg2 33. Bxe6, las blancas capturan la dama contraria, pero 33...gxf1=Q+ gana el caballo con jaque antes de que las negras recuperen el alfil. La combinación termina con una ventaja decisiva de material negro."
+          }
+        ]
+      },
+      "largo": {
+        "text": "1. Nf3 c5 2. g3 d5 3. Bg2 Nc6\n\nLas blancas preparan el fianchetto y dejan abierta la elección de su estructura central. Las negras ocupan espacio con dos peones y desarrollan una pieza que apoya ese centro. El alfil g2 apunta hacia d5, pero esa presión todavía necesita la colaboración de los peones y de las demás piezas blancas para convertirse en algo concreto.\n\n4. d4 Nf6 5. O-O Bg4 6. c3 e6\n\nCon d4, las blancas fijan parte de la lucha central, y c3 sostiene ese punto a costa de un desarrollo más lento del caballo b1. Las negras sacan el alfil antes de cerrar su diagonal con ...e6 y mantienen la tensión entre c5 y d4. El enroque blanco proporciona seguridad inmediata, aunque el flanco de dama continúa entero en sus casillas iniciales.\n\n7. Ne5 Nxe5 8. dxe5 Nd7 9. f4 Qb6\n\nEl cambio de caballos transforma la estructura: el peón blanco de d4 llega a e5, gana espacio y obliga al caballo f6 a retroceder. Con f4 queda sostenido ese peón, pero también se despeja la diagonal que conduce desde b6 hasta g1. La dama negra se instala precisamente en b6, donde tiene objetivos y posibilidades de jaque descubierto mediante ...c4+. Su salida también permite a las blancas ganar iniciativa central con c4, cuestionando d5.\n\n10. Qc2 h5 11. h4 Rh6\n\nLa dama blanca se aparta de su casilla inicial y las negras empiezan una operación en el flanco de rey. ...h5 amenaza ganar espacio y pone en relación al peón h con el alfil g4. La respuesta h4 frena el avance directo, y ...Rh6 incorpora la torre por la sexta fila. Es una maniobra ambiciosa, pero consume tiempos cuando siguen pendientes el desarrollo y la tensión central. En particular, las negras habían dispuesto de ...c4+ antes de iniciar ese recorrido de torre.\n\n12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6\n\nLas blancas abren el juego mediante una secuencia de capturas cruzadas. Al terminar, cada bando ha perdido una torre y un alfil; el balance no corresponde a un sacrificio permanente de torre. Sin embargo, las negras han ganado el peón f y conservan objetivos en el centro blanco. Tras 12...Bxf5, 13. e4 ofrecía una continuación menos comprometida, atacando el alfil. Una vez jugado 13. Rxf5 exf5, el orden 14. Bxd5 también era más resistente que capturar inmediatamente en h6: recogía el peón central y dejaba abierta la amenaza sobre la torre.\n\n15. Bxd5 Qe3+ 16. Kg2 Qxe5\n\nEl alfil blanco recupera el peón d5, pero la dama negra entra con jaque y captura después el peón e5. Desaparece así el peón que había dado espacio a las blancas desde la apertura. La dama negra queda centralizada y el rey blanco sale de g1, mientras el caballo b1 continúa sin desarrollar. Las negras tienen un peón de ventaja y una iniciativa que depende sobre todo de la actividad de sus piezas.\n\n17. Bxb7 Rb8 18. Bc6 Bd6\n\nLa captura en b7 iguala el número de peones, pero ofrece a la torre negra una columna abierta y un ataque con ganancia de tiempo. El alfil blanco se retira a c6 y las negras completan el desarrollo del suyo mediante ...Bd6. Este alfil será importante por su alcance hacia el flanco de rey. Las capturas blancas han recuperado material, aunque no han resuelto la falta de coordinación de sus piezas.\n\n19. Qd3 Rxb2 20. Nd2 Ke7 21. Rd1 Nb6\n\nLa torre entra en la segunda fila y vuelve a establecer una ventaja de un peón. Las blancas consiguen por fin desarrollar el caballo y activar la torre, pero las negras responden coordinando sus propias piezas. El rey se coloca en e7, donde el control central negro dificulta los jaques y las entradas rivales. ...Nb6 despeja d7 y prepara una cooperación especialmente útil con el avance del peón c.\n\n22. a4 c4 23. Qf3 a5\n\nEl avance blanco gana espacio en el flanco de dama. Las negras contestan con ...c4, atacando la dama y fijando un peón avanzado que queda defendido por el caballo b6. Tras la retirada de la dama, ...a5 fija también el peón a4 y controla b4. La posición negra combina así espacio, objetivos estables y piezas activas; las blancas disponen de menos libertad para reorganizarse.\n\n24. Kh3 Rc2 25. Qf2 Rxc3\n\nEl desplazamiento del rey a h3 aumenta su exposición sin crear una amenaza equivalente contra las negras. La torre aprovecha el momento para pasar de b2 a c2 y capturar después en c3. Con ello, las negras alcanzan dos peones de ventaja y ocupan la tercera fila. El peón g3 queda bajo la presión de esa torre, con el rey blanco situado detrás de él en la misma fila. La invasión vincula la ganancia material con el ataque al rey.\n\n26. Bf3 Qe3 27. Qg2 g6 28. Nf1 Qe6\n\nLas blancas concentran piezas cerca de su rey, pero esa defensa limita su actividad. ...Qe3 ofrece un cambio de damas favorable a las negras por su ventaja de peones y la actividad de la torre; la retirada Qg2 mantiene las damas y, con ellas, los peligros contra el rey. ...g6 sostiene f5 y facilita su avance. El caballo blanco llega a f1 como defensor, mientras la dama negra vuelve a e6 y mantiene el control de casillas centrales.\n\n29. Kh2 f4 30. g4 hxg4\n\nEl rey blanco regresa a h2, una casilla situada en la diagonal del alfil d6. De momento, el peón negro f4 corta esa diagonal, pero precisamente por eso su próximo avance puede descubrir un jaque. Las blancas intentan cerrar líneas con g4; las negras capturan con el peón h y conservan el peón f preparado para avanzar. La posición contiene ya el mecanismo táctico del remate.\n\n31. Bxg4 f3+ 32. Kg1 fxg2\n\nLa captura del alfil deja la dama en g2 y el rey en h2. Con ...f3+, las negras abren la diagonal d6–h2 y atacan la dama mediante el peón. Antes de esa combinación, 31. Qxg4 permitía cambiar damas, aunque dejaba a las blancas en un final claramente inferior. Después del jaque, 32. Rxd6 era una defensa más tenaz: eliminaba el alfil y, tras ...Qxd6, daba tiempo a retirar la dama con Qg3. En la partida, la retirada del rey permite capturarla directamente.\n\n33. Bxe6 gxf1=Q+ 34. Kxf1 Kxe6\n\nLas blancas responden a la pérdida de su dama capturando la dama negra con el alfil. Sin embargo, el peón continúa su recorrido, captura el caballo f1 y corona con jaque. Ese jaque concede a las negras el tiempo necesario para recuperar después el alfil e6. La posición registrada al final contiene una torre por bando, pero las negras conservan además alfil, caballo y un peón de ventaja. El PGN se interrumpe en esa posición, sin resultado declarado.",
+        "segments": [
+          {
+            "type": "text",
+            "text": "1. Nf3 c5 2. g3 d5 3. Bg2 Nc6\n\nLas blancas preparan el fianchetto y dejan abierta la elección de su estructura central. Las negras ocupan espacio con dos peones y desarrollan una pieza que apoya ese centro. El alfil g2 apunta hacia d5, pero esa presión todavía necesita la colaboración de los peones y de las demás piezas blancas para convertirse en algo concreto.\n\n4. d4 Nf6 5. O-O Bg4 6. c3 e6\n\nCon d4, las blancas fijan parte de la lucha central, y c3 sostiene ese punto a costa de un desarrollo más lento del caballo b1. Las negras sacan el alfil antes de cerrar su diagonal con ...e6 y mantienen la tensión entre c5 y d4. El enroque blanco proporciona seguridad inmediata, aunque el flanco de dama continúa entero en sus casillas iniciales.\n\n7. Ne5 Nxe5 8. dxe5 Nd7 9. f4 Qb6\n\nEl cambio de caballos transforma la estructura: el peón blanco de d4 llega a e5, gana espacio y obliga al caballo f6 a retroceder. Con f4 queda sostenido ese peón, pero también se despeja la diagonal que conduce desde b6 hasta g1. La dama negra se instala precisamente en b6, donde tiene objetivos y posibilidades de jaque descubierto mediante ...c4+. Su salida también permite a las blancas ganar iniciativa central con c4, cuestionando d5.\n\n10. Qc2 h5 11. h4 Rh6\n\nLa dama blanca se aparta de su casilla inicial y las negras empiezan una operación en el flanco de rey. ...h5 amenaza ganar espacio y pone en relación al peón h con el alfil g4. La respuesta h4 frena el avance directo, y ...Rh6 incorpora la torre por la sexta fila. Es una maniobra ambiciosa, pero consume tiempos cuando siguen pendientes el desarrollo y la tensión central. En particular, las negras habían dispuesto de ...c4+ antes de iniciar ese recorrido de torre.\n\n12. f5 Bxf5 13. Rxf5 exf5 14. Bxh6 Qxh6\n\nLas blancas abren el juego mediante una secuencia de capturas cruzadas. Al terminar, cada bando ha perdido una torre y un alfil; el balance no corresponde a un sacrificio permanente de torre. Sin embargo, las negras han ganado el peón f y conservan objetivos en el centro blanco. Tras 12...Bxf5, 13. e4 ofrecía una continuación menos comprometida, atacando el alfil. Una vez jugado 13. Rxf5 exf5, el orden 14. Bxd5 también era más resistente que capturar inmediatamente en h6: recogía el peón central y dejaba abierta la amenaza sobre la torre.\n\n15. Bxd5 Qe3+ 16. Kg2 Qxe5\n\nEl alfil blanco recupera el peón d5, pero la dama negra entra con jaque y captura después el peón e5. Desaparece así el peón que había dado espacio a las blancas desde la apertura. La dama negra queda centralizada y el rey blanco sale de g1, mientras el caballo b1 continúa sin desarrollar. Las negras tienen un peón de ventaja y una iniciativa que depende sobre todo de la actividad de sus piezas.\n\n17. Bxb7 Rb8 18. Bc6 Bd6\n\nLa captura en b7 iguala el número de peones, pero ofrece a la torre negra una columna abierta y un ataque con ganancia de tiempo. El alfil blanco se retira a c6 y las negras completan el desarrollo del suyo mediante ...Bd6. Este alfil será importante por su alcance hacia el flanco de rey. Las capturas blancas han recuperado material, aunque no han resuelto la falta de coordinación de sus piezas.\n\n19. Qd3 Rxb2 20. Nd2 Ke7 21. Rd1 Nb6\n\nLa torre entra en la segunda fila y vuelve a establecer una ventaja de un peón. Las blancas consiguen por fin desarrollar el caballo y activar la torre, pero las negras responden coordinando sus propias piezas. El rey se coloca en e7, donde el control central negro dificulta los jaques y las entradas rivales. ...Nb6 despeja d7 y prepara una cooperación especialmente útil con el avance del peón c.\n\n22. a4 c4 23. Qf3 a5\n\nEl avance blanco gana espacio en el flanco de dama. Las negras contestan con ...c4, atacando la dama y fijando un peón avanzado que queda defendido por el caballo b6. Tras la retirada de la dama, ...a5 fija también el peón a4 y controla b4. La posición negra combina así espacio, objetivos estables y piezas activas; las blancas disponen de menos libertad para reorganizarse.\n\n24. Kh3 Rc2 25. Qf2 Rxc3\n\nEl desplazamiento del rey a h3 aumenta su exposición sin crear una amenaza equivalente contra las negras. La torre aprovecha el momento para pasar de b2 a c2 y capturar después en c3. Con ello, las negras alcanzan dos peones de ventaja y ocupan la tercera fila. El peón g3 queda bajo la presión de esa torre, con el rey blanco situado detrás de él en la misma fila. La invasión vincula la ganancia material con el ataque al rey.\n\n26. Bf3 Qe3 27. Qg2 g6 28. Nf1 Qe6\n\nLas blancas concentran piezas cerca de su rey, pero esa defensa limita su actividad. ...Qe3 ofrece un cambio de damas favorable a las negras por su ventaja de peones y la actividad de la torre; la retirada Qg2 mantiene las damas y, con ellas, los peligros contra el rey. ...g6 sostiene f5 y facilita su avance. El caballo blanco llega a f1 como defensor, mientras la dama negra vuelve a e6 y mantiene el control de casillas centrales.\n\n29. Kh2 f4 30. g4 hxg4\n\nEl rey blanco regresa a h2, una casilla situada en la diagonal del alfil d6. De momento, el peón negro f4 corta esa diagonal, pero precisamente por eso su próximo avance puede descubrir un jaque. Las blancas intentan cerrar líneas con g4; las negras capturan con el peón h y conservan el peón f preparado para avanzar. La posición contiene ya el mecanismo táctico del remate.\n\n31. Bxg4 f3+ 32. Kg1 fxg2\n\nLa captura del alfil deja la dama en g2 y el rey en h2. Con ...f3+, las negras abren la diagonal d6–h2 y atacan la dama mediante el peón. Antes de esa combinación, 31. Qxg4 permitía cambiar damas, aunque dejaba a las blancas en un final claramente inferior. Después del jaque, 32. Rxd6 era una defensa más tenaz: eliminaba el alfil y, tras ...Qxd6, daba tiempo a retirar la dama con Qg3. En la partida, la retirada del rey permite capturarla directamente.\n\n33. Bxe6 gxf1=Q+ 34. Kxf1 Kxe6\n\nLas blancas responden a la pérdida de su dama capturando la dama negra con el alfil. Sin embargo, el peón continúa su recorrido, captura el caballo f1 y corona con jaque. Ese jaque concede a las negras el tiempo necesario para recuperar después el alfil e6. La posición registrada al final contiene una torre por bando, pero las negras conservan además alfil, caballo y un peón de ventaja. El PGN se interrumpe en esa posición, sin resultado declarado."
+          }
+        ]
+      },
+      "blancas": {
+        "text": "Tu iniciativa en esta partida nació de los peones, pero tus piezas tardaron en acompañarla. Con 8. dxe5 y 9. f4 ganaste espacio y obligaste a retroceder a un caballo; mientras tanto, tu caballo b1 siguió sin jugar hasta 20. Nd2. Un hábito útil para posiciones así es relacionar cada avance con la pieza que podrá aprovecharlo. Antes de abrir más líneas, comprueba si tus piezas que aún no participan van a entrar a tiempo. Aquí, el espacio central no llegó a convertirse en una acción conjunta.\n\nTambién merece atención dónde buscaste la ruptura. Después de 9...Qb6, 10. c4 cuestionaba directamente d5 y daba sentido a tu ventaja de espacio. Elegiste preparar acciones en el flanco y acabaste jugando f5. No necesitas memorizar una variante larga para sacar una enseñanza: cuando el rival conserva el rey en el centro y adelanta la dama o una torre, revisa primero las rupturas centrales. A menudo son la forma más directa de poner a prueba esos tiempos empleados lejos del desarrollo.\n\nEn las secuencias de capturas, te conviene imaginar la posición completa que quedará al terminar. La idea de Rxf5 y Bxh6 no pierde una torre sin compensación: desaparecen una torre y un alfil de cada bando. El problema está en lo que queda después y en el orden elegido. Tras 13...exf5, 14. Bxd5 permitía recoger primero el peón central sin abandonar la amenaza sobre h6. Preguntarte si una captura puede esperar te ayudará a encontrar jugadas intermedias sin necesidad de calcular muchas ramas distintas.\n\nLa recuperación de peones también necesita una revisión de los tiempos que recibe el rival. Con 17. Bxb7 igualaste el material, pero ...Rb8 atacó tu alfil y abrió el camino hacia b2. Más adelante, 24. Kh3 acercó tu rey a una zona donde ya operaban la dama y la torre negras. Cuando estás defendiendo una posición incómoda, procura que tus movimientos de rey tengan un destino concreto y que tus capturas no faciliten la entrada de una pieza rival. La seguridad depende de las líneas disponibles, no solo de cuántos peones haya alrededor.\n\nEl remate ofrece un patrón especialmente valioso para recordar. Antes de 31. Bxg4, el peón f4 tapaba el ataque del alfil d6 contra tu rey h2; al avanzar, dio jaque y atacó tu dama. Acostúmbrate a mirar qué línea abre un peón cuando se mueve, además de las casillas que ataca. Y, cuando recibas un jaque descubierto, revisa también si puedes capturar la pieza que lo da: aquí existía 32. Rxd6. La posición seguía siendo muy difícil, pero ese tipo de búsqueda amplía tus recursos defensivos más allá de mover el rey.",
+        "segments": [
+          {
+            "type": "text",
+            "text": "Tu iniciativa en esta partida nació de los peones, pero tus piezas tardaron en acompañarla. Con 8. dxe5 y 9. f4 ganaste espacio y obligaste a retroceder a un caballo; mientras tanto, tu caballo b1 siguió sin jugar hasta 20. Nd2. Un hábito útil para posiciones así es relacionar cada avance con la pieza que podrá aprovecharlo. Antes de abrir más líneas, comprueba si tus piezas que aún no participan van a entrar a tiempo. Aquí, el espacio central no llegó a convertirse en una acción conjunta.\n\nTambién merece atención dónde buscaste la ruptura. Después de 9...Qb6, 10. c4 cuestionaba directamente d5 y daba sentido a tu ventaja de espacio. Elegiste preparar acciones en el flanco y acabaste jugando f5. No necesitas memorizar una variante larga para sacar una enseñanza: cuando el rival conserva el rey en el centro y adelanta la dama o una torre, revisa primero las rupturas centrales. A menudo son la forma más directa de poner a prueba esos tiempos empleados lejos del desarrollo.\n\nEn las secuencias de capturas, te conviene imaginar la posición completa que quedará al terminar. La idea de Rxf5 y Bxh6 no pierde una torre sin compensación: desaparecen una torre y un alfil de cada bando. El problema está en lo que queda después y en el orden elegido. Tras 13...exf5, 14. Bxd5 permitía recoger primero el peón central sin abandonar la amenaza sobre h6. Preguntarte si una captura puede esperar te ayudará a encontrar jugadas intermedias sin necesidad de calcular muchas ramas distintas.\n\nLa recuperación de peones también necesita una revisión de los tiempos que recibe el rival. Con 17. Bxb7 igualaste el material, pero ...Rb8 atacó tu alfil y abrió el camino hacia b2. Más adelante, 24. Kh3 acercó tu rey a una zona donde ya operaban la dama y la torre negras. Cuando estás defendiendo una posición incómoda, procura que tus movimientos de rey tengan un destino concreto y que tus capturas no faciliten la entrada de una pieza rival. La seguridad depende de las líneas disponibles, no solo de cuántos peones haya alrededor.\n\nEl remate ofrece un patrón especialmente valioso para recordar. Antes de 31. Bxg4, el peón f4 tapaba el ataque del alfil d6 contra tu rey h2; al avanzar, dio jaque y atacó tu dama. Acostúmbrate a mirar qué línea abre un peón cuando se mueve, además de las casillas que ataca. Y, cuando recibas un jaque descubierto, revisa también si puedes capturar la pieza que lo da: aquí existía 32. Rxd6. La posición seguía siendo muy difícil, pero ese tipo de búsqueda amplía tus recursos defensivos más allá de mover el rey."
+          }
+        ]
+      },
+      "negras": {
+        "text": "Tu mejor tramo aparece cuando tus piezas empiezan a colaborar. La secuencia ...Rb8, ...Rxb2, ...Ke7 y ...Nb6 tiene una lógica clara: activas la torre con un ataque al alfil, entras en campo rival y colocas el caballo donde puede sostener ...c4. Después, ...Rc2 y ...Rxc3 convierten esa actividad en una ventaja material. Te conviene conservar ese modo de pensar: buscar una función para cada pieza y enlazarla con la de las demás. La torre no estaba simplemente recogiendo peones; estaba restringiendo a las blancas y acercándose a su rey.\n\nEn la apertura puedes aplicar esa misma atención a la coordinación antes de emprender maniobras largas. ...h5 y ...Rh6 muestran una intención concreta, pero mientras tanto seguían pendientes el alfil f8, la torre a8 y la situación de tu rey. Aquí las blancas no aprovecharon todas sus oportunidades centrales. Antes de incorporar una torre al ataque, comprueba si el rival puede abrir el centro con ganancia de tiempo y si tus piezas restantes tendrán una entrada útil. Esa revisión te permitirá distinguir cuándo la maniobra está preparada y cuándo necesita apoyo previo.\n\nUna oportunidad repetida de esta partida fue ...c4+. Con tu dama en b6 y el rey blanco en g1, el peón c5 era el único obstáculo de esa diagonal. Al avanzar, no solo ganaba espacio: descubría un jaque. Merece la pena acostumbrarte a recorrer visualmente las líneas de tus alfiles, torres y dama, identificando qué pieza o peón las está tapando. En esta partida reconociste muy bien un mecanismo parecido al final, cuando ...f3+ abrió la diagonal del alfil d6. La conexión entre ambos momentos es más útil que memorizar las jugadas por separado.\n\nTambién manejaste bien la relación entre iniciativa y material durante el medio juego. Después de 17. Bxb7 ya no tenías ventaja de peones, pero tus piezas podían ganar tiempos y entrar en la posición blanca. Más tarde, con dos peones de más, ...Qe3 ofreció un cambio de damas coherente con tu ventaja. Cuando alcances una posición favorable, sigue comparando esas dos posibilidades: mantener amenazas contra el rey o simplificar hacia un final cómodo. La actividad de tu torre daba valor a ambas opciones.\n\nEn la combinación final, lo más acertado fue que el peón no se detuvo después de capturar la dama. Tras 32...fxg2, las blancas tenían 33. Bxe6, pero ...gxf1=Q+ ganó el caballo con jaque y te permitió recuperar después el alfil. Ese cálculo hasta la última recaptura es un hábito que merece consolidarse. Antes de dar por terminada una combinación, cuenta el material de la posición final y comprueba quién conserva el siguiente tiempo útil; aquí, el jaque de la coronación fue lo que aseguró el desenlace.",
+        "segments": [
+          {
+            "type": "text",
+            "text": "Tu mejor tramo aparece cuando tus piezas empiezan a colaborar. La secuencia ...Rb8, ...Rxb2, ...Ke7 y ...Nb6 tiene una lógica clara: activas la torre con un ataque al alfil, entras en campo rival y colocas el caballo donde puede sostener ...c4. Después, ...Rc2 y ...Rxc3 convierten esa actividad en una ventaja material. Te conviene conservar ese modo de pensar: buscar una función para cada pieza y enlazarla con la de las demás. La torre no estaba simplemente recogiendo peones; estaba restringiendo a las blancas y acercándose a su rey.\n\nEn la apertura puedes aplicar esa misma atención a la coordinación antes de emprender maniobras largas. ...h5 y ...Rh6 muestran una intención concreta, pero mientras tanto seguían pendientes el alfil f8, la torre a8 y la situación de tu rey. Aquí las blancas no aprovecharon todas sus oportunidades centrales. Antes de incorporar una torre al ataque, comprueba si el rival puede abrir el centro con ganancia de tiempo y si tus piezas restantes tendrán una entrada útil. Esa revisión te permitirá distinguir cuándo la maniobra está preparada y cuándo necesita apoyo previo.\n\nUna oportunidad repetida de esta partida fue ...c4+. Con tu dama en b6 y el rey blanco en g1, el peón c5 era el único obstáculo de esa diagonal. Al avanzar, no solo ganaba espacio: descubría un jaque. Merece la pena acostumbrarte a recorrer visualmente las líneas de tus alfiles, torres y dama, identificando qué pieza o peón las está tapando. En esta partida reconociste muy bien un mecanismo parecido al final, cuando ...f3+ abrió la diagonal del alfil d6. La conexión entre ambos momentos es más útil que memorizar las jugadas por separado.\n\nTambién manejaste bien la relación entre iniciativa y material durante el medio juego. Después de 17. Bxb7 ya no tenías ventaja de peones, pero tus piezas podían ganar tiempos y entrar en la posición blanca. Más tarde, con dos peones de más, ...Qe3 ofreció un cambio de damas coherente con tu ventaja. Cuando alcances una posición favorable, sigue comparando esas dos posibilidades: mantener amenazas contra el rey o simplificar hacia un final cómodo. La actividad de tu torre daba valor a ambas opciones.\n\nEn la combinación final, lo más acertado fue que el peón no se detuvo después de capturar la dama. Tras 32...fxg2, las blancas tenían 33. Bxe6, pero ...gxf1=Q+ ganó el caballo con jaque y te permitió recuperar después el alfil. Ese cálculo hasta la última recaptura es un hábito que merece consolidarse. Antes de dar por terminada una combinación, cuenta el material de la posición final y comprueba quién conserva el siguiente tiempo útil; aquí, el jaque de la coronación fue lo que aseguró el desenlace."
+          }
+        ]
+      }
+    },
+    "sidePositions": [],
+    "positions": {
+      "pos_1": {
+        "id": "pos_1",
+        "fen": "r3kb1r/pp1n1ppp/1q2p3/2p1P3/P1Pp1Pb1/6P1/1P2P1BP/RNBQ1RK1 b kq - 0 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 18,
+          "moves": [
+            "c4",
+            "d4",
+            "a4"
+          ]
+        }
+      },
+      "pos_2": {
+        "id": "pos_2",
+        "fen": "r3kb2/pp1n1pp1/1q2p1br/3pP2p/2p1P2P/2P3P1/PPQ3B1/RNB2R1K w q - 2 15",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 24,
+          "moves": [
+            "e4",
+            "c4+",
+            "Kh1",
+            "Bg6"
+          ]
+        }
+      },
+      "pos_3": {
+        "id": "pos_3",
+        "fen": "8/4kpp1/1n1b4/pB2qp1p/P1p4P/2P2QP1/1r1NP1K1/3R4 b - - 1 24",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 46,
+          "moves": [
+            "Bb5"
+          ]
+        }
+      },
+      "pos_4": {
+        "id": "pos_4",
+        "fen": "8/4kp2/1n1b2p1/p7/P1p2pBP/2r5/4P2K/3R1N2 b - - 0 32",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 60,
+          "moves": [
+            "Qxg4",
+            "Qxg4",
+            "Bxg4"
+          ]
+        }
+      },
+      "pos_5": {
+        "id": "pos_5",
+        "fen": "8/5p2/1n1k2p1/p7/P1p3BP/2r5/4p2K/5N2 w - - 0 35",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 62,
+          "moves": [
+            "Rxd6",
+            "Qxd6",
+            "Qg3",
+            "fxe2",
+            "Qxd6+",
+            "Kxd6"
+          ]
+        }
+      },
+      "pos_6": {
+        "id": "pos_6",
+        "fen": "r3kb1r/pp1n1pp1/1q2p3/3pP2p/2p2Pb1/2P3P1/PPQ1P1BP/RNB2R1K w kq - 0 12",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 19,
+          "moves": [
+            "c4+",
+            "Kh1",
+            "h5"
+          ]
+        }
+      },
+      "pos_7": {
+        "id": "pos_7",
+        "fen": "1r2kb2/pB1n1pp1/7B/2q1Pp1p/2p4P/2P3P1/PPQ1P1K1/RN6 b - - 0 17",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 26,
+          "moves": [
+            "Bxd5",
+            "c4+",
+            "Kg2",
+            "Qc5",
+            "Bxb7",
+            "Rb8",
+            "Bxh6"
+          ]
+        }
+      },
+      "pos_8": {
+        "id": "pos_8",
+        "fen": "8/4kp2/1n1bq1p1/p4p1p/P1p4P/2r2BPK/4P1Q1/3R1N2 w - - 2 29",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 56
+        }
+      },
+      "pos_9": {
+        "id": "pos_9",
+        "fen": "8/4kp2/1n1bq1p1/p7/P1p2ppP/2r2B2/4P1QK/3R1N2 w - - 0 31",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 60
+        }
+      },
+      "pos_10": {
+        "id": "pos_10",
+        "fen": "8/5p2/1n1bk1p1/p7/P1p4P/2r5/4P3/3R1K2 w - - 0 35",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 68
+        }
+      },
+      "pos_11": {
+        "id": "pos_11",
+        "fen": "r2qkb1r/pp1n1ppp/4p3/2ppP3/5Pb1/2P3P1/PP2P1BP/RNBQ1RK1 b kq - 0 9",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 17
+        }
+      },
+      "pos_12": {
+        "id": "pos_12",
+        "fen": "r3kb1r/pp1n1ppp/1q2p3/2ppP3/5Pb1/2P3P1/PPQ1P1BP/RNB2RK1 b kq - 2 10",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 19
+        }
+      },
+      "pos_13": {
+        "id": "pos_13",
+        "fen": "r3kb1r/pp1n1pp1/1q2p3/2ppP2p/5Pb1/2P3P1/PPQ1P1BP/RNB2RK1 w kq - 0 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 20
+        }
+      },
+      "pos_14": {
+        "id": "pos_14",
+        "fen": "r3kb1r/pp1n1pp1/1q2p3/2ppP2p/5PbP/2P3P1/PPQ1P1B1/RNB2RK1 b kq - 0 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 21
+        }
+      },
+      "pos_15": {
+        "id": "pos_15",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppPP1p/6bP/2P3P1/PPQ1P1B1/RNB2RK1 b q - 0 12",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 23
+        }
+      },
+      "pos_16": {
+        "id": "pos_16",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppPR1p/7P/2P3P1/PPQ1P1B1/RNB3K1 b q - 0 13",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 25
+        }
+      },
+      "pos_17": {
+        "id": "pos_17",
+        "fen": "r3kb2/pp1n1pp1/7q/2pBPp1p/7P/2P3P1/PPQ1P3/RN4K1 b q - 0 15",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 29
+        }
+      },
+      "pos_18": {
+        "id": "pos_18",
+        "fen": "r3kb2/pp1n1pp1/8/2pBPp1p/7P/2P1q1P1/PPQ1P3/RN4K1 w q - 1 16",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 30
+        }
+      },
+      "pos_19": {
+        "id": "pos_19",
+        "fen": "r3kb2/pp1n1pp1/8/2pBPp1p/7P/2P1q1P1/PPQ1P1K1/RN6 b q - 2 16",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 31
+        }
+      },
+      "pos_20": {
+        "id": "pos_20",
+        "fen": "r3kb2/pp1n1pp1/8/2pBqp1p/7P/2P3P1/PPQ1P1K1/RN6 w q - 0 17",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 32
+        }
+      },
+      "pos_21": {
+        "id": "pos_21",
+        "fen": "r3kb2/pB1n1pp1/8/2p1qp1p/7P/2P3P1/PPQ1P1K1/RN6 b q - 0 17",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 33
+        }
+      },
+      "pos_22": {
+        "id": "pos_22",
+        "fen": "1r2kb2/pB1n1pp1/8/2p1qp1p/7P/2P3P1/PPQ1P1K1/RN6 w - - 1 18",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 34
+        }
+      },
+      "pos_23": {
+        "id": "pos_23",
+        "fen": "8/p2nkpp1/2Bb4/2p1qp1p/7P/2PQ2P1/Pr1NP1K1/3R4 b - - 3 21",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 41
+        }
+      },
+      "pos_24": {
+        "id": "pos_24",
+        "fen": "8/p3kpp1/1nBb4/2p1qp1p/7P/2PQ2P1/Pr1NP1K1/3R4 w - - 4 22",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 42
+        }
+      },
+      "pos_25": {
+        "id": "pos_25",
+        "fen": "8/p3kpp1/1nBb4/2p1qp1p/P6P/2PQ2P1/1r1NP1K1/3R4 b - - 0 22",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 43
+        }
+      },
+      "pos_26": {
+        "id": "pos_26",
+        "fen": "8/p3kpp1/1nBb4/4qp1p/P1p4P/2PQ2P1/1r1NP1K1/3R4 w - - 0 23",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 44
+        }
+      },
+      "pos_27": {
+        "id": "pos_27",
+        "fen": "8/4kpp1/1nBb4/p3qp1p/P1p4P/2P2QPK/1r1NP3/3R4 b - - 1 24",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 47
+        }
+      },
+      "pos_28": {
+        "id": "pos_28",
+        "fen": "8/4kpp1/1nBb4/p3qp1p/P1p4P/2P2QPK/2rNP3/3R4 w - - 2 25",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 48
+        }
+      },
+      "pos_29": {
+        "id": "pos_29",
+        "fen": "8/4kpp1/1nBb4/p3qp1p/P1p4P/2P3PK/2rNPQ2/3R4 b - - 3 25",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 49
+        }
+      },
+      "pos_30": {
+        "id": "pos_30",
+        "fen": "8/4kpp1/1nBb4/p3qp1p/P1p4P/2r3PK/3NPQ2/3R4 w - - 0 26",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 50
+        }
+      },
+      "pos_31": {
+        "id": "pos_31",
+        "fen": "8/4kpp1/1n1b4/p3qp1p/P1p4P/2r2BPK/3NPQ2/3R4 b - - 1 26",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 51
+        }
+      },
+      "pos_32": {
+        "id": "pos_32",
+        "fen": "8/4kpp1/1n1b4/p4p1p/P1p4P/2r1qBPK/3NPQ2/3R4 w - - 2 27",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 52
+        }
+      },
+      "pos_33": {
+        "id": "pos_33",
+        "fen": "8/4kpp1/1n1b4/p4p1p/P1p4P/2r1qBPK/3NP1Q1/3R4 b - - 3 27",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 53
+        }
+      },
+      "pos_34": {
+        "id": "pos_34",
+        "fen": "8/4kp2/1n1bq1p1/p4p1p/P1p4P/2r2BP1/4P1QK/3R1N2 b - - 3 29",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 57
+        }
+      },
+      "pos_35": {
+        "id": "pos_35",
+        "fen": "8/4kp2/1n1bq1p1/p6p/P1p2p1P/2r2BP1/4P1QK/3R1N2 w - - 0 30",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 58
+        }
+      },
+      "pos_36": {
+        "id": "pos_36",
+        "fen": "8/4kp2/1n1bq1p1/p6p/P1p2pPP/2r2B2/4P1QK/3R1N2 b - - 0 30",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 59
+        }
+      },
+      "pos_37": {
+        "id": "pos_37",
+        "fen": "8/4kp2/1n1bq1p1/p7/P1p2pBP/2r5/4P1QK/3R1N2 b - - 0 31",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 61
+        }
+      },
+      "pos_38": {
+        "id": "pos_38",
+        "fen": "8/4kp2/1n1b2p1/p4p1p/P1p4P/2r1qBPK/4P1Q1/3R1N2 b - - 1 28",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 55
+        }
+      },
+      "pos_39": {
+        "id": "pos_39",
+        "fen": "8/4kp2/1n1bq1p1/p7/P1p3BP/2r2p2/4P1QK/3R1N2 w - - 0 32",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 62
+        }
+      },
+      "pos_40": {
+        "id": "pos_40",
+        "fen": "8/4kp2/1n1b2p1/p4p1p/P1p4P/2r1qBPK/3NP1Q1/3R4 w - - 0 28",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 54
+        }
+      },
+      "pos_41": {
+        "id": "pos_41",
+        "fen": "r3kb1r/pp1n1ppp/1q2p3/2ppP3/5Pb1/2P3P1/PP2P1BP/RNBQ1RK1 w kq - 1 10",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 18
+        }
+      },
+      "pos_42": {
+        "id": "pos_42",
+        "fen": "r3kb1r/pp1n1ppp/1q2p3/2ppP3/5Pb1/2P3P1/PPQ1P1BP/RNB2RK1 b kq - 2 10",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 19
+        }
+      },
+      "pos_43": {
+        "id": "pos_43",
+        "fen": "r3kb1r/pp1n1pp1/1q2p3/2ppP2p/5Pb1/2P3P1/PPQ1P1BP/RNB2RK1 w kq - 0 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 20
+        }
+      },
+      "pos_44": {
+        "id": "pos_44",
+        "fen": "r3kb1r/pp1n1pp1/1q2p3/2ppP2p/5PbP/2P3P1/PPQ1P1B1/RNB2RK1 b kq - 0 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 21
+        }
+      },
+      "pos_45": {
+        "id": "pos_45",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppP2p/5PbP/2P3P1/PPQ1P1B1/RNB2RK1 w q - 1 12",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 22
+        }
+      },
+      "pos_46": {
+        "id": "pos_46",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppPP1p/6bP/2P3P1/PPQ1P1B1/RNB2RK1 b q - 0 12",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 23
+        }
+      },
+      "pos_47": {
+        "id": "pos_47",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppPb1p/7P/2P3P1/PPQ1P1B1/RNB2RK1 w q - 0 13",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 24
+        }
+      },
+      "pos_48": {
+        "id": "pos_48",
+        "fen": "r3kb2/pp1n1pp1/1q2p2r/2ppPR1p/7P/2P3P1/PPQ1P1B1/RNB3K1 b q - 0 13",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 25
+        }
+      },
+      "pos_49": {
+        "id": "pos_49",
+        "fen": "r3kb2/pp1n1pp1/1q5r/2ppPp1p/7P/2P3P1/PPQ1P1B1/RNB3K1 w q - 0 14",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 26
+        }
+      },
+      "pos_50": {
+        "id": "pos_50",
+        "fen": "8/4kp2/1n1bq1p1/p7/P1p3BP/2r2p2/4P1Q1/3R1NK1 b - - 1 32",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 63
+        }
+      },
+      "pos_51": {
+        "id": "pos_51",
+        "fen": "8/4kp2/1n1bq1p1/p7/P1p3BP/2r5/4P1p1/3R1NK1 w - - 0 33",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 64
+        }
+      },
+      "pos_52": {
+        "id": "pos_52",
+        "fen": "8/4kp2/1n1bB1p1/p7/P1p4P/2r5/4P1p1/3R1NK1 b - - 0 33",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 65
+        }
+      },
+      "pos_53": {
+        "id": "pos_53",
+        "fen": "r3kb2/pp1n1pp1/1q5B/2ppPp1p/7P/2P3P1/PPQ1P1B1/RN4K1 b q - 0 14",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 27
+        }
+      },
+      "pos_54": {
+        "id": "pos_54",
+        "fen": "8/4kp2/1n1bB1p1/p7/P1p4P/2r5/4P3/3R1qK1 w - - 0 34",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 66
+        }
+      },
+      "pos_55": {
+        "id": "pos_55",
+        "fen": "r3kb1r/pp1n1ppp/1q2p3/3pP3/2p2Pb1/2P3P1/PPQ1P1BP/RNB2R1K b kq - 1 11",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 19,
+          "moves": [
+            "c4+",
+            "Kh1"
+          ]
+        }
+      },
+      "pos_56": {
+        "id": "pos_56",
+        "fen": "r3kb2/pp1n1pp1/1q5r/3BPp1p/2p4P/2P3P1/PPQ1P3/RNB3K1 w q - 0 15",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 26,
+          "moves": [
+            "Bxd5",
+            "c4"
+          ]
+        }
+      },
+      "pos_57": {
+        "id": "pos_57",
+        "fen": "8/4kp2/1n1q2p1/p7/P1p3BP/2r2pQ1/4P2K/5N2 b - - 1 33",
+        "kind": "tree",
+        "origin": {
+          "kind": "game",
+          "ply": 62,
+          "moves": [
+            "Rxd6",
+            "Qxd6",
+            "Qg3"
+          ]
+        }
+      }
+    },
+    "issues": [],
+    "source": "codex",
+    "performance": {
+      "available": true,
+      "depth": 8,
+      "thin": false,
+      "white": {
+        "accuracy": 80.65,
+        "performance": 1220.4,
+        "moveCount": 34,
+        "inaccuracies": 1,
+        "mistakes": 5,
+        "blunders": 0
+      },
+      "black": {
+        "accuracy": 85.75,
+        "performance": 1384.1,
+        "moveCount": 34,
+        "inaccuracies": 0,
+        "mistakes": 6,
+        "blunders": 0
+      }
+    }
+  }
+}
