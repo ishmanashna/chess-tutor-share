@@ -1,6 +1,15 @@
 {
   "games": [
     {
+      "slug": "landroam-2022-02-14",
+      "title": "Per equips 2022 Ronda 4 · 2022.02.14",
+      "white": "Blancas",
+      "black": "Negras",
+      "date": "2022.02.14",
+      "event": "Per equips 2022 Ronda 4",
+      "addedAt": "2026-10-22T22:19:34.217Z"
+    },
+    {
       "slug": "landroam-2021-11-30",
       "title": "landroam (Jordi) · 2021.11.30",
       "white": "Blancas",
