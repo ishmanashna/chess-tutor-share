@@ -1,6 +1,15 @@
 {
   "games": [
     {
+      "slug": "jordi-compte-2023-02-12",
+      "title": "Jordi Compte: Capítulo 1 · 2023.02.12",
+      "white": "Blancas",
+      "black": "Negras",
+      "date": "2023.02.12",
+      "event": "Jordi Compte: Capítulo 1",
+      "addedAt": "2026-10-25T14:34:08.023Z"
+    },
+    {
       "slug": "landroam-2022-02-14",
       "title": "Per equips 2022 Ronda 4 · 2022.02.14",
       "white": "Blancas",
