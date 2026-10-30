@@ -14,8 +14,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-DNzvplYI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B7wrV3dg.css">
+    <script type="module" crossorigin src="./assets/index-DoE_LnkM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CvYbtQ85.css">
   </head>
   <body data-share="true">
     <div class="wrap">
@@ -29,7 +29,15 @@
           </label>
           <button type="button" id="toggle-load" class="secondary">Cargar partida</button>
           <button type="button" id="analizar">Analizar partida</button>
-          <button type="button" id="theme-toggle" class="theme-toggle">Modo oscuro</button>
+          <button type="button" id="ratings-btn" class="secondary" popovertarget="ratings-view">Valoraciones</button>
+          <button type="button" id="theme-toggle" class="secondary theme-toggle" aria-label="Modo oscuro" title="Modo oscuro">
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M14.3 2.4a1 1 0 0 1 1.1 1.5 8 8 0 1 0 4.7 4.7 1 1 0 0 1 1.5 1.1A10 10 0 1 1 14.3 2.4Z"/>
+            </svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 5a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V6a1 1 0 0 1 1-1Zm0 12a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1Zm7-5a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1ZM7 12a1 1 0 0 1-1 1H5a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1Zm10.66-4.66a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0ZM8.46 15.54a1 1 0 0 1 0 1.41l-.71.71a1 1 0 1 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Zm9.2 0a1 1 0 0 1 1.41 0l.71.71a1 1 0 1 1-1.41 1.41l-.71-.71a1 1 0 0 1 0-1.41ZM6.34 6.34a1 1 0 0 1 1.41 0l.71.71A1 1 0 1 1 7.05 8.46l-.71-.71a1 1 0 0 1 0-1.41ZM12 8.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Z"/>
+            </svg>
+          </button>
         </div>
       </header>
 
@@ -56,14 +64,14 @@
           <article class="watch-info-card commentary-card" id="commentary-panel">
             <div class="card-head">
               <div class="commentary-tabs" role="tablist" aria-label="Comentario">
-                <button type="button" role="tab" id="tab-corto" data-length="corto" aria-controls="comentario" aria-selected="false">Relato</button>
-                <button type="button" role="tab" id="tab-medio" data-length="medio" aria-controls="comentario" aria-selected="true">Claves</button>
+                <button type="button" role="tab" id="tab-corto" data-length="corto" aria-controls="comentario" aria-selected="true">Relato</button>
+                <button type="button" role="tab" id="tab-medio" data-length="medio" aria-controls="comentario" aria-selected="false">Claves</button>
                 <button type="button" role="tab" id="tab-largo" data-length="largo" aria-controls="comentario" aria-selected="false">Guía</button>
                 <button type="button" role="tab" id="tab-blancas" data-length="blancas" aria-controls="comentario" aria-selected="false">Blancas</button>
                 <button type="button" role="tab" id="tab-negras" data-length="negras" aria-controls="comentario" aria-selected="false">Negras</button>
               </div>
             </div>
-            <div id="comentario" class="commentary-body" role="tabpanel" aria-labelledby="tab-medio"></div>
+            <div id="comentario" class="commentary-body" role="tabpanel" aria-labelledby="tab-corto"></div>
           </article>
         </section>
 
@@ -83,7 +91,7 @@
             <div class="board-toolbar">
               <div class="board-toolbar-main">
                 <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1">
-                  Información de la partida
+                  Información
                 </button>
                 <div class="nav-buttons">
                   <button type="button" id="nav-first" data-nav="first" tabindex="-1" aria-label="Inicio" title="Inicio">«</button>
@@ -98,7 +106,7 @@
             </div>
           </div>
           <article class="game-info-pop" id="game-info" popover>
-            <h2>Información de la partida</h2>
+            <h2>Información</h2>
             <p class="game-info-brief" id="info-brief">—</p>
             <dl class="watch-meta-grid">
               <dt>Blancas</dt>
@@ -129,9 +137,49 @@
           <article class="watch-info-card engine-card" id="engine-panel" aria-label="Motor">
             <div class="engine-head">
               <h2>Motor <span id="engine-depth" class="engine-depth-mini"></span></h2>
-              <label class="engine-toggle" for="engine-on">
-                <input type="checkbox" id="engine-on" checked />
-                <span id="engine-toggle-label">Encendido</span>
+              <div class="engine-head-actions">
+                <button type="button" id="engine-options-btn" class="engine-options-btn" popovertarget="engine-options" aria-label="Opciones del motor" title="Opciones">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M10.3 3.2 9.8 5.6a6.8 6.8 0 0 0-1.5.9L5.9 5.7 3.7 7.9l.8 2.4a6.8 6.8 0 0 0 0 3.4l-.8 2.4 2.2 2.2 2.4-.8c.47.35.97.65 1.5.9l.5 2.4h3.4l.5-2.4c.53-.25 1.03-.55 1.5-.9l2.4.8 2.2-2.2-.8-2.4a6.8 6.8 0 0 0 0-3.4l.8-2.4-2.2-2.2-2.4.8a6.8 6.8 0 0 0-1.5-.9L13.7 3.2h-3.4ZM12 9.2A2.8 2.8 0 1 1 9.2 12 2.8 2.8 0 0 1 12 9.2Z"/>
+                  </svg>
+                </button>
+                <label class="engine-toggle" for="engine-on">
+                  <input type="checkbox" id="engine-on" checked />
+                  <span id="engine-toggle-label">Encendido</span>
+                </label>
+              </div>
+            </div>
+            <div class="engine-options-pop" id="engine-options" popover>
+              <label>
+                Líneas
+                <select id="engine-opt-lines" aria-label="Número de líneas">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3" selected>3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+              <label>
+                Profundidad
+                <select id="engine-opt-depth" aria-label="Profundidad máxima">
+                  <option value="0" selected>Sin límite</option>
+                  <option value="12">12</option>
+                  <option value="16">16</option>
+                  <option value="20">20</option>
+                  <option value="24">24</option>
+                  <option value="28">28</option>
+                </select>
+              </label>
+              <label>
+                Tiempo
+                <select id="engine-opt-time" aria-label="Tiempo máximo">
+                  <option value="0" selected>Sin límite</option>
+                  <option value="1000">1 s</option>
+                  <option value="3000">3 s</option>
+                  <option value="5000">5 s</option>
+                  <option value="8000">8 s</option>
+                </select>
               </label>
             </div>
             <ol class="engine-lines" id="engine-lines">
@@ -144,6 +192,10 @@
           </article>
         </section>
       </div>
+      <article class="ratings-pop" id="ratings-view" popover>
+        <h2>Valoraciones</h2>
+        <div id="ratings-body"></div>
+      </article>
     </div>
   </body>
 </html>
