@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutor de ajedrez</title>
+    <title>Tutor de ajedrez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
     <script>
       try {
         const theme = localStorage.getItem("chess-tutor-theme");
@@ -14,72 +17,50 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-BQFnJwrM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BMe9hmGu.css">
+    <script type="module" crossorigin src="./assets/index-sr9dnAN2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CwHwhtC3.css">
   </head>
-  <body data-share="true">
+  <body data-left="empty" data-right="library">
     <div class="wrap">
-      <header class="top-bar">
-        <h1>Tutor de ajedrez</h1>
-        <p id="estado" class="status top-status" aria-live="polite">Pega o sube un PGN y pulsa Analizar partida.</p>
-        <div class="top-bar-actions">
-          <label class="share-games" id="share-games" hidden>
-            <span>Partida</span>
-            <select id="share-game" aria-label="Partida"></select>
-          </label>
-          <button type="button" id="toggle-load" class="secondary">Cargar partida</button>
-          <button type="button" id="analizar">Analizar partida</button>
-          <button type="button" id="pgn-download" class="secondary">Descargar PGN</button>
-          <button type="button" id="theme-toggle" class="secondary theme-toggle" aria-label="Modo oscuro" title="Modo oscuro">
-            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-              <path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-            </svg>
-            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-              <circle class="sun-core" cx="12" cy="12" r="4.05"/>
-              <g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round">
-                <path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/>
-              </g>
-            </svg>
-          </button>
-        </div>
-      </header>
-
-      <section class="load-panel" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
-        <div class="load-form">
-          <label for="pgn">PGN</label>
-          <textarea id="pgn" rows="4" placeholder="Pega aquí el PGN de la partida"></textarea>
-          <div class="load-row">
-            <input type="file" id="pgn-file" accept=".pgn,text/plain,application/x-chess-pgn" hidden />
-            <button type="button" id="pgn-upload" class="secondary">Subir PGN</button>
-            <span id="pgn-file-name" class="file-name"></span>
-            <label for="perspective">Perspectiva</label>
-            <select id="perspective">
-              <option value="ninguno" selected>Ninguno</option>
-              <option value="blancas">Jugué con blancas</option>
-              <option value="negras">Jugué con negras</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
       <div class="watch-layout">
         <section class="col commentary-col" aria-label="Comentario">
-          <article class="watch-info-card commentary-card" id="commentary-panel">
-            <div class="card-head commentary-head">
-              <div class="commentary-tabs" role="tablist" aria-label="Comentario">
-                <button type="button" role="tab" id="tab-corto" data-length="corto" aria-controls="comentario" aria-selected="true">Relato</button>
-                <button type="button" role="tab" id="tab-medio" data-length="medio" aria-controls="comentario" aria-selected="false">Claves</button>
-                <button type="button" role="tab" id="tab-largo" data-length="largo" aria-controls="comentario" aria-selected="false">Guía</button>
-                <button type="button" role="tab" id="tab-blancas" data-length="blancas" aria-controls="comentario" aria-selected="false">Blancas</button>
-                <button type="button" role="tab" id="tab-negras" data-length="negras" aria-controls="comentario" aria-selected="false">Negras</button>
-              </div>
+          <article class="watch-info-card commentary-card" id="commentary-panel" data-mode="empty">
+            <div class="left-empty" id="left-empty">
+              <p class="commentary-empty">Abre una partida a la derecha para leerla o analizarla.</p>
             </div>
-            <div id="comentario" class="commentary-body" role="tabpanel" aria-labelledby="tab-corto"></div>
+            <div class="analysis-run" id="analysis-run" hidden>
+              <h2>Analizar partida</h2>
+              <p class="analysis-run-copy">Esta partida aún no tiene un análisis escrito. El tablero ya está listo; el texto se escribe aquí.</p>
+              <p id="estado" class="status" aria-live="polite"></p>
+              <button type="button" id="analizar">Analizar partida</button>
+            </div>
+            <div class="commentary-read" id="commentary-read" hidden>
+              <div class="card-head commentary-head">
+                <div class="commentary-tabs" role="tablist" aria-label="Comentario">
+                  <button type="button" role="tab" id="tab-corto" data-length="corto" aria-controls="comentario" aria-selected="true">Relato</button>
+                  <button type="button" role="tab" id="tab-medio" data-length="medio" aria-controls="comentario" aria-selected="false">Claves</button>
+                  <button type="button" role="tab" id="tab-largo" data-length="largo" aria-controls="comentario" aria-selected="false">Guía</button>
+                  <button type="button" role="tab" id="tab-blancas" data-length="blancas" aria-controls="comentario" aria-selected="false">Blancas</button>
+                  <button type="button" role="tab" id="tab-negras" data-length="negras" aria-controls="comentario" aria-selected="false">Negras</button>
+                </div>
+              </div>
+              <div id="comentario" class="commentary-body" role="tabpanel" aria-labelledby="tab-corto"></div>
+            </div>
           </article>
         </section>
 
         <section class="col board-col" aria-label="Tablero">
           <div class="board-stack">
+            <div class="board-toolbar board-toolbar-top">
+              <div class="board-toolbar-actions">
+                <button type="button" id="toggle-load" class="secondary" tabindex="-1">Cargar partida</button>
+                <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1">
+                  Información
+                </button>
+                <button type="button" id="pgn-download" class="secondary" aria-label="Descargar PGN" title="Descargar PGN" tabindex="-1">PGN</button>
+                <button type="button" id="theme-toggle" class="secondary theme-toggle" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
+              </div>
+            </div>
             <div class="board-row">
               <div class="eval-col" id="eval-col" data-orientation="white" data-enabled="false">
                 <div class="eval-track">
@@ -91,21 +72,16 @@
                 <div id="board" class="cg-wrap"></div>
               </div>
             </div>
-            <div class="board-toolbar">
+            <div class="board-toolbar board-toolbar-bottom">
               <div class="board-toolbar-main">
-                <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1">
-                  Información
-                </button>
+                <button type="button" id="ratings-btn" class="secondary ratings-btn" popovertarget="ratings-view" tabindex="-1">Valoraciones</button>
                 <div class="nav-buttons">
-                  <button type="button" id="nav-first" data-nav="first" tabindex="-1" aria-label="Inicio" title="Inicio">«</button>
-                  <button type="button" id="nav-prev" data-nav="prev" tabindex="-1" aria-label="Anterior" title="Anterior">‹</button>
-                  <button type="button" id="nav-next" data-nav="next" tabindex="-1" aria-label="Siguiente" title="Siguiente">›</button>
-                  <button type="button" id="nav-last" data-nav="last" tabindex="-1" aria-label="Final" title="Final">»</button>
+                  <button type="button" id="nav-first" data-nav="first" tabindex="-1" aria-label="Inicio" title="Inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10.75 6 5.25 12l5.5 6M18.75 6 13.25 12l5.5 6"/></svg></button>
+                  <button type="button" id="nav-prev" data-nav="prev" tabindex="-1" aria-label="Anterior" title="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6 9 12l6 6"/></svg></button>
+                  <button type="button" id="nav-next" data-nav="next" tabindex="-1" aria-label="Siguiente" title="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg></button>
+                  <button type="button" id="nav-last" data-nav="last" tabindex="-1" aria-label="Final" title="Final"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5.25 6 10.75 12l-5.5 6M13.25 6 18.75 12l-5.5 6"/></svg></button>
                 </div>
-                <div class="board-toolbar-end">
-                  <button type="button" id="ratings-btn" class="secondary ratings-btn" popovertarget="ratings-view" tabindex="-1">Valoraciones</button>
-                  <button type="button" id="flip" class="secondary flip-btn" tabindex="-1">Invertir</button>
-                </div>
+                <button type="button" id="flip" class="secondary flip-btn" tabindex="-1">Invertir</button>
               </div>
             </div>
           </div>
@@ -137,7 +113,36 @@
           </div>
         </section>
 
-        <section class="col info-col" aria-label="Motor y jugadas">
+        <section class="col info-col" aria-label="Motor y jugadas" data-mode="library">
+          <label class="share-games" id="share-games" hidden>
+            <span>Partida</span>
+            <select id="share-game" aria-label="Partida"></select>
+          </label>
+          <article class="watch-info-card library-card" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
+            <div class="card-head library-head">
+              <h2>Partida</h2>
+              <button type="button" id="library-close" class="secondary">Volver</button>
+            </div>
+            <p id="library-status" class="status" aria-live="polite"></p>
+            <section class="library-section" aria-label="Análisis guardados">
+              <h3>Con análisis</h3>
+              <ul class="library-list" id="library-analyses"></ul>
+            </section>
+            <section class="library-section" aria-label="Partidas">
+              <h3>Partidas</h3>
+              <ul class="library-list" id="library-games"></ul>
+            </section>
+            <div class="load-form">
+              <label for="pgn">PGN</label>
+              <textarea id="pgn" rows="4" placeholder="Pega aquí el PGN de la partida"></textarea>
+              <div class="load-row">
+                <input type="file" id="pgn-file" accept=".pgn,text/plain,application/x-chess-pgn" hidden />
+                <button type="button" id="pgn-upload" class="secondary">Subir PGN</button>
+                <span id="pgn-file-name" class="file-name"></span>
+                <button type="button" id="open-game" class="secondary">Abrir partida</button>
+              </div>
+            </div>
+          </article>
           <article class="watch-info-card engine-card" id="engine-panel" aria-label="Motor">
             <div class="engine-head">
               <h2>Motor <span id="engine-depth" class="engine-depth-mini"></span></h2>
@@ -191,7 +196,9 @@
             </ol>
           </article>
           <article class="watch-info-card moves-card" aria-label="Jugadas">
-            <h2>Jugadas</h2>
+            <div class="moves-head">
+              <h2>Jugadas</h2>
+            </div>
             <div class="moves-scroll" id="move-tree"></div>
           </article>
         </section>
