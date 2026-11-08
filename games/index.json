@@ -1,6 +1,15 @@
 {
   "games": [
     {
+      "slug": "byrne-fischer-1956",
+      "title": "Donald Byrne – Robert James Fischer · 1956.10.17",
+      "white": "Donald Byrne",
+      "black": "Robert James Fischer",
+      "date": "1956.10.17",
+      "event": "Third Rosenwald Trophy",
+      "addedAt": "2026-11-08T13:55:27.188Z"
+    },
+    {
       "slug": "jordi-compte-2023-02-12",
       "title": "Jordi Compte: Capítulo 1 · 2023.02.12",
       "white": "Blancas",
