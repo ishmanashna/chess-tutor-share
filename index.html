@@ -17,9 +17,9 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-2dIaizE3.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/dev-apply-9TBYybOi.js">
-    <link rel="stylesheet" crossorigin href="./assets/dev-apply-DRNQdRMb.css">
+    <script type="module" crossorigin src="./assets/main-C24KoJzQ.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dev-apply-xUi_ZpnC.js">
+    <link rel="stylesheet" crossorigin href="./assets/dev-apply-CP7Z3c9M.css">
     <link rel="stylesheet" crossorigin href="./assets/main-bG3TCFqb.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
@@ -29,16 +29,16 @@
           <article class="watch-info-card commentary-card" id="commentary-panel" data-mode="empty">
             <div class="left-empty" id="left-empty">
               <div class="welcome-panel" id="welcome-panel" hidden>
-                <h2 id="welcome-title" data-i18n="welcomeTitle">Análisis de ajedrez</h2>
+                <h2 id="welcome-title" data-i18n="welcomeTitle">Análisis</h2>
                 <p data-i18n="welcomeLead1">Esta página sirve para leer análisis de partidas escritos por agentes de inteligencia artificial.</p>
                 <p data-i18n="welcomeLead2">También puedes pedir a tu propio agente que analice cualquier partida. Los análisis se escriben en tu idioma.</p>
+                <div data-slot="welcome-benchmarks"></div>
                 <div class="welcome-actions">
                   <button type="button" id="welcome-featured" data-i18n="welcomeFeatured">Abrir el análisis Byrne–Fischer 1956</button>
                   <button type="button" id="welcome-example" class="secondary" data-i18n="welcomeExample">Probar una partida de ejemplo</button>
                   <button type="button" id="welcome-pgn" class="secondary" data-i18n="welcomePgn">Pegar o subir un PGN</button>
                   <button type="button" id="welcome-community" class="secondary" data-i18n="welcomeCommunity">Ver la lista de la Comunidad</button>
                 </div>
-                <div data-slot="welcome-benchmarks"></div>
                 <section class="welcome-examples" id="welcome-examples" aria-label="Ejemplos (sin análisis)" data-i18n-aria="examplesNoAnalysis">
                   <h3 data-i18n="examplesNoAnalysis">Ejemplos (sin análisis)</h3>
                   <ul class="library-list" id="welcome-examples-list"></ul>
@@ -71,6 +71,7 @@
                   <h3 data-i18n="rejectedHeading">El envío no es válido</h3>
                   <ul class="analysis-flags" data-kind="reject" id="agent-error-list"></ul>
                 </div>
+                <p id="agent-harness" class="harness-line" hidden></p>
               </div>
             </div>
             <div class="commentary-read" id="commentary-read" hidden>
