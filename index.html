@@ -17,8 +17,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-BER_PYmL.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bjlms4rE.css">
+    <script type="module" crossorigin src="./assets/index-CxPEitw4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BblqZ4k4.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
     <div class="wrap">
@@ -26,18 +26,45 @@
         <section class="col commentary-col" aria-label="Comentario">
           <article class="watch-info-card commentary-card" id="commentary-panel" data-mode="empty">
             <div class="left-empty" id="left-empty">
-              <h2 id="left-empty-heading">Analizar partida</h2>
+              <h2 id="left-empty-heading" data-i18n="analyzeGame">Analizar partida</h2>
               <p class="commentary-empty" id="left-empty-copy">Abre una partida a la derecha para leerla o analizarla.</p>
             </div>
             <div class="analysis-run" id="analysis-run" hidden>
-              <h2>Analizar partida</h2>
-              <p class="analysis-run-copy">Esta partida aún no tiene un análisis escrito. El tablero ya está listo; el texto se escribe aquí.</p>
-              <p id="estado" class="status" aria-live="polite"></p>
-              <button type="button" id="analizar">Analizar partida</button>
+              <div id="local-analyze">
+                <h2 data-i18n="analyzeGame">Analizar partida</h2>
+                <p class="analysis-run-copy" data-i18n="analyzeHint">Esta partida aún no tiene un análisis escrito. El tablero ya está listo; el texto se escribe aquí.</p>
+                <p id="estado" class="status" aria-live="polite"></p>
+                <button type="button" id="analizar" data-i18n="analyzeGame">Analizar partida</button>
+              </div>
+              <div id="agent-panel" hidden>
+                <h2 data-i18n="analyzeWithAgent">Analizar con tu agente</h2>
+                <p class="analysis-run-copy" data-i18n="agentIntro">Copia el prompt en tu agente de código (hace falta Node 18 o superior y red). No hace falta dejar esta pestaña abierta.</p>
+                <button type="button" id="agent-start" data-i18n="analyzeWithAgent">Analizar con tu agente</button>
+                <div id="agent-session" hidden>
+                  <label for="agent-prompt" data-i18n="agentPromptLabel">Prompt para tu agente</label>
+                  <textarea id="agent-prompt" readonly rows="8"></textarea>
+                  <div class="agent-session-row">
+                    <button type="button" id="agent-copy" data-i18n="copy">Copiar</button>
+                    <span id="agent-copied" hidden data-i18n="copied">Copiado</span>
+                  </div>
+                  <p id="agent-status" class="status" aria-live="polite"></p>
+                </div>
+                <div id="agent-reject" hidden>
+                  <h3 data-i18n="rejectedHeading">El envío no es válido</h3>
+                  <ul class="analysis-flags" data-kind="reject" id="agent-error-list"></ul>
+                </div>
+              </div>
             </div>
             <div class="commentary-read" id="commentary-read" hidden>
+              <p id="analysis-source" class="analysis-source" hidden></p>
+              <ul class="analysis-flags" id="analysis-warnings" hidden></ul>
+              <div class="agent-actions" id="agent-actions" hidden>
+                <button type="button" id="agent-publish" data-i18n="publish">Publicar</button>
+                <button type="button" id="agent-download" class="secondary" data-i18n="downloadAnalysis">Descargar análisis</button>
+                <button type="button" id="agent-discard" class="secondary" data-i18n="discard">Descartar</button>
+              </div>
               <div class="card-head commentary-head">
-                <div class="commentary-tabs" role="tablist" aria-label="Comentario">
+                <div class="commentary-tabs" role="tablist" aria-label="Comentario" data-i18n-aria="commentary">
                   <button type="button" role="tab" id="tab-corto" data-length="corto" aria-controls="comentario" aria-selected="true">Relato</button>
                   <button type="button" role="tab" id="tab-medio" data-length="medio" aria-controls="comentario" aria-selected="false">Claves</button>
                   <button type="button" role="tab" id="tab-largo" data-length="largo" aria-controls="comentario" aria-selected="false">Guía</button>
@@ -55,10 +82,14 @@
             <div class="board-toolbar board-toolbar-top">
               <div class="board-toolbar-actions">
                 <button type="button" id="toggle-load" class="secondary" tabindex="-1">Cargar partida</button>
-                <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1">
+                <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1" data-i18n="gameInfo">
                   Información
                 </button>
-                <button type="button" id="pgn-download" class="secondary" aria-label="Descargar PGN" title="Descargar PGN" tabindex="-1">PGN</button>
+                <button type="button" id="pgn-download" class="secondary" aria-label="Descargar PGN" title="Descargar PGN" tabindex="-1" data-i18n-aria="downloadPgn" data-i18n-title="downloadPgn">PGN</button>
+                <div class="lang-switch" id="lang-switch" hidden role="group" aria-label="Idioma" data-i18n-aria="language">
+                  <button type="button" id="lang-es" class="secondary" data-lang="es" aria-pressed="true">ES</button>
+                  <button type="button" id="lang-en" class="secondary" data-lang="en" aria-pressed="false">EN</button>
+                </div>
                 <button type="button" id="theme-toggle" class="secondary theme-toggle" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
               </div>
             </div>
@@ -75,76 +106,82 @@
             </div>
             <div class="board-toolbar board-toolbar-bottom">
               <div class="board-toolbar-main">
-                <button type="button" id="ratings-btn" class="secondary ratings-btn" popovertarget="ratings-view" tabindex="-1">Valoraciones</button>
+                <button type="button" id="ratings-btn" class="secondary ratings-btn" popovertarget="ratings-view" tabindex="-1" data-i18n="ratings">Valoraciones</button>
                 <div class="nav-buttons">
-                  <button type="button" id="nav-first" data-nav="first" tabindex="-1" aria-label="Inicio" title="Inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10.75 6 5.25 12l5.5 6M18.75 6 13.25 12l5.5 6"/></svg></button>
-                  <button type="button" id="nav-prev" data-nav="prev" tabindex="-1" aria-label="Anterior" title="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6 9 12l6 6"/></svg></button>
-                  <button type="button" id="nav-next" data-nav="next" tabindex="-1" aria-label="Siguiente" title="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg></button>
-                  <button type="button" id="nav-last" data-nav="last" tabindex="-1" aria-label="Final" title="Final"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5.25 6 10.75 12l-5.5 6M13.25 6 18.75 12l-5.5 6"/></svg></button>
+                  <button type="button" id="nav-first" data-nav="first" tabindex="-1" aria-label="Inicio" title="Inicio" data-i18n-aria="navFirst" data-i18n-title="navFirst"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10.75 6 5.25 12l5.5 6M18.75 6 13.25 12l5.5 6"/></svg></button>
+                  <button type="button" id="nav-prev" data-nav="prev" tabindex="-1" aria-label="Anterior" title="Anterior" data-i18n-aria="navPrev" data-i18n-title="navPrev"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6 9 12l6 6"/></svg></button>
+                  <button type="button" id="nav-next" data-nav="next" tabindex="-1" aria-label="Siguiente" title="Siguiente" data-i18n-aria="navNext" data-i18n-title="navNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg></button>
+                  <button type="button" id="nav-last" data-nav="last" tabindex="-1" aria-label="Final" title="Final" data-i18n-aria="navLast" data-i18n-title="navLast"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5.25 6 10.75 12l-5.5 6M13.25 6 18.75 12l-5.5 6"/></svg></button>
                 </div>
-                <button type="button" id="flip" class="secondary flip-btn" tabindex="-1">Invertir</button>
+                <button type="button" id="flip" class="secondary flip-btn" tabindex="-1" data-i18n="flip">Invertir</button>
               </div>
             </div>
           </div>
           <article class="game-info-pop" id="game-info" popover>
-            <h2>Información</h2>
+            <h2 data-i18n="gameInfo">Información</h2>
             <p class="game-info-brief" id="info-brief">—</p>
             <dl class="watch-meta-grid">
-              <dt>Blancas</dt>
+              <dt data-i18n="white">Blancas</dt>
               <dd id="info-white">—</dd>
-              <dt>Negras</dt>
+              <dt data-i18n="black">Negras</dt>
               <dd id="info-black">—</dd>
-              <dt>Resultado</dt>
+              <dt data-i18n="result">Resultado</dt>
               <dd id="info-result">—</dd>
-              <dt>Apertura</dt>
+              <dt data-i18n="opening">Apertura</dt>
               <dd class="meta-opening" id="info-opening">—</dd>
-              <dt>Precisión (B)</dt>
+              <dt data-i18n="accuracyWhite">Precisión (B)</dt>
               <dd id="info-white-accuracy">—</dd>
-              <dt>Rendimiento (B)</dt>
+              <dt data-i18n="performanceWhite">Rendimiento (B)</dt>
               <dd id="info-white-performance">—</dd>
-              <dt>Precisión (N)</dt>
+              <dt data-i18n="accuracyBlack">Precisión (N)</dt>
               <dd id="info-black-accuracy">—</dd>
-              <dt>Rendimiento (N)</dt>
+              <dt data-i18n="performanceBlack">Rendimiento (N)</dt>
               <dd id="info-black-performance">—</dd>
             </dl>
           </article>
           <div class="side-banner" id="side-banner" hidden>
             <p class="side-banner-label" id="side-banner-label">Ejemplo</p>
-            <button type="button" id="side-back">Volver a la partida</button>
+            <button type="button" id="side-back" data-i18n="backToGame">Volver a la partida</button>
           </div>
         </section>
 
         <section class="col info-col" aria-label="Motor y jugadas" data-mode="library">
           <article class="watch-info-card library-card" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
             <div class="card-head library-head">
-              <h2>Partida</h2>
-              <button type="button" id="library-close" class="secondary">Volver</button>
+              <h2 data-i18n="game">Partida</h2>
+              <button type="button" id="library-close" class="secondary" data-i18n="back">Volver</button>
             </div>
             <p id="library-status" class="status" aria-live="polite"></p>
-            <section class="library-section" aria-label="Análisis guardados">
-              <h3>Con análisis</h3>
+            <section class="library-section" id="library-analyses-section" aria-label="Análisis guardados">
+              <h3 data-i18n="withAnalysis">Con análisis</h3>
               <ul class="library-list" id="library-analyses"></ul>
             </section>
-            <section class="library-section" aria-label="Partidas">
-              <h3>Partidas</h3>
+            <section class="library-section" id="community-section" hidden aria-label="Comunidad">
+              <h3 data-i18n="community">Comunidad</h3>
+              <p id="community-status" class="status"></p>
+              <ul class="library-list" id="library-community"></ul>
+              <button type="button" id="community-more" class="secondary" hidden data-i18n="loadMore">Más</button>
+            </section>
+            <section class="library-section" id="library-pgn-section" aria-label="Partidas">
+              <h3 data-i18n="games">Partidas</h3>
               <ul class="library-list" id="library-games"></ul>
             </section>
             <div class="load-form">
-              <label for="pgn">PGN</label>
-              <textarea id="pgn" rows="4" placeholder="Pega aquí el PGN de la partida"></textarea>
+              <label for="pgn" data-i18n="pgn">PGN</label>
+              <textarea id="pgn" rows="4" placeholder="Pega aquí el PGN de la partida" data-i18n-placeholder="pgnPlaceholder"></textarea>
               <div class="load-row">
                 <input type="file" id="pgn-file" accept=".pgn,text/plain,application/x-chess-pgn" hidden />
-                <button type="button" id="pgn-upload" class="secondary">Subir PGN</button>
+                <button type="button" id="pgn-upload" class="secondary" data-i18n="uploadPgn">Subir PGN</button>
                 <span id="pgn-file-name" class="file-name"></span>
-                <button type="button" id="open-game" class="secondary">Abrir partida</button>
+                <button type="button" id="open-game" class="secondary" data-i18n="openGame">Abrir partida</button>
               </div>
             </div>
           </article>
           <article class="watch-info-card engine-card" id="engine-panel" aria-label="Motor">
             <div class="engine-head">
-              <h2>Motor <span id="engine-depth" class="engine-depth-mini"></span></h2>
+              <h2><span data-i18n="engine">Motor</span> <span id="engine-depth" class="engine-depth-mini"></span></h2>
               <div class="engine-head-actions">
-                <button type="button" id="engine-options-btn" class="engine-options-btn" popovertarget="engine-options" aria-label="Opciones del motor" title="Opciones">
+                <button type="button" id="engine-options-btn" class="engine-options-btn" popovertarget="engine-options" aria-label="Opciones del motor" title="Opciones" data-i18n-aria="engineOptions" data-i18n-title="engineOptions">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path fill="currentColor" d="M10.3 3.2 9.8 5.6a6.8 6.8 0 0 0-1.5.9L5.9 5.7 3.7 7.9l.8 2.4a6.8 6.8 0 0 0 0 3.4l-.8 2.4 2.2 2.2 2.4-.8c.47.35.97.65 1.5.9l.5 2.4h3.4l.5-2.4c.53-.25 1.03-.55 1.5-.9l2.4.8 2.2-2.2-.8-2.4a6.8 6.8 0 0 0 0-3.4l.8-2.4-2.2-2.2-2.4.8a6.8 6.8 0 0 0-1.5-.9L13.7 3.2h-3.4ZM12 9.2A2.8 2.8 0 1 1 9.2 12 2.8 2.8 0 0 1 12 9.2Z"/>
                   </svg>
@@ -157,8 +194,8 @@
             </div>
             <div class="engine-options-pop" id="engine-options" popover>
               <label>
-                Líneas
-                <select id="engine-opt-lines" aria-label="Número de líneas">
+                <span data-i18n="lines">Líneas</span>
+                <select id="engine-opt-lines" aria-label="Número de líneas" data-i18n-aria="lineCount">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3" selected>3</option>
@@ -167,9 +204,9 @@
                 </select>
               </label>
               <label>
-                Profundidad
-                <select id="engine-opt-depth" aria-label="Profundidad máxima">
-                  <option value="0" selected>Sin límite</option>
+                <span data-i18n="depth">Profundidad</span>
+                <select id="engine-opt-depth" aria-label="Profundidad máxima" data-i18n-aria="maxDepth">
+                  <option value="0" selected data-i18n="unlimited">Sin límite</option>
                   <option value="12">12</option>
                   <option value="16">16</option>
                   <option value="20">20</option>
@@ -178,9 +215,9 @@
                 </select>
               </label>
               <label>
-                Tiempo
-                <select id="engine-opt-time" aria-label="Tiempo máximo">
-                  <option value="0" selected>Sin límite</option>
+                <span data-i18n="time">Tiempo</span>
+                <select id="engine-opt-time" aria-label="Tiempo máximo" data-i18n-aria="maxTime">
+                  <option value="0" selected data-i18n="unlimited">Sin límite</option>
                   <option value="1000">1 s</option>
                   <option value="3000">3 s</option>
                   <option value="5000">5 s</option>
@@ -194,14 +231,14 @@
           </article>
           <article class="watch-info-card moves-card" aria-label="Jugadas">
             <div class="moves-head">
-              <h2>Jugadas</h2>
+              <h2 data-i18n="moves">Jugadas</h2>
             </div>
             <div class="moves-scroll" id="move-tree"></div>
           </article>
         </section>
       </div>
       <article class="ratings-pop" id="ratings-view" popover>
-        <h2>Valoraciones</h2>
+        <h2 data-i18n="ratings">Valoraciones</h2>
         <div id="ratings-body"></div>
       </article>
     </div>

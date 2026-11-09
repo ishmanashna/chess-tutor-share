@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "chess-tutor-analysis/1",
+  "title": "chess-tutor analysis submission v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "session",
+    "lang",
+    "agent",
+    "positions",
+    "analysis"
+  ],
+  "properties": {
+    "format": {
+      "const": "chess-tutor-analysis/1"
+    },
+    "session": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "es",
+        "en"
+      ]
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effort": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "helper": {
+          "type": "string"
+        },
+        "engine": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "kind"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "native",
+                "lite"
+              ]
+            },
+            "maxDepth": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    "positions": {
+      "type": "object",
+      "description": "Position manifest. Keys are pos_N ids referenced by the analysis.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "from",
+          "moves"
+        ],
+        "properties": {
+          "from": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "ply"
+                ],
+                "properties": {
+                  "ply": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "fen"
+                ],
+                "properties": {
+                  "fen": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "start"
+                ],
+                "properties": {
+                  "start": {
+                    "const": true
+                  }
+                }
+              }
+            ]
+          },
+          "moves": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "English SAN played from the starting point."
+          },
+          "eval": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "score",
+              "depth",
+              "bestmove"
+            ],
+            "properties": {
+              "score": {
+                "type": "string",
+                "pattern": "^(cp -?\\d+|mate -?\\d+)$",
+                "description": "Engine score from the side to move: \"cp 34\" or \"mate -3\"."
+              },
+              "depth": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "bestmove": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gameTitle",
+        "gameTreePgn",
+        "commentaries",
+        "sidePositions",
+        "ratings"
+      ],
+      "properties": {
+        "gameTitle": {
+          "type": "string",
+          "description": "Short evocative flavour title for this game, not the players, event, or date."
+        },
+        "gameTreePgn": {
+          "type": "string",
+          "description": "PGN of the submitted game: the same mainline, plus variations and NAG glyphs for the move tree. No prose comments. Do not put other openings or famous games here."
+        },
+        "commentaries": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "corto",
+            "medio",
+            "largo",
+            "blancas",
+            "negras"
+          ],
+          "properties": {
+            "corto": {
+              "type": "string",
+              "description": "Relato (corto): The reader wants to understand what this game was about: the ideas and the chess concepts that shaped it and decided it. They're not trying to follow the moves. Concise straightforward thematic narrative; name the defining strategic idea up front and use very few move references. A defining idea may be positional — activity, tempi, structure — not merely a forced combination; say which it was in this game, without reciting one famous story as a template. Natural Spanish. Plain text, no bold. English SAN with move numbers when useful. Objective; no advice to either side. Game moves do not need {@pos_N}; tool-issued references are for outside positions or shapes."
+            },
+            "medio": {
+              "type": "string",
+              "description": "Claves (medio): The reader wants to go deep into whatever the coach found most important in this game, and understand it fully. One section covers the opening and early plans; the others are distinct pivotal ideas. Mark genuine section titles in bold; body prose is plain. Natural Spanish. English SAN with move numbers when useful. Objective. Game moves do not need {@pos_N}; use tool-issued ids for outside positions and shapes."
+            },
+            "largo": {
+              "type": "string",
+              "description": "Guía (largo): The reader is going through the game move by move with the board in front of them, and wants commentary wherever the game gives a reason for it. Name the opening when it is identifiable; if it is not clear, say so. Early on, explain intentions, plans, consequences, and meaningful alternatives, not just more variations. Natural Spanish. Plain text, no bold. English SAN with move numbers when useful. Objective. Game moves do not need {@pos_N}; use tool-issued ids for outside positions and shapes."
+            },
+            "blancas": {
+              "type": "string",
+              "description": "Blancas: The reader is the player who played that side. He knows his moves and why he chose them. He wants whatever from this game helps him play better: what he didn't see and what this game shows about his play. Prioritize actual missed opportunities and practical earlier improvements. Distinguish an equivalent alternative from an improvement. Do not manufacture criticism of moves he handled well. Address White in natural Spanish as tú, not condescending. Do not explain his own good moves back to him as if teaching him his own game. Plain text, no bold. English SAN with move numbers when useful. Game moves do not need {@pos_N}; use tool-issued ids for outside positions and shapes."
+            },
+            "negras": {
+              "type": "string",
+              "description": "Negras: The reader is the player who played that side. He knows his moves and why he chose them. He wants whatever from this game helps him play better: what he didn't see and what this game shows about his play. Prioritize actual missed opportunities and practical earlier improvements. Distinguish an equivalent alternative from an improvement. Do not manufacture criticism of moves he handled well. Address Black in natural Spanish as tú, not condescending. Do not explain his own good moves back to him as if teaching him his own game. Plain text, no bold. English SAN with move numbers when useful. Game moves do not need {@pos_N}; use tool-issued ids for outside positions and shapes."
+            }
+          }
+        },
+        "sidePositions": {
+          "type": "array",
+          "description": "Positions reached from the start position or a known FEN (another opening, a famous game), not from a ply of this game. They must not appear in gameTreePgn.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "positionId",
+              "label"
+            ],
+            "properties": {
+              "positionId": {
+                "type": "string",
+                "description": "Tool-issued id from the position tool, e.g. pos_1."
+              },
+              "label": {
+                "type": "string",
+                "description": "Short label for the side board, e.g. an opening name."
+              }
+            }
+          }
+        },
+        "ratings": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "A playful, openly subjective rating of each player's style and skills in this game. Use these six categories, in this order, for both players: Apertura, Estrategia, Cálculo, Táctica, Defensa, Final. Apertura: Opening play: development, early plans, and how the opening was handled. Estrategia: Long-term plans and positional understanding in this game. Cálculo: Accuracy of concrete sequences and move order. Distinct from spotting tactical motifs. Táctica: Tactical motifs, combinations, and opportunities. Defensa: Resourcefulness and accuracy when under pressure. Final: Endgame play. Use null when the game never meaningfully tested an endgame. Fill every category. Score 0–10, or null when that facet was not meaningfully tested (no invented endgame score if there was no endgame). Do not invent extra category names. Da también un Elo estimado a ojo para cada bando, juzgado por cómo jugó, sin dejarte llevar por las cifras de rendimiento.",
+          "required": [
+            "white",
+            "black"
+          ],
+          "properties": {
+            "white": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "vibeElo",
+                "categories"
+              ],
+              "properties": {
+                "vibeElo": {
+                  "type": "integer"
+                },
+                "categories": {
+                  "type": "array",
+                  "minItems": 6,
+                  "maxItems": 6,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "key",
+                      "score"
+                    ],
+                    "properties": {
+                      "key": {
+                        "type": "string",
+                        "enum": [
+                          "opening",
+                          "strategy",
+                          "calculation",
+                          "tactics",
+                          "defence",
+                          "endgame"
+                        ],
+                        "description": "opening (Apertura/Opening): Opening play: development, early plans, and how the opening was handled. strategy (Estrategia/Strategy): Long-term plans and positional understanding in this game. calculation (Cálculo/Calculation): Accuracy of concrete sequences and move order. Distinct from spotting tactical motifs. tactics (Táctica/Tactics): Tactical motifs, combinations, and opportunities. defence (Defensa/Defence): Resourcefulness and accuracy when under pressure. endgame (Final/Endgame): Endgame play. Use null when the game never meaningfully tested an endgame."
+                      },
+                      "score": {
+                        "anyOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 10
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Integer 0–10, or null when this facet was not meaningfully tested."
+                      },
+                      "explanation": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "black": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "vibeElo",
+                "categories"
+              ],
+              "properties": {
+                "vibeElo": {
+                  "type": "integer"
+                },
+                "categories": {
+                  "type": "array",
+                  "minItems": 6,
+                  "maxItems": 6,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "key",
+                      "score"
+                    ],
+                    "properties": {
+                      "key": {
+                        "type": "string",
+                        "enum": [
+                          "opening",
+                          "strategy",
+                          "calculation",
+                          "tactics",
+                          "defence",
+                          "endgame"
+                        ],
+                        "description": "opening (Apertura/Opening): Opening play: development, early plans, and how the opening was handled. strategy (Estrategia/Strategy): Long-term plans and positional understanding in this game. calculation (Cálculo/Calculation): Accuracy of concrete sequences and move order. Distinct from spotting tactical motifs. tactics (Táctica/Tactics): Tactical motifs, combinations, and opportunities. defence (Defensa/Defence): Resourcefulness and accuracy when under pressure. endgame (Final/Endgame): Endgame play. Use null when the game never meaningfully tested an endgame."
+                      },
+                      "score": {
+                        "anyOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 10
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Integer 0–10, or null when this facet was not meaningfully tested."
+                      },
+                      "explanation": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "description": "The five texts, tree, side positions and ratings. Prose and rating explanations match top-level lang; category labels are stored by key."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+Stockfish 19 Lite (WASM) — GPL-3.0
+
+This directory contains stockfish-19-lite-single.js and
+stockfish-19-lite-single.wasm from stockfish.js 19.0.1, a WASM build of
+Stockfish 19.
+
+Source for this exact version:
+  https://github.com/nmrugg/stockfish.js/releases/tag/v19.0.1
+  https://github.com/official-stockfish/Stockfish
+
+Upstream licence: https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt
+The full GNU GPL version 3 is at https://www.gnu.org/licenses/gpl-3.0.html

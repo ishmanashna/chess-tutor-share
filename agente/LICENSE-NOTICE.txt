@@ -1,0 +1,21 @@
+chess-tools.mjs
+SPDX-License-Identifier: GPL-3.0-or-later
+
+This file is the helper script served from the chess-tutor share page. It
+bundles chessops and talks to Stockfish. Source for this script:
+
+  https://github.com/ishmanashna/chess-tutor/tree/main/agent-kit
+
+Third-party code
+----------------
+
+chessops 0.15.1 — GPL-3.0-or-later
+  https://github.com/niklasf/chessops
+
+Stockfish 19 — GPL-3.0
+  Native binary, or the lite WASM files also served from this site
+  (stockfish.js 19.0.1 / stockfish-19-lite-single).
+  https://github.com/official-stockfish/Stockfish
+  https://github.com/nmrugg/stockfish.js/releases/tag/v19.0.1
+
+The full GNU GPL version 3 is at https://www.gnu.org/licenses/gpl-3.0.html
