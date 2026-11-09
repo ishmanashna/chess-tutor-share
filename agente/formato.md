@@ -17,8 +17,12 @@ Machine-readable copy: [`analysis-format-v1.schema.json`](analysis-format-v1.sch
     "model": "gpt-6.1-sol",
     "effort": "xhigh",
     "tool": "Codex CLI",
-    "helper": "chess-tools.mjs 1.0.0",
+    "helper": "chess-tools.mjs 1.1.0",
     "engine": { "name": "Stockfish 18", "kind": "native", "maxDepth": 22 }
+  },
+  "engineAnalysis": {
+    "format": "chess-tutor-engine/1",
+    "gameHash": "64 lowercase hex chars"
   },
   "positions": {
     "pos_7": {
@@ -78,6 +82,7 @@ Machine-readable copy: [`analysis-format-v1.schema.json`](analysis-format-v1.sch
 | `agent.model` | agent | Self-reported. Required. |
 | `agent.effort`, `agent.tool` | agent | Self-reported. Optional. |
 | `agent.helper`, `agent.engine` | helper | Filled on submit. `engine.kind` is `native` or `lite`. |
+| `engineAnalysis` | helper | Optional for older files. On submit, chess-tools.mjs runs the same full-game Stockfish pass as the browser (`chess-tutor-engine/1`, see [`engine-analysis-format.md`](engine-analysis-format.md)) and includes it. Agents do not write this field. |
 | `positions` | helper | Manifest. Replay with chessops; do not trust a tool log. |
 | `analysis` | agent | Inner object, same jobs as Sol, with category **keys** instead of Spanish names. |
 
@@ -211,7 +216,7 @@ An English submission is the same shape with `"lang": "en"`, English prose, and 
 ## What later phases should know
 
 - Phase 2's session page should build study/compose/retry from `backend/prompt-text.mjs` in the session's `lang` (`buildStudyPrompt`, `buildAgentComposePrompt`, `buildRetryPrompt`). Sol still calls the Spanish defaults with no `lang`.
-- Phase 3's `check` should print `validateSubmissionV1` errors in `lang`, and `submit` should add `positions`, `helper` and `engine` without asking the agent to write them.
+- Phase 3's `check` should print `validateSubmissionV1` errors in `lang`, and `submit` should add `positions`, `helper`, `engine` and `engineAnalysis` without asking the agent to write them.
 - Phase 4 should run `validateSubmissionV1` in the browser and re-check manifest evals and glyphs with the lite engine. Display category labels from `key` plus the visitor's UI language, not from a stored name.
 - Do not add a licence file, a benchmark, or new runtime dependencies for this format.
 - Do not change Codex prompts or the lenient validator.

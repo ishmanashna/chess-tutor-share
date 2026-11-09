@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * chess-tools.mjs 1.0.0
+ * chess-tools.mjs 1.1.0
  * SPDX-License-Identifier: GPL-3.0-or-later
  *
  * Bundles chessops (GPL-3.0-or-later): https://github.com/niklasf/chessops
@@ -424,6 +424,10 @@ var TEMPLATES = {
   engine_kind: {
     es: () => 'agent.engine.kind debe ser "native" o "lite".',
     en: () => 'agent.engine.kind must be "native" or "lite".'
+  },
+  bad_engine_analysis: {
+    es: ({ detail }) => `engineAnalysis no es un documento chess-tutor-engine/1 v\xE1lido${detail ? `: ${detail}` : "."}`,
+    en: ({ detail }) => `engineAnalysis is not a valid chess-tutor-engine/1 document${detail ? `: ${detail}` : "."}`
   }
 };
 function v1Error(code, lang, params = {}) {
@@ -542,6 +546,7 @@ function commentarySchema(description) {
 }
 var COMMENTARY_KEYS = ["corto", "medio", "largo", "blancas", "negras"];
 var FORMAT_V1 = "chess-tutor-analysis/1";
+var ENGINE_FORMAT_V1 = "chess-tutor-engine/1";
 function v1PlayerRatingsSchema() {
   return {
     type: "object",
@@ -647,6 +652,31 @@ function v1AnalysisSchema() {
   return analysis;
 }
 var V1_ANALYSIS_SCHEMA = v1AnalysisSchema();
+function v1EngineAnalysisSchema() {
+  return {
+    type: "object",
+    description: "Optional full-game engine pass (chess-tutor-engine/1). chess-tools.mjs fills this on submit with the same document the browser stores in the engine cache. Older submissions may omit it.",
+    required: ["format", "gameHash", "engine", "plies", "summary"],
+    properties: {
+      format: { const: ENGINE_FORMAT_V1 },
+      gameHash: { type: "string", pattern: "^[0-9a-f]{64}$" },
+      engine: {
+        type: "object",
+        required: ["name", "depth", "multipv"],
+        properties: {
+          name: { type: "string", minLength: 1 },
+          depth: { type: "integer", minimum: 1, maximum: 64 },
+          multipv: { type: "integer", minimum: 1, maximum: 5 }
+        }
+      },
+      plies: { type: "array", minItems: 1, maxItems: 512 },
+      summary: { type: "object" },
+      settings: { type: "object" },
+      createdAt: { type: "string" },
+      keyMoments: { type: "array" }
+    }
+  };
+}
 var V1_SUBMISSION_SCHEMA = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
   $id: "chess-tutor-analysis/1",
@@ -664,7 +694,8 @@ var V1_SUBMISSION_SCHEMA = {
       description: "Position manifest. Keys are pos_N ids referenced by the analysis.",
       additionalProperties: v1ManifestEntrySchema()
     },
-    analysis: V1_ANALYSIS_SCHEMA
+    analysis: V1_ANALYSIS_SCHEMA,
+    engineAnalysis: v1EngineAnalysisSchema()
   }
 };
 function looksFencedJson(raw) {
@@ -1205,6 +1236,27 @@ function parseSquare(str) {
   return squareFromCoords(str.charCodeAt(0) - "a".charCodeAt(0), str.charCodeAt(1) - "1".charCodeAt(0));
 }
 var makeSquare = (square) => FILE_NAMES[squareFile(square)] + RANK_NAMES[squareRank(square)];
+var parseUci = (str) => {
+  if (str[1] === "@" && str.length === 4) {
+    const role = charToRole(str[0]);
+    const to = parseSquare(str.slice(2));
+    if (role && defined(to))
+      return { role, to };
+  } else if (str.length === 4 || str.length === 5) {
+    const from = parseSquare(str.slice(0, 2));
+    const to = parseSquare(str.slice(2, 4));
+    let promotion;
+    if (str.length === 5) {
+      promotion = charToRole(str[4]);
+      if (!promotion)
+        return;
+    }
+    if (defined(from) && defined(to))
+      return { from, to, promotion };
+  }
+  return;
+};
+var makeUci = (move) => isDrop(move) ? `${roleToChar(move.role).toUpperCase()}@${makeSquare(move.to)}` : makeSquare(move.from) + makeSquare(move.to) + (move.promotion ? roleToChar(move.promotion) : "");
 var kingCastlesTo = (color, side) => color === "white" ? side === "a" ? 2 : 6 : side === "a" ? 58 : 62;
 var rookCastlesTo = (color, side) => color === "white" ? side === "a" ? 3 : 5 : side === "a" ? 59 : 61;
 
@@ -3450,6 +3502,75 @@ var parseComment = (comment) => {
 };
 
 // node_modules/chessops/dist/esm/san.js
+var makeSanWithoutSuffix = (pos, move) => {
+  let san = "";
+  if (isDrop(move)) {
+    if (move.role !== "pawn")
+      san = roleToChar(move.role).toUpperCase();
+    san += "@" + makeSquare(move.to);
+  } else {
+    const role = pos.board.getRole(move.from);
+    if (!role)
+      return "--";
+    if (role === "king" && (pos.board[pos.turn].has(move.to) || Math.abs(move.to - move.from) === 2)) {
+      san = move.to > move.from ? "O-O" : "O-O-O";
+    } else {
+      const capture = pos.board.occupied.has(move.to) || role === "pawn" && squareFile(move.from) !== squareFile(move.to);
+      if (role !== "pawn") {
+        san = roleToChar(role).toUpperCase();
+        let others;
+        if (role === "king")
+          others = kingAttacks(move.to).intersect(pos.board.king);
+        else if (role === "queen")
+          others = queenAttacks(move.to, pos.board.occupied).intersect(pos.board.queen);
+        else if (role === "rook")
+          others = rookAttacks(move.to, pos.board.occupied).intersect(pos.board.rook);
+        else if (role === "bishop")
+          others = bishopAttacks(move.to, pos.board.occupied).intersect(pos.board.bishop);
+        else
+          others = knightAttacks(move.to).intersect(pos.board.knight);
+        others = others.intersect(pos.board[pos.turn]).without(move.from);
+        if (others.nonEmpty()) {
+          const ctx = pos.ctx();
+          for (const from of others) {
+            if (!pos.dests(from, ctx).has(move.to))
+              others = others.without(from);
+          }
+          if (others.nonEmpty()) {
+            let row = false;
+            let column = others.intersects(SquareSet.fromRank(squareRank(move.from)));
+            if (others.intersects(SquareSet.fromFile(squareFile(move.from))))
+              row = true;
+            else
+              column = true;
+            if (column)
+              san += FILE_NAMES[squareFile(move.from)];
+            if (row)
+              san += RANK_NAMES[squareRank(move.from)];
+          }
+        }
+      } else if (capture)
+        san = FILE_NAMES[squareFile(move.from)];
+      if (capture)
+        san += "x";
+      san += makeSquare(move.to);
+      if (move.promotion)
+        san += "=" + roleToChar(move.promotion).toUpperCase();
+    }
+  }
+  return san;
+};
+var makeSanAndPlay = (pos, move) => {
+  var _a;
+  const san = makeSanWithoutSuffix(pos, move);
+  pos.play(move);
+  if ((_a = pos.outcome()) === null || _a === void 0 ? void 0 : _a.winner)
+    return san + "#";
+  if (pos.isCheck())
+    return san + "+";
+  return san;
+};
+var makeSan = (pos, move) => makeSanAndPlay(pos.clone(), move);
 var parseSan = (pos, san) => {
   const ctx = pos.ctx();
   const match = san.match(/^([NBRQK])?([a-h])?([1-8])?[-x]?([a-h][1-8])(?:=?([nbrqkNBRQK]))?[+#]?$/);
@@ -4203,6 +4324,727 @@ function pathForLinkedRef(tree, positions, extra, segment) {
   return matches.length === 1 ? matches[0].path : null;
 }
 
+// frontend/src/uci.js
+var UCI_MOVE = /^[a-h][1-8][a-h][1-8][qrbn]?$/;
+var MATE_CP = 1e4;
+function parseInfoLine(line) {
+  const text = String(line ?? "").trim();
+  if (!text.startsWith("info ")) return null;
+  const scoreMatch = text.match(/\bscore (cp|mate) (-?\d+)/);
+  if (!scoreMatch) return null;
+  const depth = intField(text, "depth");
+  if (depth == null) return null;
+  const pv = parsePv(text);
+  if (!pv.length) return null;
+  return {
+    depth,
+    multipv: intField(text, "multipv") ?? 1,
+    score: { kind: scoreMatch[1], value: Number(scoreMatch[2]) },
+    pv
+  };
+}
+function whiteScoreFromInfo(score, fen) {
+  const turn = String(fen ?? "").split(" ")[1] === "b" ? "black" : "white";
+  switch (score.kind) {
+    case "cp": {
+      const whiteCp = turn === "white" ? score.value : -score.value;
+      return { kind: "cp", whiteCp, whiteMate: null };
+    }
+    case "mate": {
+      const stmMate = score.value;
+      const whiteMate = turn === "white" ? stmMate : -stmMate;
+      const whiteCp = whiteMate === 0 ? 0 : whiteMate > 0 ? MATE_CP : -MATE_CP;
+      return { kind: "mate", whiteCp, whiteMate };
+    }
+    default: {
+      const _exhaustive = score.kind;
+      throw new Error(`Unknown score kind: ${_exhaustive}`);
+    }
+  }
+}
+function formatEval(score) {
+  if (!score) return "\u2014";
+  switch (score.kind) {
+    case "mate": {
+      if (!score.whiteMate) return "0";
+      return score.whiteMate > 0 ? `#${score.whiteMate}` : `-#${-score.whiteMate}`;
+    }
+    case "cp": {
+      const pawns = score.whiteCp / 100;
+      if (pawns === 0) return "0.0";
+      const abs = Math.abs(pawns).toFixed(1);
+      return pawns > 0 ? `+${abs}` : `-${abs}`;
+    }
+    default: {
+      const _exhaustive = score.kind;
+      throw new Error(`Unknown score kind: ${_exhaustive}`);
+    }
+  }
+}
+function uciMovesToSan(fen, uciMoves) {
+  const setup = parseFen(String(fen ?? ""));
+  if (setup.isErr) return [];
+  const chess = Chess.fromSetup(setup.value);
+  if (chess.isErr) return [];
+  const pos = chess.value;
+  const sans = [];
+  for (const uci of uciMoves ?? []) {
+    const move = parseUci(String(uci));
+    if (!move || !pos.isLegal(move)) break;
+    sans.push(makeSan(pos, move));
+    pos.play(move);
+  }
+  return sans;
+}
+function sanLineMoves(fen, sans) {
+  const parts = String(fen ?? "").split(" ");
+  let side = parts[1] === "b" ? "b" : "w";
+  let moveNumber = Number(parts[5] || 1);
+  if (!Number.isFinite(moveNumber) || moveNumber < 1) moveNumber = 1;
+  const moves = [];
+  for (const san of sans ?? []) {
+    let label;
+    if (side === "w") {
+      label = `${moveNumber}. ${san}`;
+      side = "b";
+    } else if (moves.length === 0) {
+      label = `${moveNumber}... ${san}`;
+      side = "w";
+      moveNumber += 1;
+    } else {
+      label = san;
+      side = "w";
+      moveNumber += 1;
+    }
+    moves.push({ label, ply: moves.length });
+  }
+  return moves;
+}
+function formatSanLine(fen, sans) {
+  return sanLineMoves(fen, sans).map((move) => move.label).join(" ");
+}
+var MAX_LINE_PLIES = 8;
+function lineFromInfo(info, fen) {
+  const score = whiteScoreFromInfo(info.score, fen);
+  const pv = (info.pv ?? []).slice(0, MAX_LINE_PLIES);
+  const sans = uciMovesToSan(fen, pv);
+  return {
+    pv: pv.slice(0, sans.length),
+    multipv: info.multipv,
+    depth: info.depth,
+    score,
+    eval: formatEval(score),
+    san: formatSanLine(fen, sans)
+  };
+}
+function intField(text, name) {
+  const match = text.match(new RegExp(`\\b${name} (\\d+)`));
+  return match ? Number(match[1]) : null;
+}
+function parsePv(text) {
+  const idx = text.search(/\bpv /);
+  if (idx < 0) return [];
+  const moves = [];
+  for (const token of text.slice(idx + 3).trim().split(/\s+/)) {
+    if (!UCI_MOVE.test(token)) break;
+    moves.push(token);
+  }
+  return moves;
+}
+
+// frontend/src/engine-metrics.js
+var WIN_STEEPNESS = 368208e-8;
+var CP_CAP = 1e3;
+var ACCURACY_A = 103.1668;
+var ACCURACY_B = -0.04354;
+var ACCURACY_C = -3.1669;
+var VOL_WINDOW_MIN = 2;
+var VOL_WINDOW_MAX = 8;
+var VOL_WEIGHT_MIN = 0.5;
+var VOL_WEIGHT_MAX = 12;
+var DEFAULT_INACCURACY = 10;
+var DEFAULT_MISTAKE = 20;
+var DEFAULT_BLUNDER = 30;
+var ROUGH_PERF_BASE = 3100;
+var ROUGH_PERF_PER_ACPL = 5.5;
+var ROUGH_PERF_MIN = 400;
+var ROUGH_PERF_MAX = 3200;
+var KEY_SWING_COUNT = 3;
+var PV_SAN_PLIES = 6;
+var ACCURACY_ELO_KNOTS = [
+  [43.162, -225.4],
+  [49.8825, -133.5],
+  [53.14, 118],
+  [54.76, 276],
+  [55.79, 359],
+  [56.25, 409],
+  [59.95, 552],
+  [62.47, 588.5],
+  [65.47, 610],
+  [65.67, 616],
+  [67.93, 643],
+  [69.47, 694],
+  [70.89, 752],
+  [71.8, 760],
+  [72.84, 827],
+  [73.22, 905],
+  [73.87, 922],
+  [76.17, 944],
+  [76.22, 1018.67],
+  [77.34, 1063],
+  [78.97, 1144.5],
+  [79.565, 1181.5],
+  [80.05, 1217],
+  [81.66, 1226],
+  [85.03, 1320],
+  [86.18, 1422.5],
+  [89.14, 1600.33],
+  [90.43, 1788],
+  [90.59, 1927.5],
+  [91.53, 2115],
+  [92, 2255],
+  [92.01, 2348],
+  [92.47, 2442],
+  [93.06, 2536],
+  [94.56, 2629],
+  [94.955, 2769],
+  [95.22, 2910],
+  [95.36, 3003],
+  [95.64, 3096],
+  [96.07, 3190]
+];
+var ENGINE_GLYPHS = {
+  inaccuracy: { symbol: "?!", className: "is-inaccuracy" },
+  mistake: { symbol: "?", className: "is-mistake" },
+  blunder: { symbol: "??", className: "is-blunder" }
+};
+function metricsFromSettings(settings = {}) {
+  const thresholds = settings.thresholds ?? {};
+  return {
+    winSteepness: numOr(thresholds.winSteepness, WIN_STEEPNESS),
+    cpCap: numOr(thresholds.mateCp, CP_CAP),
+    inaccuracy: numOr(thresholds.inaccuracy, DEFAULT_INACCURACY),
+    mistake: numOr(thresholds.mistake, DEFAULT_MISTAKE),
+    blunder: numOr(thresholds.blunder, DEFAULT_BLUNDER),
+    accuracyA: ACCURACY_A,
+    accuracyB: ACCURACY_B,
+    accuracyC: ACCURACY_C,
+    volWindowMin: VOL_WINDOW_MIN,
+    volWindowMax: VOL_WINDOW_MAX,
+    volWeightMin: VOL_WEIGHT_MIN,
+    volWeightMax: VOL_WEIGHT_MAX
+  };
+}
+function cappedCp(whiteCp, cap = CP_CAP) {
+  const n = Number(whiteCp);
+  if (!Number.isFinite(n)) return 0;
+  return Math.max(-cap, Math.min(cap, n));
+}
+function scoreToCappedCp(score, cap = CP_CAP) {
+  if (!score) return 0;
+  if (score.kind === "mate") {
+    if (!score.whiteMate) return 0;
+    return score.whiteMate > 0 ? cap : -cap;
+  }
+  return cappedCp(score.whiteCp, cap);
+}
+function winPercent(cp, { winSteepness = WIN_STEEPNESS, cpCap = CP_CAP } = {}) {
+  const c = cappedCp(cp, cpCap);
+  return 50 + 50 * (2 / (1 + Math.exp(-winSteepness * c)) - 1);
+}
+function winPercentFromScore(score, opts = {}) {
+  return winPercent(scoreToCappedCp(score, opts.cpCap), opts);
+}
+function moverWinPercent(score, side, opts = {}) {
+  const whiteWp = winPercentFromScore(score, opts);
+  return side === "black" ? 100 - whiteWp : whiteWp;
+}
+function moveAccuracy(winPercentLoss, {
+  accuracyA = ACCURACY_A,
+  accuracyB = ACCURACY_B,
+  accuracyC = ACCURACY_C
+} = {}) {
+  const loss = Math.max(0, Number(winPercentLoss) || 0);
+  if (loss === 0) return 100;
+  const raw = accuracyA * Math.exp(accuracyB * loss) + accuracyC;
+  return clamp(raw, 0, 100);
+}
+function judgementFromLoss(winPercentLoss, {
+  inaccuracy = DEFAULT_INACCURACY,
+  mistake = DEFAULT_MISTAKE,
+  blunder = DEFAULT_BLUNDER
+} = {}) {
+  const loss = Math.max(0, Number(winPercentLoss) || 0);
+  if (loss >= blunder) return "blunder";
+  if (loss >= mistake) return "mistake";
+  if (loss >= inaccuracy) return "inaccuracy";
+  return "good";
+}
+function glyphForJudgement(judgement) {
+  switch (judgement) {
+    case "inaccuracy":
+    case "mistake":
+    case "blunder":
+      return ENGINE_GLYPHS[judgement];
+    case "good":
+      return null;
+    default: {
+      const _exhaustive = judgement;
+      void _exhaustive;
+      return null;
+    }
+  }
+}
+function harmonicMean(values) {
+  if (!values.length) return null;
+  let inv = 0;
+  for (const value of values) inv += 1 / (value > 0 ? value : 0.01);
+  return values.length / inv;
+}
+function weightedMean(values, weights) {
+  if (!values.length) return null;
+  let sum = 0;
+  let total = 0;
+  for (let i = 0; i < values.length; i += 1) {
+    const w = i < weights.length ? weights[i] : 1;
+    sum += values[i] * w;
+    total += w;
+  }
+  return total > 0 ? sum / total : values.reduce((a, b) => a + b, 0) / values.length;
+}
+function volatilityWeights(winPercents, nMoves, {
+  volWindowMin = VOL_WINDOW_MIN,
+  volWindowMax = VOL_WINDOW_MAX,
+  volWeightMin = VOL_WEIGHT_MIN,
+  volWeightMax = VOL_WEIGHT_MAX
+} = {}) {
+  if (nMoves <= 0) return [];
+  const wsize = Math.max(volWindowMin, Math.min(volWindowMax, Math.floor(nMoves / 10)));
+  const first = winPercents.slice(0, wsize);
+  const pad = Math.max(0, wsize - 2);
+  const weights = [];
+  for (let i = 0; i < nMoves; i += 1) {
+    const start = i < pad ? 0 : i - pad;
+    const window2 = i < pad ? first : winPercents.slice(start, start + wsize);
+    let sd = 0;
+    if (window2.length >= 2) {
+      const mean = window2.reduce((a, b) => a + b, 0) / window2.length;
+      sd = Math.sqrt(window2.reduce((sum, v) => sum + (v - mean) ** 2, 0) / window2.length);
+    }
+    weights.push(clamp(sd, volWeightMin, volWeightMax));
+  }
+  return weights;
+}
+function sideAccuracy(accuracies, weights) {
+  if (!accuracies.length) return null;
+  if (accuracies.length === 1) return accuracies[0];
+  const wm = weightedMean(accuracies, weights);
+  const hm = harmonicMean(accuracies);
+  if (wm == null || hm == null) return accuracies[0];
+  return (wm + hm) / 2;
+}
+function playRatingFromAccuracy(accuracy, knots = ACCURACY_ELO_KNOTS) {
+  if (!knots.length || accuracy == null || Number.isNaN(Number(accuracy))) return null;
+  const rating = interpolateKnots(knots, Number(accuracy));
+  return rating == null ? null : Math.round(rating);
+}
+function roughPerformanceFromAcpl(acpl, {
+  base = ROUGH_PERF_BASE,
+  perAcpl = ROUGH_PERF_PER_ACPL,
+  min = ROUGH_PERF_MIN,
+  max = ROUGH_PERF_MAX
+} = {}) {
+  const n = Number(acpl);
+  if (!Number.isFinite(n)) return null;
+  return Math.round(clamp(base - perAcpl * n, min, max));
+}
+function performanceForSide(accuracy, acpl) {
+  const mapped = playRatingFromAccuracy(accuracy);
+  if (mapped != null) {
+    return { performance: mapped, performanceSource: "accuracy-elo-map" };
+  }
+  const rough = roughPerformanceFromAcpl(acpl);
+  return {
+    performance: rough,
+    performanceSource: "acpl-rough"
+  };
+}
+function annotatePlies(rawPlies, settings = {}) {
+  const metrics = metricsFromSettings(settings);
+  const whiteWps = [];
+  if (rawPlies[0]?.evalBefore) {
+    whiteWps.push(winPercentFromScore(rawPlies[0].evalBefore, metrics));
+  }
+  const annotated = rawPlies.map((ply) => {
+    const side = ply.side === "black" ? "black" : "white";
+    const wpBefore = moverWinPercent(ply.evalBefore, side, metrics);
+    const wpAfter = moverWinPercent(ply.eval, side, metrics);
+    const winPercentLoss = Math.max(0, wpBefore - wpAfter);
+    const cpBefore = moverCp(ply.evalBefore, side, metrics.cpCap);
+    const cpAfter = moverCp(ply.eval, side, metrics.cpCap);
+    const cpLoss = Math.max(0, cpBefore - cpAfter);
+    const judgement = judgementFromLoss(winPercentLoss, metrics);
+    const glyph = glyphForJudgement(judgement);
+    const accuracy = moveAccuracy(winPercentLoss, metrics);
+    const best = ply.best ?? null;
+    const playedBest = Boolean(best?.uci && ply.uci && best.uci === ply.uci);
+    const onlyMove = Boolean(ply.onlyMove) || isOnlyMove(ply.lines, side, playedBest, metrics);
+    const missedMate = Boolean(ply.missedMate) || isMissedMate(ply.evalBefore, ply.eval, side);
+    whiteWps.push(winPercentFromScore(ply.eval, metrics));
+    return {
+      ...ply,
+      side,
+      winPercentLoss,
+      cpLoss,
+      judgement,
+      glyph: glyph?.symbol ?? "",
+      glyphClass: glyph?.className ?? "",
+      accuracy,
+      onlyMove,
+      missedMate
+    };
+  });
+  const vol = volatilityWeights(whiteWps, annotated.length, metrics);
+  return annotated.map((ply, index) => ({ ...ply, volWeight: vol[index] ?? 1 }));
+}
+function summariseSides(plies, settings = {}) {
+  const metrics = metricsFromSettings(settings);
+  return {
+    white: summariseSide(plies.filter((ply) => ply.side === "white"), metrics),
+    black: summariseSide(plies.filter((ply) => ply.side === "black"), metrics)
+  };
+}
+function selectKeyMoments(plies, { maxSwings = KEY_SWING_COUNT } = {}) {
+  const byPly = /* @__PURE__ */ new Map();
+  for (const ply of plies) {
+    if (ply.judgement === "mistake" || ply.judgement === "blunder") {
+      byPly.set(ply.ply, ply);
+    }
+  }
+  const ranked = [...plies].sort((a, b) => b.winPercentLoss - a.winPercentLoss);
+  let swings = 0;
+  for (const ply of ranked) {
+    if (swings >= maxSwings) break;
+    if (!(ply.winPercentLoss > 0)) continue;
+    if (!byPly.has(ply.ply)) byPly.set(ply.ply, ply);
+    swings += 1;
+  }
+  return [...byPly.values()].sort((a, b) => a.ply - b.ply).map(keyMomentFromPly);
+}
+function summariseSide(plies, metrics) {
+  const counts = { inaccuracy: 0, mistake: 0, blunder: 0 };
+  const accuracies = [];
+  const weights = [];
+  const losses = [];
+  for (const ply of plies) {
+    switch (ply.judgement) {
+      case "inaccuracy":
+        counts.inaccuracy += 1;
+        break;
+      case "mistake":
+        counts.mistake += 1;
+        break;
+      case "blunder":
+        counts.blunder += 1;
+        break;
+      case "good":
+        break;
+      default: {
+        const _exhaustive = ply.judgement;
+        void _exhaustive;
+        break;
+      }
+    }
+    accuracies.push(ply.accuracy);
+    weights.push(ply.volWeight ?? 1);
+    losses.push(Math.min(ply.cpLoss ?? 0, metrics.cpCap));
+  }
+  const accuracy = sideAccuracy(accuracies, weights);
+  const acpl = losses.length ? losses.reduce((a, b) => a + b, 0) / losses.length : null;
+  const perf = performanceForSide(accuracy, acpl);
+  return {
+    accuracy: accuracy == null ? null : round2(accuracy),
+    acpl: acpl == null ? null : round1(acpl),
+    performance: perf.performance,
+    performanceSource: perf.performanceSource,
+    counts
+  };
+}
+function keyMomentFromPly(ply) {
+  const bestLine = ply.lines?.[0];
+  const betterLine = String(bestLine?.san ?? "").trim() || ply.best?.san || "";
+  return {
+    ply: ply.ply,
+    san: ply.san,
+    played: ply.san,
+    judgement: ply.judgement,
+    betterLine,
+    betterEval: bestLine?.eval || (ply.evalBefore ? formatEval(ply.evalBefore) : ""),
+    evalChange: round1(ply.winPercentLoss)
+  };
+}
+function isOnlyMove(lines, side, playedBest, metrics) {
+  if (!playedBest) return false;
+  if (!Array.isArray(lines) || lines.length < 2) return lines?.length === 1 && playedBest;
+  const first = moverWinPercent(lines[0].score ?? evalFromLine(lines[0]), side, metrics);
+  const second = moverWinPercent(lines[1].score ?? evalFromLine(lines[1]), side, metrics);
+  return first - second >= metrics.blunder;
+}
+function isMissedMate(before, after, side) {
+  const beforeMate = mateFor(before, side);
+  if (!beforeMate) return false;
+  return !mateFor(after, side);
+}
+function mateFor(score, side) {
+  if (!score || score.kind !== "mate" || !score.whiteMate) return false;
+  return side === "black" ? score.whiteMate < 0 : score.whiteMate > 0;
+}
+function evalFromLine(line) {
+  if (line?.score) return line.score;
+  return { kind: "cp", whiteCp: 0, whiteMate: null };
+}
+function moverCp(score, side, cap) {
+  const white = scoreToCappedCp(score, cap);
+  return side === "black" ? -white : white;
+}
+function interpolateKnots(knots, q) {
+  if (!knots.length) return null;
+  if (knots.length < 2) return knots[0][1];
+  const qLo = knots[0][0];
+  const rLo = knots[0][1];
+  const qHi = knots[1][0];
+  const rHi = knots[1][1];
+  if (q < qLo) {
+    if (qHi === qLo) return rLo;
+    const t = (q - qLo) / (qHi - qLo);
+    return rLo + t * (rHi - rLo);
+  }
+  const qTop = knots[knots.length - 1][0];
+  const rTop = knots[knots.length - 1][1];
+  const qPrev = knots[knots.length - 2][0];
+  const rPrev = knots[knots.length - 2][1];
+  if (q > qTop) {
+    if (qTop === qPrev) return rTop;
+    const t = (q - qPrev) / (qTop - qPrev);
+    return rPrev + t * (rTop - rPrev);
+  }
+  for (let i = 0; i < knots.length - 1; i += 1) {
+    const q0 = knots[i][0];
+    const r0 = knots[i][1];
+    const q1 = knots[i + 1][0];
+    const r1 = knots[i + 1][1];
+    if (q0 <= q && q <= q1) {
+      if (q1 === q0) return r0;
+      const t = (q - q0) / (q1 - q0);
+      return r0 + t * (r1 - r0);
+    }
+  }
+  return rTop;
+}
+function numOr(value, fallback) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+function clamp(value, lo, hi) {
+  return Math.min(hi, Math.max(lo, value));
+}
+function round2(value) {
+  return Math.round(value * 100) / 100;
+}
+function round1(value) {
+  return Math.round(value * 10) / 10;
+}
+
+// frontend/src/engine-hash.js
+var ENGINE_FORMAT = "chess-tutor-engine/1";
+var ENGINE_NAME = "Stockfish 19 Lite";
+var HASH_RE = /^[0-9a-f]{64}$/;
+var MAX_ENGINE_PLIES = 512;
+async function sha256Hex(text) {
+  const data = new TextEncoder().encode(String(text ?? ""));
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+async function gameHashFromFenAndUci(startFen, uciMoves) {
+  const moves = Array.isArray(uciMoves) ? uciMoves.join(" ") : "";
+  return sha256Hex(`${startFen}
+${moves}`);
+}
+function mainlinePlies(tree) {
+  if (!tree?.ok) return [];
+  const root = nodeAt(tree, []);
+  if (!root) return [];
+  const startFen = root.fen;
+  const setup = parseFen(startFen);
+  if (setup.isErr) return [];
+  const chess = Chess.fromSetup(setup.value);
+  if (chess.isErr) return [];
+  const pos = chess.value;
+  const plies = [];
+  let path5 = [];
+  while (true) {
+    const parent = nodeAt(tree, path5);
+    if (!parent || parent.childCount === 0) break;
+    const child = nodeAt(tree, [...path5, 0]);
+    if (!child) break;
+    const move = parseSan(pos, child.san);
+    if (!move) break;
+    const uci = makeUci(move);
+    const fenBefore = parent.fen;
+    pos.play(move);
+    plies.push({
+      ply: plies.length + 1,
+      path: child.path,
+      san: child.san,
+      uci,
+      side: fenBefore.split(" ")[1] === "b" ? "black" : "white",
+      fenBefore,
+      fenAfter: child.fen
+    });
+    path5 = child.path;
+  }
+  return { startFen, plies };
+}
+function buildEngineAnalysis({
+  gameHash,
+  engine,
+  settings,
+  createdAt,
+  plies,
+  positionResults
+}) {
+  const raw = plies.map((ply, index) => {
+    const before = positionResults[index];
+    const after = positionResults[index + 1];
+    const lines = (before?.lines ?? []).slice(0, 3).map((line) => normalizeLine(line, ply.fenBefore));
+    const best = before?.best ?? (lines[0] ? { uci: lines[0].pv?.[0] ?? "", san: lines[0].sans?.[0] ?? "" } : null);
+    return {
+      ply: ply.ply,
+      san: ply.san,
+      uci: ply.uci,
+      side: ply.side,
+      path: ply.path,
+      eval: after?.score ?? { kind: "cp", whiteCp: 0, whiteMate: null },
+      evalBefore: before?.score ?? { kind: "cp", whiteCp: 0, whiteMate: null },
+      best,
+      lines,
+      depth: after?.depth ?? before?.depth ?? engine.depth
+    };
+  });
+  const annotated = annotatePlies(raw, settings);
+  const summary = summariseSides(annotated, settings);
+  return {
+    format: ENGINE_FORMAT,
+    gameHash,
+    engine: {
+      name: engine.name ?? ENGINE_NAME,
+      depth: engine.depth,
+      multipv: engine.multipv
+    },
+    settings: {
+      engine: {
+        depth: settings?.engine?.depth ?? engine.depth,
+        movetime: settings?.engine?.movetime ?? 0,
+        multipv: settings?.engine?.multipv ?? engine.multipv
+      },
+      thresholds: settings?.thresholds ?? {}
+    },
+    createdAt: createdAt ?? (/* @__PURE__ */ new Date()).toISOString(),
+    plies: annotated.map(serializePly),
+    summary,
+    keyMoments: selectKeyMoments(annotated)
+  };
+}
+function normalizeLine(line, fen) {
+  const pv = Array.isArray(line.pv) ? line.pv.slice(0, PV_SAN_PLIES) : [];
+  const sans = Array.isArray(line.sans) && line.sans.length ? line.sans.slice(0, PV_SAN_PLIES) : uciMovesToSan(fen, pv);
+  const score = line.score ?? { kind: "cp", whiteCp: 0, whiteMate: null };
+  return {
+    san: sans.join(" "),
+    sans,
+    pv: pv.slice(0, sans.length),
+    eval: line.eval ?? formatEval(score),
+    score
+  };
+}
+function serializePly(ply) {
+  return {
+    ply: ply.ply,
+    san: ply.san,
+    uci: ply.uci,
+    side: ply.side,
+    eval: ply.eval,
+    evalBefore: ply.evalBefore,
+    best: ply.best,
+    lines: (ply.lines ?? []).map((line) => ({
+      san: line.san,
+      eval: line.eval,
+      pv: line.pv
+    })),
+    depth: ply.depth,
+    judgement: ply.judgement,
+    glyph: ply.glyph,
+    accuracy: ply.accuracy,
+    winPercentLoss: ply.winPercentLoss,
+    cpLoss: ply.cpLoss,
+    onlyMove: ply.onlyMove,
+    missedMate: ply.missedMate
+  };
+}
+
+// frontend/src/engine-document.js
+function engineAnalysisShapeErrors(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return ["engineAnalysis must be an object."];
+  }
+  const errors = [];
+  if (value.format !== ENGINE_FORMAT) {
+    errors.push(`format must be "${ENGINE_FORMAT}".`);
+  }
+  if (typeof value.gameHash !== "string" || !HASH_RE.test(value.gameHash)) {
+    errors.push("gameHash must be 64 lowercase hex characters.");
+  }
+  const engine = value.engine;
+  if (!engine || typeof engine !== "object" || Array.isArray(engine)) {
+    errors.push("engine is required.");
+  } else {
+    const depth = Number(engine.depth);
+    const multipv = Number(engine.multipv);
+    if (typeof engine.name !== "string" || engine.name.trim() === "") {
+      errors.push("engine.name is required.");
+    }
+    if (!Number.isInteger(depth) || depth < 1 || depth > 64) {
+      errors.push("engine.depth out of range.");
+    }
+    if (!Number.isInteger(multipv) || multipv < 1 || multipv > 5) {
+      errors.push("engine.multipv out of range.");
+    }
+  }
+  if (!Array.isArray(value.plies) || value.plies.length < 1 || value.plies.length > MAX_ENGINE_PLIES) {
+    errors.push("plies.length is not sane.");
+  }
+  if (!value.summary || typeof value.summary !== "object" || Array.isArray(value.summary)) {
+    errors.push("summary is required.");
+  } else {
+    for (const side of ["white", "black"]) {
+      const row = value.summary[side];
+      if (!row || typeof row !== "object" || Array.isArray(row)) {
+        errors.push(`summary.${side} is required.`);
+        continue;
+      }
+      if (!inRangeOrNull(row.accuracy, 0, 100) || !inRangeOrNull(row.acpl, 0, 1e4)) {
+        errors.push(`summary.${side} numbers out of range.`);
+      }
+    }
+  }
+  return errors;
+}
+function inRangeOrNull(value, min, max) {
+  if (value == null) return true;
+  const n = Number(value);
+  return Number.isFinite(n) && n >= min && n <= max;
+}
+
 // backend/validate.mjs
 function positionKind(origin) {
   const kind = origin && origin.kind;
@@ -4867,9 +5709,11 @@ function validateSubmissionV1(json, gamePgn) {
   if (body.positions == null || typeof body.positions !== "object" || Array.isArray(body.positions)) {
     errors.push(v1Error("missing_positions", locale, { path: "positions" }));
   }
+  const engineParsed = parseEngineAnalysis(body.engineAnalysis, locale);
+  errors.push(...engineParsed.errors);
   if (body.analysis == null || typeof body.analysis !== "object" || Array.isArray(body.analysis)) {
     errors.push(v1Error("missing_analysis", locale, { path: "analysis" }));
-    return { ok: false, errors, warnings: [], analysis: null };
+    return { ok: false, errors, warnings: [], analysis: null, engineAnalysis: engineParsed.document };
   }
   const analysisParsed = parseV1Analysis(body.analysis, locale);
   if (!analysisParsed.ok) errors.push(...analysisParsed.errors);
@@ -4877,7 +5721,7 @@ function validateSubmissionV1(json, gamePgn) {
   const manifest = positionsFromManifest(body.positions ?? {}, gamePgn, { lang: locale });
   errors.push(...manifest.errors);
   if (!analysisParsed.ok) {
-    return { ok: false, errors, warnings: [], analysis: null };
+    return { ok: false, errors, warnings: [], analysis: null, engineAnalysis: engineParsed.document };
   }
   const output = {
     ...analysisParsed.output,
@@ -4938,8 +5782,24 @@ function validateSubmissionV1(json, gamePgn) {
     ok: unique.length === 0,
     errors: unique,
     warnings,
-    analysis
+    analysis,
+    engineAnalysis: engineParsed.document
   };
+}
+function parseEngineAnalysis(value, lang = "es") {
+  if (value === void 0 || value === null) {
+    return { ok: true, missing: true, document: null, errors: [] };
+  }
+  const shape = engineAnalysisShapeErrors(value);
+  if (shape.length) {
+    return {
+      ok: false,
+      missing: false,
+      document: null,
+      errors: [v1Error("bad_engine_analysis", lang, { path: "engineAnalysis", detail: shape[0] })]
+    };
+  }
+  return { ok: true, missing: false, document: value, errors: [] };
 }
 function dedupeErrors(errors) {
   const seen = /* @__PURE__ */ new Set();
@@ -5049,6 +5909,10 @@ var TEMPLATES2 = {
     es: ({ status, detail }) => `El API rechaz\xF3 el borrador (${status})${detail ? `: ${detail}` : "."}`,
     en: ({ status, detail }) => `The API rejected the draft (${status})${detail ? `: ${detail}` : "."}`
   },
+  game_analysis_failed: {
+    es: ({ detail }) => `No se pudo completar el an\xE1lisis de motor de la partida${detail ? `: ${detail}` : "."}`,
+    en: ({ detail }) => `The full-game engine analysis could not be completed${detail ? `: ${detail}` : "."}`
+  },
   timeout: {
     es: () => "El motor super\xF3 el l\xEDmite de 20 s.",
     en: () => "The engine exceeded the 20 s limit."
@@ -5086,7 +5950,7 @@ function formatStartSummary(lang, info) {
 }
 
 // agent-kit/engine.mjs
-var HELPER_VERSION = "1.0.0";
+var HELPER_VERSION = "1.1.0";
 var HELPER_NAME = `chess-tools.mjs ${HELPER_VERSION}`;
 var MAX_DEPTH = 30;
 var EVAL_TIMEOUT_MS = 2e4;
@@ -5105,7 +5969,7 @@ function clampDepth(value, fallback) {
   if (!Number.isInteger(n) || n < 1 || n > MAX_DEPTH) return null;
   return n;
 }
-function sha256Hex(bytes) {
+function sha256Hex2(bytes) {
   return createHash("sha256").update(bytes).digest("hex");
 }
 function findOnPath(name, env = process.env) {
@@ -5304,7 +6168,7 @@ async function ensureLiteEngine({
     }
     if (file.hash) {
       const bytes = await readFile(dest);
-      const actual = sha256Hex(bytes);
+      const actual = sha256Hex2(bytes);
       if (actual !== file.hash) {
         throw new Error(msg(lang, "engine_hash_mismatch", { file: file.name }));
       }
@@ -5378,6 +6242,343 @@ function makeEvaluator(engine) {
       return { error: message };
     }
   };
+}
+
+// agent-kit/game-analysis.mjs
+import { spawn as spawn2 } from "node:child_process";
+
+// frontend/src/grain.js
+var GRAIN_BLEND_MODES = [
+  "normal",
+  "multiply",
+  "screen",
+  "overlay",
+  "soft-light",
+  "hard-light",
+  "difference"
+];
+var GRAIN_BLEND_SET = new Set(GRAIN_BLEND_MODES);
+function defaultGrainSettings(mode = "light") {
+  const dark = mode === "dark";
+  return {
+    enabled: false,
+    opacity: dark ? 0.2 : 0.14,
+    size: 3,
+    fps: 12,
+    contrast: 0.55,
+    color: false,
+    blend: dark ? "screen" : "multiply"
+  };
+}
+
+// frontend/src/dev-settings.js
+var LIGHT_THEME = {
+  boardLight: "#f3d5a3",
+  boardDark: "#c08648",
+  lastMove: "#c48a28",
+  pageBg: "#f4f3ef",
+  panelBg: "#ffffff",
+  text: "#222222",
+  muted: "#666666",
+  accent: "#3d6b4f",
+  link: "#3d6ea8",
+  border: "#e4e2da",
+  radius: 8,
+  fontStack: "default",
+  fontFamily: "",
+  fontSize: 16,
+  grain: defaultGrainSettings("light")
+};
+var DARK_THEME = {
+  boardLight: "#f3d5a3",
+  boardDark: "#c08648",
+  lastMove: "#c48a28",
+  pageBg: "#0b0b0b",
+  panelBg: "#161616",
+  text: "#ededed",
+  muted: "#9a9a9a",
+  accent: "#4e8a66",
+  link: "#8eb4e0",
+  border: "#2a2a2a",
+  radius: 8,
+  fontStack: "default",
+  fontFamily: "",
+  fontSize: 16,
+  grain: defaultGrainSettings("dark")
+};
+function defaultUiSettings() {
+  return {
+    boardSize: 0,
+    showCoordinates: true,
+    animationMs: 160,
+    showBestMoveArrows: true,
+    showEvalBar: true,
+    moveListFontSize: 0,
+    compact: false,
+    defaultOrientation: "white",
+    defaultLang: "es"
+  };
+}
+function defaultThemeSettings() {
+  return {
+    light: { ...LIGHT_THEME, grain: { ...LIGHT_THEME.grain } },
+    dark: { ...DARK_THEME, grain: { ...DARK_THEME.grain } }
+  };
+}
+function defaultDevSettings() {
+  return {
+    version: 1,
+    engine: {
+      depth: 14,
+      liveDepth: 0,
+      movetime: 0,
+      multipv: 2,
+      threads: 1,
+      hash: 16
+    },
+    thresholds: {
+      inaccuracy: 10,
+      mistake: 20,
+      blunder: 30,
+      mateCp: 1e3,
+      winSteepness: 368208e-8
+    },
+    ui: defaultUiSettings(),
+    theme: defaultThemeSettings()
+  };
+}
+
+// frontend/src/engine-game.js
+var TERMINAL_MATE_CP = 1e4;
+function requestedEngine(settings = defaultDevSettings()) {
+  return {
+    name: settings.engine?.name || ENGINE_NAME,
+    depth: settings.engine?.depth ?? 14,
+    multipv: settings.engine?.multipv ?? 2,
+    movetime: settings.engine?.movetime ?? 0
+  };
+}
+function terminalScore(fen) {
+  const pos = positionFromFen2(fen);
+  if (!pos) return null;
+  if (typeof pos.isCheckmate === "function" && pos.isCheckmate()) {
+    const whiteMate = pos.turn === "white" ? -1 : 1;
+    return {
+      kind: "mate",
+      whiteCp: whiteMate > 0 ? TERMINAL_MATE_CP : -TERMINAL_MATE_CP,
+      whiteMate
+    };
+  }
+  if (typeof pos.isEnd === "function" && pos.isEnd()) {
+    return { kind: "cp", whiteCp: 0, whiteMate: null };
+  }
+  return null;
+}
+async function analyseWithSearchFn(tree, searchFn, {
+  settings = defaultDevSettings(),
+  createdAt,
+  onProgress,
+  signal
+} = {}) {
+  const walked = mainlinePlies(tree);
+  if (!walked?.startFen) throw new Error("no-game");
+  const fens = [walked.startFen, ...walked.plies.map((ply) => ply.fenAfter)];
+  const positionResults = [];
+  for (let i = 0; i < fens.length; i += 1) {
+    if (signal?.aborted) throw abortError();
+    onProgress?.({ current: i, total: fens.length });
+    const terminal = terminalScore(fens[i]);
+    if (terminal) {
+      positionResults.push({
+        depth: settings.engine?.depth ?? 14,
+        score: terminal,
+        best: null,
+        lines: []
+      });
+      continue;
+    }
+    const searched = await searchFn(fens[i], i, fens.length);
+    if (signal?.aborted) throw abortError();
+    positionResults.push(searched);
+  }
+  onProgress?.({ current: fens.length, total: fens.length });
+  const gameHash = await gameHashFromFenAndUci(
+    walked.startFen,
+    walked.plies.map((ply) => ply.uci)
+  );
+  const engine = requestedEngine(settings);
+  return buildEngineAnalysis({
+    gameHash,
+    engine,
+    settings,
+    createdAt,
+    plies: walked.plies,
+    positionResults
+  });
+}
+function positionFromFen2(fen) {
+  const setup = parseFen(String(fen ?? ""));
+  if (setup.isErr) return null;
+  const chess = Chess.fromSetup(setup.value);
+  if (chess.isErr) return null;
+  return chess.value;
+}
+function abortError() {
+  const err = new Error("cancelled");
+  err.code = "cancelled";
+  return err;
+}
+
+// agent-kit/game-analysis.mjs
+var GAME_ANALYSIS_DEPTH = 14;
+var GAME_ANALYSIS_MULTIPV = 2;
+var GAME_SEARCH_TIMEOUT_MS = 6e4;
+function gameAnalysisSettings(engineName) {
+  const settings = defaultDevSettings();
+  return {
+    ...settings,
+    engine: {
+      ...settings.engine,
+      name: engineName || "Stockfish",
+      depth: GAME_ANALYSIS_DEPTH,
+      multipv: GAME_ANALYSIS_MULTIPV,
+      movetime: 0
+    }
+  };
+}
+function createUciSearcher(engine, {
+  depth = GAME_ANALYSIS_DEPTH,
+  multipv = GAME_ANALYSIS_MULTIPV,
+  timeoutMs = GAME_SEARCH_TIMEOUT_MS
+} = {}) {
+  const spawned = spawnArgsFor(engine);
+  const proc = spawn2(spawned.command, spawned.args, {
+    windowsHide: true,
+    shell: false,
+    stdio: ["pipe", "pipe", "ignore"]
+  });
+  let buf = "";
+  let closed = false;
+  const listeners = /* @__PURE__ */ new Set();
+  proc.stdout.on("data", (chunk) => {
+    buf += chunk;
+    const lines = buf.split(/\r?\n/);
+    buf = lines.pop();
+    for (const line of lines) {
+      for (const fn of listeners) fn(line);
+    }
+  });
+  proc.on("error", (err) => {
+    for (const fn of listeners) fn({ error: err });
+  });
+  function onLine(fn) {
+    listeners.add(fn);
+    return () => listeners.delete(fn);
+  }
+  function send(command) {
+    if (closed) throw new Error("engine-closed");
+    proc.stdin.write(`${command}
+`);
+  }
+  function waitFor(match, ms) {
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        off();
+        reject(new Error("timeout"));
+      }, ms);
+      const off = onLine((line) => {
+        if (line && typeof line === "object" && line.error) {
+          clearTimeout(timer);
+          off();
+          reject(line.error);
+          return;
+        }
+        if (match(String(line ?? ""))) {
+          clearTimeout(timer);
+          off();
+          resolve(line);
+        }
+      });
+    });
+  }
+  const ready = (async () => {
+    send("uci");
+    await waitFor((line) => line === "uciok", 8e3);
+    send(`setoption name MultiPV value ${multipv}`);
+    send("isready");
+    await waitFor((line) => line === "readyok", 8e3);
+  })();
+  async function searchFen(fen) {
+    await ready;
+    const pvs = /* @__PURE__ */ new Map();
+    let depthSeen = 0;
+    const done = waitFor((line) => {
+      if (line.startsWith("bestmove")) return true;
+      const info = parseInfoLine(line);
+      if (!info) return false;
+      if (info.depth < depthSeen && pvs.has(info.multipv)) return false;
+      pvs.set(info.multipv, lineFromInfo(info, fen));
+      depthSeen = Math.max(depthSeen, info.depth);
+      return false;
+    }, timeoutMs);
+    send(`position fen ${fen}`);
+    send(`go depth ${depth}`);
+    await done;
+    const lines = [...pvs.values()].sort((a, b) => a.multipv - b.multipv);
+    const top = lines[0];
+    const bestUci = top?.pv?.[0] ?? "";
+    const bestSan = bestUci ? uciMovesToSan(fen, [bestUci])[0] ?? "" : "";
+    return {
+      depth: depthSeen || depth,
+      score: top?.score ?? { kind: "cp", whiteCp: 0, whiteMate: null },
+      best: bestUci ? { uci: bestUci, san: bestSan } : null,
+      lines: lines.map((line) => ({
+        pv: line.pv,
+        sans: Array.isArray(line.sans) ? line.sans : uciMovesToSan(fen, line.pv),
+        san: line.san,
+        eval: line.eval ?? formatEval(line.score),
+        score: line.score
+      }))
+    };
+  }
+  return {
+    searchFen,
+    close() {
+      if (closed) return;
+      try {
+        proc.stdin.write("quit\n");
+      } catch {
+      }
+      closed = true;
+      try {
+        proc.stdin.end();
+      } catch {
+      }
+      try {
+        proc.kill();
+      } catch {
+      }
+    }
+  };
+}
+async function analysePgnWithEngine(pgn, engine, { createdAt } = {}) {
+  const tree = loadGameTree(pgn);
+  if (!tree.ok) throw new Error("no-game");
+  const settings = gameAnalysisSettings(engine?.name);
+  const searcher = createUciSearcher(engine, {
+    depth: settings.engine.depth,
+    multipv: settings.engine.multipv
+  });
+  try {
+    const result = await analyseWithSearchFn(tree, (fen) => searcher.searchFen(fen), {
+      settings,
+      createdAt
+    });
+    if (!result.plies?.length) return null;
+    return result;
+  } finally {
+    searcher.close();
+  }
 }
 
 // agent-kit/game.mjs
@@ -5964,6 +7165,13 @@ async function cmdSubmit(ctx) {
     positions,
     analysis
   };
+  try {
+    const enginePass = await analysePgnWithEngine(state.session.pgn, state.session.engine);
+    if (enginePass) submission.engineAnalysis = enginePass;
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err);
+    return { json: jsonError(msg(lang, "game_analysis_failed", { detail })), exitCode: 1 };
+  }
   const checked = validateSubmissionV1(submission, state.session.pgn);
   if (!checked.ok) {
     return {

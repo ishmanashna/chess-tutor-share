@@ -437,24 +437,34 @@
         "vibeElo": 2100,
         "categories": [
           {
-            "name": "Inventiva táctica (sobre 10)",
-            "score": 7,
-            "explanation": "Mi termómetro es subjetivo: 14.Bxe7 y 16.Bc5 muestran recursos activos en una posición muy exigente. El Elo a ojo reconoce esa dificultad y esas respuestas."
+            "name": "Apertura",
+            "score": null,
+            "explanation": ""
           },
           {
-            "name": "Radar de peligro (sobre 10)",
-            "score": 4,
-            "explanation": "11.Bg5 permitió una combinación concreta y 18.Bxb6 aceptó una dama cuyo coste real aparecía varios jaques después."
-          },
-          {
-            "name": "Coordinación (sobre 10)",
+            "name": "Estrategia",
             "score": 4,
             "explanation": "La dama y los alfiles crearon amenazas, pero el rey y las torres quedaron sujetos a obligaciones defensivas que las negras explotaron."
           },
           {
-            "name": "Resistencia (sobre 10)",
+            "name": "Cálculo",
+            "score": null,
+            "explanation": ""
+          },
+          {
+            "name": "Táctica",
+            "score": 7,
+            "explanation": "Mi termómetro es subjetivo: 14.Bxe7 y 16.Bc5 muestran recursos activos en una posición muy exigente. El Elo a ojo reconoce esa dificultad y esas respuestas."
+          },
+          {
+            "name": "Defensa",
             "score": 6,
             "explanation": "Hubo respuestas difíciles y acertadas, como 17.Kf1. La gran oportunidad defensiva omitida fue 18.Qxc3, que ofrecía un final mucho más resistente."
+          },
+          {
+            "name": "Final",
+            "score": null,
+            "explanation": ""
           }
         ]
       },
@@ -462,22 +472,32 @@
         "vibeElo": 2500,
         "categories": [
           {
-            "name": "Imaginación táctica (sobre 10)",
-            "score": 10,
-            "explanation": "Nota lúdica de sobresaliente: 11...Na4 y 17...Be6 explotan relaciones entre piezas que requieren mirar bastante más allá de la captura inmediata."
+            "name": "Apertura",
+            "score": null,
+            "explanation": ""
           },
           {
-            "name": "Cálculo y orden de jugadas (sobre 10)",
-            "score": 10,
-            "explanation": "La secuencia de jaques conserva el caballo, recoge d4 y permite recuperar los alfiles antes de alcanzar Rd1. Cambiar el orden podía invertir la ventaja."
-          },
-          {
-            "name": "Coordinación (sobre 10)",
+            "name": "Estrategia",
             "score": 10,
             "explanation": "Alfiles, caballo y torres compartieron objetivos y restringieron al rey. La dama rival tuvo pocas ocasiones de organizar contrajuego."
           },
           {
-            "name": "Precisión práctica (sobre 10)",
+            "name": "Cálculo",
+            "score": 10,
+            "explanation": "La secuencia de jaques conserva el caballo, recoge d4 y permite recuperar los alfiles antes de alcanzar Rd1. Cambiar el orden podía invertir la ventaja."
+          },
+          {
+            "name": "Táctica",
+            "score": 10,
+            "explanation": "Nota lúdica de sobresaliente: 11...Na4 y 17...Be6 explotan relaciones entre piezas que requieren mirar bastante más allá de la captura inmediata."
+          },
+          {
+            "name": "Defensa",
+            "score": null,
+            "explanation": ""
+          },
+          {
+            "name": "Final",
             "score": 9,
             "explanation": "La ventaja se convirtió con seguridad y terminó en mate. Existía un remate más corto con 36...Rf2+; ese detalle apenas rebaja una actuación de enorme dificultad."
           }

@@ -17,8 +17,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-19iQdumt.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-CFnvw_vZ.css">
+    <script type="module" crossorigin src="./assets/main-CRMis64U.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-UOm0mRLg.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
     <div class="wrap">
@@ -217,6 +217,11 @@
                     <path fill="currentColor" d="M10.3 3.2 9.8 5.6a6.8 6.8 0 0 0-1.5.9L5.9 5.7 3.7 7.9l.8 2.4a6.8 6.8 0 0 0 0 3.4l-.8 2.4 2.2 2.2 2.4-.8c.47.35.97.65 1.5.9l.5 2.4h3.4l.5-2.4c.53-.25 1.03-.55 1.5-.9l2.4.8 2.2-2.2-.8-2.4a6.8 6.8 0 0 0 0-3.4l.8-2.4-2.2-2.2-2.4.8a6.8 6.8 0 0 0-1.5-.9L13.7 3.2h-3.4ZM12 9.2A2.8 2.8 0 1 1 9.2 12 2.8 2.8 0 0 1 12 9.2Z"/>
                   </svg>
                 </button>
+                <button type="button" id="engine-game-analyse" class="engine-options-btn" hidden aria-label="Analizar con el motor" title="Analizar con el motor" data-i18n-aria="runEngineAnalysis" data-i18n-title="runEngineAnalysis">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 19V5M4 19h16M7 14.5 11 10l3 2.5 5-7"/>
+                  </svg>
+                </button>
                 <label class="engine-toggle" for="engine-on">
                   <input type="checkbox" id="engine-on" checked />
                   <span id="engine-toggle-label">Encendido</span>
@@ -259,12 +264,6 @@
             <ol class="engine-lines" id="engine-lines">
               <li class="engine-empty">Cargando motor…</li>
             </ol>
-          </article>
-          <article class="watch-info-card engine-analysis-card" id="engine-analysis-panel" hidden aria-label="Análisis del motor">
-            <div class="engine-analysis-head">
-              <h2 data-i18n="engineAnalysis">Análisis del motor</h2>
-            </div>
-            <div id="engine-analysis-body"></div>
           </article>
           <article class="watch-info-card moves-card" aria-label="Jugadas">
             <div class="moves-head">
