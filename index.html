@@ -17,9 +17,9 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-C24KoJzQ.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/dev-apply-xUi_ZpnC.js">
-    <link rel="stylesheet" crossorigin href="./assets/dev-apply-CP7Z3c9M.css">
+    <script type="module" crossorigin src="./assets/main-DLGshZ2W.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dev-apply-wHe3NnFH.js">
+    <link rel="stylesheet" crossorigin href="./assets/dev-apply-CzsAgcR2.css">
     <link rel="stylesheet" crossorigin href="./assets/main-bG3TCFqb.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
@@ -39,10 +39,6 @@
                   <button type="button" id="welcome-pgn" class="secondary" data-i18n="welcomePgn">Pegar o subir un PGN</button>
                   <button type="button" id="welcome-community" class="secondary" data-i18n="welcomeCommunity">Ver la lista de la Comunidad</button>
                 </div>
-                <section class="welcome-examples" id="welcome-examples" aria-label="Ejemplos (sin análisis)" data-i18n-aria="examplesNoAnalysis">
-                  <h3 data-i18n="examplesNoAnalysis">Ejemplos (sin análisis)</h3>
-                  <ul class="library-list" id="welcome-examples-list"></ul>
-                </section>
               </div>
               <h2 id="left-empty-heading" data-i18n="analyzeGame">Analizar partida</h2>
               <p class="commentary-empty" id="left-empty-copy">Abre una partida a la derecha para leerla o analizarla.</p>
@@ -175,46 +171,48 @@
         <section class="col info-col" aria-label="Motor y jugadas" data-mode="library">
           <article class="watch-info-card library-card" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
             <div class="card-head library-head">
-              <h2 data-i18n="game">Partida</h2>
+              <h2 data-i18n="openAGame">Abrir una partida</h2>
               <button type="button" id="library-close" class="secondary" data-i18n="back">Volver</button>
             </div>
             <p id="library-status" class="status" aria-live="polite"></p>
-            <section class="library-section" id="library-analyses-section" aria-label="Análisis guardados">
-              <h3 data-i18n="withAnalysis">Con análisis</h3>
-              <ul class="library-list" id="library-analyses"></ul>
+            <section class="library-section" id="library-own-section" aria-label="Mis partidas" data-i18n-aria="ownGames">
+              <details class="library-category" id="library-own-category" open data-library-category="own">
+                <summary><span data-i18n="ownGames">Mis partidas</span></summary>
+                <p id="private-status" class="status"></p>
+                <p id="library-own-hint" class="library-hint" hidden></p>
+                <ul class="library-list" id="library-own"></ul>
+                <button type="button" id="library-own-more" class="secondary library-more" hidden data-library-more="own" data-i18n="showMore">Ver más</button>
+              </details>
             </section>
-            <section class="library-section" id="private-section" hidden aria-label="Mis análisis">
-              <h3>
-                <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill="currentColor" d="M17 9h-1V7A4 4 0 0 0 8 7v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Zm4 8.7V18h-2v-2.3a2 2 0 1 1 2 0Z"/>
-                </svg>
-                <span data-i18n="privateAnalyses">Mis análisis (privados)</span>
-              </h3>
-              <p id="private-status" class="status"></p>
-              <ul class="library-list" id="library-private"></ul>
+            <section class="library-section" id="library-analyses-section" aria-label="Partidas con análisis" data-i18n-aria="gamesWithAnalysis">
+              <details class="library-category" id="library-analysed-category" open data-library-category="analysed">
+                <summary><span data-i18n="gamesWithAnalysis">Partidas con análisis</span></summary>
+                <ul class="library-list" id="library-analyses"></ul>
+                <button type="button" id="library-analysed-more" class="secondary library-more" hidden data-library-more="analysed" data-i18n="showMore">Ver más</button>
+                <div class="library-subsection" id="community-section" hidden>
+                  <h4 data-i18n="community">Comunidad</h4>
+                  <p id="community-status" class="status"></p>
+                  <ul class="library-list" id="library-community"></ul>
+                  <button type="button" id="community-more" class="secondary library-more" hidden data-library-more="community" data-i18n="showMore">Ver más</button>
+                </div>
+              </details>
             </section>
-            <section class="library-section" id="community-section" hidden aria-label="Comunidad">
-              <h3 data-i18n="community">Comunidad</h3>
-              <p id="community-status" class="status"></p>
-              <ul class="library-list" id="library-community"></ul>
-              <button type="button" id="community-more" class="secondary" hidden data-i18n="loadMore">Más</button>
+            <section class="library-section" id="library-examples-section" hidden aria-label="Partidas sin análisis" data-i18n-aria="gamesWithoutAnalysis">
+              <details class="library-category" id="library-plain-category" open data-library-category="plain">
+                <summary><span data-i18n="gamesWithoutAnalysis">Partidas sin análisis</span></summary>
+                <ul class="library-list" id="library-examples"></ul>
+                <button type="button" id="library-plain-more" class="secondary library-more" hidden data-library-more="plain" data-i18n="showMore">Ver más</button>
+              </details>
             </section>
-            <section class="library-section" id="library-examples-section" hidden aria-label="Ejemplos (sin análisis)" data-i18n-aria="examplesNoAnalysis">
-              <h3 data-i18n="examplesNoAnalysis">Ejemplos (sin análisis)</h3>
-              <ul class="library-list" id="library-examples"></ul>
-            </section>
-            <section class="library-section" id="library-pgn-section" aria-label="Partidas">
-              <h3 data-i18n="games">Partidas</h3>
-              <ul class="library-list" id="library-games"></ul>
-            </section>
+            <ul class="library-list" id="library-games" hidden></ul>
             <div class="load-form">
-              <label for="pgn" data-i18n="pgn">PGN</label>
-              <textarea id="pgn" rows="4" placeholder="Pega aquí el PGN de la partida" data-i18n-placeholder="pgnPlaceholder"></textarea>
+              <label for="pgn" data-i18n="pgn">Pegar un PGN</label>
+              <textarea id="pgn" rows="4" placeholder="Pega aquí el texto PGN de la partida" data-i18n-placeholder="pgnPlaceholder"></textarea>
               <div class="load-row">
                 <input type="file" id="pgn-file" accept=".pgn,text/plain,application/x-chess-pgn" hidden />
-                <button type="button" id="pgn-upload" class="secondary" data-i18n="uploadPgn">Subir PGN</button>
+                <button type="button" id="pgn-upload" class="secondary" data-i18n="uploadPgn">Subir un archivo PGN</button>
                 <span id="pgn-file-name" class="file-name"></span>
-                <button type="button" id="open-game" class="secondary" data-i18n="openGame">Abrir partida</button>
+                <button type="button" id="open-game" class="secondary" data-i18n="openGame">Abrir el PGN pegado</button>
               </div>
             </div>
           </article>
