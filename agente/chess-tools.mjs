@@ -6257,6 +6257,8 @@ var GRAIN_BLEND_MODES = [
   "hard-light",
   "difference"
 ];
+var GRAIN_TARGETS = ["page", "dark-bg", "panel"];
+var GRAIN_TARGET_SET = new Set(GRAIN_TARGETS);
 var GRAIN_BLEND_SET = new Set(GRAIN_BLEND_MODES);
 function defaultGrainSettings(mode = "light") {
   const dark = mode === "dark";
@@ -6267,6 +6269,7 @@ function defaultGrainSettings(mode = "light") {
     fps: 12,
     contrast: 0.55,
     color: false,
+    target: "page",
     blend: dark ? "screen" : "multiply"
   };
 }
