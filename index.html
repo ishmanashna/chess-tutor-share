@@ -17,8 +17,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-Ci1G0NPr.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-WKKlCX6Y.css">
+    <script type="module" crossorigin src="./assets/index-CnjpiO_9.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-euOBAdvt.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
     <div class="wrap">
@@ -75,6 +75,7 @@
               <p id="analysis-source" class="analysis-source" hidden></p>
               <ul class="analysis-flags" id="analysis-warnings" hidden></ul>
               <div class="agent-actions" id="agent-actions" hidden>
+                <button type="button" id="agent-save-private" hidden data-i18n="savePrivate">Guardar en privado</button>
                 <button type="button" id="agent-publish" data-i18n="publish">Publicar</button>
                 <button type="button" id="agent-download" class="secondary" data-i18n="downloadAnalysis">Descargar análisis</button>
                 <button type="button" id="agent-discard" class="secondary" data-i18n="discard">Descartar</button>
@@ -111,6 +112,7 @@
                     </button>
                     <ul class="lang-menu-list" id="lang-menu-list" hidden></ul>
                   </div>
+                  <button type="button" id="account-btn" class="secondary toolbar-chip" popovertarget="account-pop" hidden data-i18n="account">Cuenta</button>
                   <button type="button" id="theme-toggle" class="secondary theme-toggle toolbar-chip" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
                 </div>
               </div>
@@ -177,6 +179,16 @@
             <section class="library-section" id="library-analyses-section" aria-label="Análisis guardados">
               <h3 data-i18n="withAnalysis">Con análisis</h3>
               <ul class="library-list" id="library-analyses"></ul>
+            </section>
+            <section class="library-section" id="private-section" hidden aria-label="Mis análisis">
+              <h3>
+                <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M17 9h-1V7A4 4 0 0 0 8 7v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Zm4 8.7V18h-2v-2.3a2 2 0 1 1 2 0Z"/>
+                </svg>
+                <span data-i18n="privateAnalyses">Mis análisis (privados)</span>
+              </h3>
+              <p id="private-status" class="status"></p>
+              <ul class="library-list" id="library-private"></ul>
             </section>
             <section class="library-section" id="community-section" hidden aria-label="Comunidad">
               <h3 data-i18n="community">Comunidad</h3>
@@ -267,6 +279,25 @@
         <h2 data-i18n="ratings">Valoraciones</h2>
         <div id="ratings-body"></div>
       </article>
+      <div class="account-pop" id="account-pop" popover>
+        <form id="account-form">
+          <p class="account-hint" data-i18n="noRecovery">Sin correo, sin recuperación de contraseña.</p>
+          <label for="account-username" data-i18n="username">Usuario</label>
+          <input id="account-username" name="username" autocomplete="username" maxlength="24" required />
+          <label for="account-password" data-i18n="password">Contraseña</label>
+          <input id="account-password" name="password" type="password" autocomplete="current-password" maxlength="200" required />
+          <p id="account-error" class="status" role="alert"></p>
+          <div class="account-form-actions">
+            <button type="submit" id="account-login" data-i18n="logIn">Entrar</button>
+            <button type="button" id="account-register" class="secondary" data-i18n="createAccount">Crear cuenta</button>
+          </div>
+        </form>
+        <div id="account-menu" hidden>
+          <p class="account-menu-name" id="account-menu-name"></p>
+          <button type="button" id="account-my-analyses" data-i18n="myAnalyses">Mis análisis</button>
+          <button type="button" id="account-logout" class="secondary" data-i18n="logOut">Cerrar sesión</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
