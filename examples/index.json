@@ -1,0 +1,85 @@
+{
+  "games": [
+    {
+      "slug": "opera-1858",
+      "file": "opera-1858.pgn",
+      "title": "Paul Morphy – Duke of Brunswick and Count Isouard · 1858.??.??",
+      "white": "Paul Morphy",
+      "black": "Duke of Brunswick and Count Isouard",
+      "date": "1858.??.??",
+      "event": "Opera Game"
+    },
+    {
+      "slug": "immortal-1851",
+      "file": "immortal-1851.pgn",
+      "title": "Adolf Anderssen – Lionel Kieseritzky · 1851.06.21",
+      "white": "Adolf Anderssen",
+      "black": "Lionel Kieseritzky",
+      "date": "1851.06.21",
+      "event": "London"
+    },
+    {
+      "slug": "evergreen-1852",
+      "file": "evergreen-1852.pgn",
+      "title": "Adolf Anderssen – Jean Dufresne · 1852.??.??",
+      "white": "Adolf Anderssen",
+      "black": "Jean Dufresne",
+      "date": "1852.??.??",
+      "event": "Berlin"
+    },
+    {
+      "slug": "deep-blue-kasparov-1997",
+      "file": "deep-blue-kasparov-1997.pgn",
+      "title": "Deep Blue – Garry Kasparov · 1997.05.11",
+      "white": "Deep Blue",
+      "black": "Garry Kasparov",
+      "date": "1997.05.11",
+      "event": "IBM Man-Machine, Game 6"
+    },
+    {
+      "slug": "fischer-spassky-1972-g6",
+      "file": "fischer-spassky-1972-g6.pgn",
+      "title": "Robert James Fischer – Boris Spassky · 1972.07.23",
+      "white": "Robert James Fischer",
+      "black": "Boris Spassky",
+      "date": "1972.07.23",
+      "event": "World Championship"
+    },
+    {
+      "slug": "kasparov-topalov-1999",
+      "file": "kasparov-topalov-1999.pgn",
+      "title": "Garry Kasparov – Veselin Topalov · 1999.01.20",
+      "white": "Garry Kasparov",
+      "black": "Veselin Topalov",
+      "date": "1999.01.20",
+      "event": "Hoogovens"
+    },
+    {
+      "slug": "capablanca-marshall-1918",
+      "file": "capablanca-marshall-1918.pgn",
+      "title": "Jose Raul Capablanca – Frank James Marshall · 1918.10.23",
+      "white": "Jose Raul Capablanca",
+      "black": "Frank James Marshall",
+      "date": "1918.10.23",
+      "event": "New York"
+    },
+    {
+      "slug": "karpov-kasparov-1985-g16",
+      "file": "karpov-kasparov-1985-g16.pgn",
+      "title": "Anatoly Karpov – Garry Kasparov · 1985.10.15",
+      "white": "Anatoly Karpov",
+      "black": "Garry Kasparov",
+      "date": "1985.10.15",
+      "event": "World Championship"
+    },
+    {
+      "slug": "steinitz-bardeleben-1895",
+      "file": "steinitz-bardeleben-1895.pgn",
+      "title": "Wilhelm Steinitz – Curt von Bardeleben · 1895.08.17",
+      "white": "Wilhelm Steinitz",
+      "black": "Curt von Bardeleben",
+      "date": "1895.08.17",
+      "event": "Hastings"
+    }
+  ]
+}

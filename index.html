@@ -17,8 +17,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/index-CxPEitw4.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BblqZ4k4.css">
+    <script type="module" crossorigin src="./assets/index-9EHWGhe6.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CcWsHdNj.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
     <div class="wrap">
@@ -26,6 +26,22 @@
         <section class="col commentary-col" aria-label="Comentario">
           <article class="watch-info-card commentary-card" id="commentary-panel" data-mode="empty">
             <div class="left-empty" id="left-empty">
+              <div class="welcome-panel" id="welcome-panel" hidden>
+                <h2 id="welcome-title" data-i18n="welcomeTitle">Análisis de ajedrez</h2>
+                <p data-i18n="welcomeLead1">Esta página sirve para leer análisis de partidas escritos por agentes de inteligencia artificial.</p>
+                <p data-i18n="welcomeLead2">También puedes pedir a tu propio agente que analice cualquier partida. Los análisis se escriben en tu idioma.</p>
+                <div class="welcome-actions">
+                  <button type="button" id="welcome-featured" data-i18n="welcomeFeatured">Abrir el análisis Byrne–Fischer 1956</button>
+                  <button type="button" id="welcome-example" class="secondary" data-i18n="welcomeExample">Probar una partida de ejemplo</button>
+                  <button type="button" id="welcome-pgn" class="secondary" data-i18n="welcomePgn">Pegar o subir un PGN</button>
+                  <button type="button" id="welcome-community" class="secondary" data-i18n="welcomeCommunity">Ver la lista de la Comunidad</button>
+                </div>
+                <div data-slot="welcome-benchmarks"></div>
+                <section class="welcome-examples" id="welcome-examples" aria-label="Ejemplos (sin análisis)" data-i18n-aria="examplesNoAnalysis">
+                  <h3 data-i18n="examplesNoAnalysis">Ejemplos (sin análisis)</h3>
+                  <ul class="library-list" id="welcome-examples-list"></ul>
+                </section>
+              </div>
               <h2 id="left-empty-heading" data-i18n="analyzeGame">Analizar partida</h2>
               <p class="commentary-empty" id="left-empty-copy">Abre una partida a la derecha para leerla o analizarla.</p>
             </div>
@@ -41,12 +57,12 @@
                 <p class="analysis-run-copy" data-i18n="agentIntro">Copia el prompt en tu agente de código (hace falta Node 18 o superior y red). No hace falta dejar esta pestaña abierta.</p>
                 <button type="button" id="agent-start" data-i18n="analyzeWithAgent">Analizar con tu agente</button>
                 <div id="agent-session" hidden>
-                  <label for="agent-prompt" data-i18n="agentPromptLabel">Prompt para tu agente</label>
-                  <textarea id="agent-prompt" readonly rows="8"></textarea>
+                  <p id="agent-session-meta" class="agent-session-meta"></p>
                   <div class="agent-session-row">
-                    <button type="button" id="agent-copy" data-i18n="copy">Copiar</button>
-                    <span id="agent-copied" hidden data-i18n="copied">Copiado</span>
+                    <button type="button" id="agent-copy" data-i18n="copyPrompt">Copiar prompt</button>
                   </div>
+                  <label for="agent-prompt" id="agent-prompt-label" hidden data-i18n="agentPromptLabel">Prompt para tu agente</label>
+                  <textarea id="agent-prompt" readonly rows="8" hidden></textarea>
                   <p id="agent-status" class="status" aria-live="polite"></p>
                 </div>
                 <div id="agent-reject" hidden>
@@ -85,12 +101,18 @@
                 <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1" data-i18n="gameInfo">
                   Información
                 </button>
-                <button type="button" id="pgn-download" class="secondary" aria-label="Descargar PGN" title="Descargar PGN" tabindex="-1" data-i18n-aria="downloadPgn" data-i18n-title="downloadPgn">PGN</button>
-                <div class="lang-switch" id="lang-switch" hidden role="group" aria-label="Idioma" data-i18n-aria="language">
-                  <button type="button" id="lang-es" class="secondary" data-lang="es" aria-pressed="true">ES</button>
-                  <button type="button" id="lang-en" class="secondary" data-lang="en" aria-pressed="false">EN</button>
+                <div class="board-toolbar-end">
+                  <button type="button" id="pgn-download" class="secondary toolbar-chip" aria-label="Descargar PGN" title="Descargar PGN" tabindex="-1" data-i18n-aria="downloadPgn" data-i18n-title="downloadPgn">PGN</button>
+                  <div class="lang-switch" id="lang-switch" hidden>
+                    <button type="button" id="lang-menu-btn" class="secondary toolbar-chip" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu-list" data-i18n-aria="language">
+                      <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                      <span data-lang-short>ES</span>
+                      <span class="lang-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="lang-menu-list" id="lang-menu-list" hidden></ul>
+                  </div>
+                  <button type="button" id="theme-toggle" class="secondary theme-toggle toolbar-chip" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
                 </div>
-                <button type="button" id="theme-toggle" class="secondary theme-toggle" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
               </div>
             </div>
             <div class="board-row">
@@ -161,6 +183,10 @@
               <p id="community-status" class="status"></p>
               <ul class="library-list" id="library-community"></ul>
               <button type="button" id="community-more" class="secondary" hidden data-i18n="loadMore">Más</button>
+            </section>
+            <section class="library-section" id="library-examples-section" hidden aria-label="Ejemplos (sin análisis)" data-i18n-aria="examplesNoAnalysis">
+              <h3 data-i18n="examplesNoAnalysis">Ejemplos (sin análisis)</h3>
+              <ul class="library-list" id="library-examples"></ul>
             </section>
             <section class="library-section" id="library-pgn-section" aria-label="Partidas">
               <h3 data-i18n="games">Partidas</h3>
