@@ -17,8 +17,8 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-qhJK4PqQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-Cml5iQV_.css">
+    <script type="module" crossorigin src="./assets/main-BItF0SPI.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-CARy9iT3.css">
   </head>
   <body data-left="empty" data-right="library" data-game="false">
     <div class="wrap">
@@ -136,7 +136,12 @@
                   <button type="button" id="nav-next" data-nav="next" tabindex="-1" aria-label="Siguiente" title="Siguiente" data-i18n-aria="navNext" data-i18n-title="navNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg></button>
                   <button type="button" id="nav-last" data-nav="last" tabindex="-1" aria-label="Final" title="Final" data-i18n-aria="navLast" data-i18n-title="navLast"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5.25 6 10.75 12l-5.5 6M13.25 6 18.75 12l-5.5 6"/></svg></button>
                 </div>
-                <button type="button" id="flip" class="secondary flip-btn" tabindex="-1" data-i18n="flip">Invertir</button>
+                <div class="board-toolbar-trailing">
+                  <button type="button" id="favorite-btn" class="secondary favorite-btn" hidden aria-pressed="false" tabindex="-1" aria-label="Añadir a favoritos" title="Añadir a favoritos" data-i18n-aria="favoriteAdd" data-i18n-title="favoriteAdd">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.6 14.5 9l6 .9-4.3 4.2 1 5.9L12 17.8 6.8 20l1-5.9L3.5 9.9 9.5 9 12 3.6Z"/></svg>
+                  </button>
+                  <button type="button" id="flip" class="secondary flip-btn" tabindex="-1" data-i18n="flip">Invertir</button>
+                </div>
               </div>
             </div>
           </div>
@@ -171,38 +176,76 @@
         <section class="col info-col" aria-label="Motor y jugadas" data-mode="library">
           <article class="watch-info-card library-card" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
             <div class="card-head library-head">
-              <h2 data-i18n="games">Partidas</h2>
-              <button type="button" id="library-close" class="secondary" data-i18n="back">Volver</button>
+              <h2 id="library-title" data-i18n="games">Partidas</h2>
+              <label class="library-search-field" id="library-search-field" hidden>
+                <span class="visually-hidden" data-i18n="searchGames">Buscar partidas</span>
+                <input type="search" id="library-search-input" autocomplete="off" spellcheck="false" data-i18n-placeholder="searchPlaceholder" placeholder="Jugadores, evento, año, apertura…" />
+              </label>
+              <div class="library-head-actions">
+                <button type="button" id="library-search-btn" class="library-icon-btn" aria-pressed="false" aria-label="Buscar partidas" title="Buscar partidas" data-i18n-aria="searchGames" data-i18n-title="searchGames">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" id="library-search-clear" class="library-icon-btn" hidden aria-label="Cerrar búsqueda" title="Cerrar búsqueda" data-i18n-aria="closeSearch" data-i18n-title="closeSearch">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+                </button>
+                <button type="button" id="library-close" class="secondary" data-i18n="back">Volver</button>
+              </div>
             </div>
             <p id="library-status" class="status" aria-live="polite" hidden></p>
+            <div class="library-categories" id="library-categories">
+            <section class="library-section" id="library-favorites-section" aria-label="Favoritos" data-i18n-aria="favorites">
+              <details class="library-category" id="library-favorites-category" data-library-category="favorites">
+                <summary>
+                  <span data-i18n="favorites">Favoritos</span>
+                  <span class="library-pager" data-library-pager="favorites" hidden></span>
+                </summary>
+                <ul class="library-list" id="library-favorites"></ul>
+              </details>
+            </section>
             <section class="library-section" id="library-own-section" aria-label="Mis partidas" data-i18n-aria="ownGames">
               <details class="library-category" id="library-own-category" data-library-category="own">
-                <summary><span data-i18n="ownGames">Mis partidas</span></summary>
+                <summary>
+                  <span data-i18n="ownGames">Mis partidas</span>
+                  <span class="library-pager" data-library-pager="own" hidden></span>
+                </summary>
                 <p id="private-status" class="status"></p>
                 <ul class="library-list" id="library-own"></ul>
-                <button type="button" id="library-own-more" class="secondary library-more" hidden data-library-more="own" data-i18n="showMore">Ver más</button>
               </details>
             </section>
             <section class="library-section" id="library-analyses-section" aria-label="Partidas con análisis" data-i18n-aria="gamesWithAnalysis">
               <details class="library-category" id="library-analysed-category" data-library-category="analysed">
-                <summary><span data-i18n="gamesWithAnalysis">Partidas con análisis</span></summary>
+                <summary>
+                  <span data-i18n="gamesWithAnalysis">Partidas con análisis</span>
+                  <span class="library-pager" data-library-pager="analysed" hidden></span>
+                </summary>
                 <ul class="library-list" id="library-analyses"></ul>
-                <button type="button" id="library-analysed-more" class="secondary library-more" hidden data-library-more="analysed" data-i18n="showMore">Ver más</button>
               </details>
             </section>
             <section class="library-section" id="library-examples-section" hidden aria-label="Partidas sin análisis" data-i18n-aria="gamesWithoutAnalysis">
               <details class="library-category" id="library-plain-category" data-library-category="plain">
-                <summary><span data-i18n="gamesWithoutAnalysis">Partidas sin análisis</span></summary>
+                <summary>
+                  <span data-i18n="gamesWithoutAnalysis">Partidas sin análisis</span>
+                  <span class="library-pager" data-library-pager="plain" hidden></span>
+                </summary>
                 <ul class="library-list" id="library-examples"></ul>
-                <button type="button" id="library-plain-more" class="secondary library-more" hidden data-library-more="plain" data-i18n="showMore">Ver más</button>
               </details>
             </section>
             <section class="library-section" id="library-books-section" aria-label="Libros de partidas" data-i18n-aria="books">
               <details class="library-category" id="library-books-category" data-library-category="books">
-                <summary><span data-i18n="books">Libros de partidas</span></summary>
+                <summary>
+                  <span data-i18n="books">Libros de partidas</span>
+                  <span class="library-pager" data-library-pager="books" hidden></span>
+                </summary>
                 <ul class="library-list" id="library-books"></ul>
-                <button type="button" id="library-books-more" class="secondary library-more" hidden data-library-more="books" data-i18n="showMore">Ver más</button>
               </details>
+            </section>
+            </div>
+            <section class="library-section library-search-results" id="library-search-section" hidden aria-label="Resultados" data-i18n-aria="searchResults">
+              <div class="library-search-heading">
+                <span data-i18n="searchResults">Resultados</span>
+                <span class="library-pager" data-library-pager="search" hidden></span>
+              </div>
+              <ul class="library-list" id="library-search-results"></ul>
             </section>
             <ul class="library-list" id="library-games" hidden></ul>
             <div class="load-form">
