@@ -6257,21 +6257,194 @@ var GRAIN_BLEND_MODES = [
   "hard-light",
   "difference"
 ];
-var GRAIN_TARGETS = ["page", "dark-bg", "panel"];
-var GRAIN_TARGET_SET = new Set(GRAIN_TARGETS);
+var GRAIN_THEMES = ["dark", "light", "both"];
+var GRAIN_TYPES = ["animated", "static"];
+var GRAIN_SIZE_MIN = 0.25;
+var GRAIN_SIZE_MAX = 16;
+var GRAIN_STATIC_OPACITY = 0.04;
+var GRAIN_CSS_VARS = {
+  dpr: "--grain-dpr",
+  page: layerCssVars("page"),
+  panel: layerCssVars("panel"),
+  overlay: layerCssVars("overlay")
+};
 var GRAIN_BLEND_SET = new Set(GRAIN_BLEND_MODES);
-function defaultGrainSettings(mode = "light") {
+var GRAIN_THEME_SET = new Set(GRAIN_THEMES);
+var GRAIN_TYPE_SET = new Set(GRAIN_TYPES);
+var GRAIN_TARGET_SET = /* @__PURE__ */ new Set(["page", "dark-bg", "panel"]);
+var OPACITY_MIN = 0;
+var OPACITY_MAX = 1;
+var FPS_MIN = 0;
+var FPS_MAX = 24;
+var CONTRAST_MIN = 0;
+var CONTRAST_MAX = 1;
+function layerCssVars(name) {
+  return {
+    opacity: `--grain-${name}-opacity`,
+    size: `--grain-${name}-size`,
+    fps: `--grain-${name}-fps`,
+    blend: `--grain-${name}-blend`,
+    contrast: `--grain-${name}-contrast`,
+    theme: `--grain-${name}-theme`,
+    type: `--grain-${name}-type`,
+    tile: `--grain-${name}-tile`,
+    natural: `--grain-${name}-natural`
+  };
+}
+function defaultGrainLayer(mode = "light") {
   const dark = mode === "dark";
   return {
     enabled: false,
+    type: "animated",
     opacity: dark ? 0.2 : 0.14,
     size: 3,
     fps: 12,
     contrast: 0.55,
     color: false,
-    target: "page",
-    blend: dark ? "screen" : "multiply"
+    blend: dark ? "screen" : "multiply",
+    theme: "dark"
   };
+}
+function defaultGrainSettings(mode = "light") {
+  return {
+    page: defaultGrainLayer(mode),
+    panel: defaultGrainLayer(mode),
+    overlay: defaultGrainLayer(mode)
+  };
+}
+function clampGrainLayer(raw, fallback = defaultGrainLayer()) {
+  const src = raw && typeof raw === "object" && !Array.isArray(raw) ? raw : {};
+  const base = fallback && typeof fallback === "object" ? fallback : defaultGrainLayer();
+  const blend = GRAIN_BLEND_SET.has(src.blend) ? src.blend : GRAIN_BLEND_SET.has(base.blend) ? base.blend : "multiply";
+  const theme = GRAIN_THEME_SET.has(src.theme) ? src.theme : GRAIN_THEME_SET.has(base.theme) ? base.theme : "dark";
+  const type = GRAIN_TYPE_SET.has(src.type) ? src.type : GRAIN_TYPE_SET.has(base.type) ? base.type : "animated";
+  const opacityFallback = type === "static" && src.opacity == null ? GRAIN_STATIC_OPACITY : Number(base.opacity) || (type === "static" ? GRAIN_STATIC_OPACITY : 0);
+  return {
+    enabled: boolIn(src.enabled, Boolean(base.enabled)),
+    type,
+    opacity: numIn(src.opacity, opacityFallback, OPACITY_MIN, OPACITY_MAX),
+    size: migrateSize(src.size, Number(base.size) || 3),
+    fps: migrateFps(src, Number.isFinite(Number(base.fps)) ? Number(base.fps) : 12),
+    contrast: numIn(
+      src.contrast,
+      Number.isFinite(Number(base.contrast)) ? Number(base.contrast) : 0.55,
+      CONTRAST_MIN,
+      CONTRAST_MAX
+    ),
+    color: boolIn(src.color, Boolean(base.color)),
+    blend,
+    theme
+  };
+}
+function clampGrainSettings(raw, fallback = defaultGrainSettings()) {
+  const src = raw && typeof raw === "object" && !Array.isArray(raw) ? raw : {};
+  const base = isLayeredGrain(fallback) ? fallback : defaultGrainSettings();
+  if (isLayeredGrain(src)) {
+    return {
+      page: clampGrainLayer(src.page, base.page),
+      panel: clampGrainLayer(src.panel, base.panel),
+      overlay: clampGrainLayer(src.overlay, base.overlay)
+    };
+  }
+  return migrateLegacyGrain(src, base);
+}
+function cloneGrainSettings(grain) {
+  const next = clampGrainSettings(grain);
+  return {
+    page: { ...next.page },
+    panel: { ...next.panel },
+    overlay: { ...next.overlay }
+  };
+}
+var runtime = {
+  doc: null,
+  win: null,
+  page: canvasSlot(),
+  overlay: canvasSlot(),
+  panel: {
+    tile: null,
+    ctx: null,
+    pixels: null,
+    timer: 0,
+    playing: false,
+    contrast: 0.55,
+    color: false,
+    fps: 12
+  }
+};
+function canvasSlot() {
+  return {
+    canvas: null,
+    ctx: null,
+    pixels: null,
+    timer: 0,
+    playing: false,
+    size: 3,
+    contrast: 0.55,
+    color: false,
+    fps: 12
+  };
+}
+function isLayeredGrain(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  return Boolean(value.page || value.panel || value.overlay);
+}
+function migrateLegacyGrain(src, base) {
+  const layer = clampGrainLayer(src, base.page);
+  const target = migrateTarget(src);
+  const next = {
+    page: clampGrainLayer({ ...base.page, enabled: false, theme: "dark" }, base.page),
+    panel: clampGrainLayer({ ...base.panel, enabled: false, theme: "dark" }, base.panel),
+    overlay: clampGrainLayer({ ...base.overlay, enabled: false, theme: "dark" }, base.overlay)
+  };
+  if (!layer.enabled) return next;
+  const migrated = { ...layer, enabled: true, theme: "dark" };
+  if (target === "panel") next.panel = clampGrainLayer(migrated, base.panel);
+  else if (target === "dark-bg") next.page = clampGrainLayer(migrated, base.page);
+  else next.overlay = clampGrainLayer(migrated, base.overlay);
+  return next;
+}
+function migrateTarget(src) {
+  if (GRAIN_TARGET_SET.has(src.target)) return src.target;
+  if (src.backgroundOnlyDark === true || src.backgroundOnlyDark === "true" || src.backgroundOnlyDark === 1) {
+    return "dark-bg";
+  }
+  return "page";
+}
+function migrateSize(value, fallback) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return numIn(fallback, 3, GRAIN_SIZE_MIN, GRAIN_SIZE_MAX);
+  if (n > GRAIN_SIZE_MAX) {
+    return numIn(Math.round(256 / n), 3, GRAIN_SIZE_MIN, GRAIN_SIZE_MAX);
+  }
+  return numIn(n, 3, GRAIN_SIZE_MIN, GRAIN_SIZE_MAX);
+}
+function migrateFps(src, fallback) {
+  if (src.fps != null && src.fps !== "") {
+    return intIn(src.fps, fallback, FPS_MIN, FPS_MAX);
+  }
+  if (src.speed != null && src.speed !== "") {
+    const speed = Number(src.speed);
+    if (!Number.isFinite(speed) || speed <= 0) return 0;
+    return intIn(Math.round(1e3 * speed / 70), fallback, FPS_MIN, FPS_MAX);
+  }
+  return intIn(fallback, 12, FPS_MIN, FPS_MAX);
+}
+function boolIn(value, fallback) {
+  if (typeof value === "boolean") return value;
+  if (value === "true" || value === 1 || value === "1") return true;
+  if (value === "false" || value === 0 || value === "0") return false;
+  return fallback;
+}
+function intIn(value, fallback, min, max) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.round(Math.min(max, Math.max(min, n)));
+}
+function numIn(value, fallback, min, max) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.min(max, Math.max(min, n));
 }
 
 // frontend/src/dev-settings.js
@@ -6324,8 +6497,8 @@ function defaultUiSettings() {
 }
 function defaultThemeSettings() {
   return {
-    light: { ...LIGHT_THEME, grain: { ...LIGHT_THEME.grain } },
-    dark: { ...DARK_THEME, grain: { ...DARK_THEME.grain } }
+    light: { ...LIGHT_THEME, grain: cloneGrainSettings(LIGHT_THEME.grain) },
+    dark: { ...DARK_THEME, grain: cloneGrainSettings(DARK_THEME.grain) }
   };
 }
 function defaultDevSettings() {
