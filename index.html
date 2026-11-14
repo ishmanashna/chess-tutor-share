@@ -17,13 +17,25 @@
         /* ignore */
       }
     </script>
-    <script type="module" crossorigin src="./assets/main-DMTR-dQu.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-DNYJBFWD.css">
+    <script type="module" crossorigin src="./assets/main-CifwBEr4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BwGiOUQ7.css">
   </head>
-  <body data-left="empty" data-right="library" data-game="false">
+  <body data-left="empty" data-right="library" data-game="false" data-hide-left="false" data-hide-right="false">
+    <script>
+      try {
+        if (localStorage.getItem("chess-tutor-hide-left") === "true") {
+          document.body.dataset.hideLeft = "true";
+        }
+        if (localStorage.getItem("chess-tutor-hide-right") === "true") {
+          document.body.dataset.hideRight = "true";
+        }
+      } catch {
+        /* ignore */
+      }
+    </script>
     <div class="wrap">
       <div class="watch-layout">
-        <section class="col commentary-col" aria-label="Comentario">
+        <section class="col commentary-col" id="commentary-col" aria-label="Comentario">
           <article class="watch-info-card commentary-card" id="commentary-panel" data-mode="empty">
             <div class="left-empty" id="left-empty">
               <div class="welcome-panel" id="welcome-panel" hidden>
@@ -71,6 +83,34 @@
               </div>
             </div>
             <div class="commentary-read" id="commentary-read" hidden>
+              <div class="book-chrome" id="book-chrome" hidden>
+                <div class="book-unit-nav">
+                  <button type="button" class="secondary book-unit-btn" id="book-prev-unit" data-book-unit="prev" aria-label="Unidad anterior (Re Pág)" title="Unidad anterior (Re Pág)" data-i18n-aria="bookPrevUnit" data-i18n-title="bookPrevUnit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6 9 12l6 6"/></svg>
+                  </button>
+                  <p class="book-unit-strip" id="book-unit-strip" data-book-strip></p>
+                  <button type="button" class="secondary book-unit-btn" id="book-next-unit" data-book-unit="next" aria-label="Unidad siguiente (Av Pág)" title="Unidad siguiente (Av Pág)" data-i18n-aria="bookNextUnit" data-i18n-title="bookNextUnit">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg>
+                  </button>
+                </div>
+                <label class="book-unit-select-label">
+                  <span class="visually-hidden" data-i18n="bookUnits">Unidades</span>
+                  <select id="book-unit-select" data-book-unit-select></select>
+                </label>
+                <div class="book-unit-nav book-segment-nav" data-book-segments hidden>
+                  <button type="button" class="secondary book-unit-btn" data-book-segment="prev" aria-label="Tramo anterior" title="Tramo anterior" data-i18n-aria="bookPrevSegment" data-i18n-title="bookPrevSegment">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6 9 12l6 6"/></svg>
+                  </button>
+                  <p class="book-unit-strip" data-book-segment-strip></p>
+                  <button type="button" class="secondary book-unit-btn" data-book-segment="next" aria-label="Tramo siguiente" title="Tramo siguiente" data-i18n-aria="bookNextSegment" data-i18n-title="bookNextSegment">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6 15 12 9 18"/></svg>
+                  </button>
+                </div>
+                <div class="book-notation" role="group" aria-label="Notación" data-i18n-aria="bookNotation">
+                  <button type="button" class="secondary" data-book-notation="modern" aria-pressed="true" data-i18n="bookNotationModern">Moderna</button>
+                  <button type="button" class="secondary" data-book-notation="printed" aria-pressed="false" data-i18n="bookNotationPrinted">Del libro</button>
+                </div>
+              </div>
               <p id="analysis-source" class="analysis-source" hidden></p>
               <ul class="analysis-flags" id="analysis-warnings" hidden></ul>
               <div class="agent-actions" id="agent-actions" hidden>
@@ -97,6 +137,10 @@
           <div class="board-stack">
             <div class="board-toolbar board-toolbar-top">
               <div class="board-toolbar-actions">
+                <button type="button" id="hide-left" class="secondary sidebar-toggle toolbar-chip" data-hide-side="left" aria-pressed="false" aria-controls="commentary-col" tabindex="-1" aria-label="Ocultar el panel izquierdo ([)" title="Ocultar el panel izquierdo ([)" data-i18n-aria="hideLeft" data-i18n-title="hideLeft">
+                  <svg class="sidebar-icon-hide" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.2" width="17.6" height="15.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.2 4.2v15.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.2" y="4.2" width="6" height="15.6" rx="0" fill="currentColor" opacity="0.22"/></svg>
+                  <svg class="sidebar-icon-show" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.2" width="17.6" height="15.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.2 4.2v15.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
                 <button type="button" id="toggle-load" class="secondary" tabindex="-1">Cargar partida</button>
                 <button type="button" id="account-btn" class="secondary toolbar-chip" popovertarget="account-pop" hidden data-i18n="account">Cuenta</button>
                 <button type="button" id="game-info-btn" class="secondary game-info-btn" popovertarget="game-info" tabindex="-1" data-i18n="gameInfo">
@@ -113,6 +157,10 @@
                     <ul class="lang-menu-list" id="lang-menu-list" hidden></ul>
                   </div>
                   <button type="button" id="theme-toggle" class="secondary theme-toggle toolbar-chip" aria-label="Modo oscuro" title="Modo oscuro" tabindex="-1"><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4.05"/><g class="sun-rays" fill="none" stroke-width="1.85" stroke-linecap="round"><path d="M12 3.1v2.15M12 18.75v2.15M3.1 12h2.15M18.75 12h2.15M5.95 5.95l1.52 1.52M16.53 16.53l1.52 1.52M5.95 18.05l1.52-1.52M16.53 7.47l1.52-1.52"/></g></svg></button>
+                  <button type="button" id="hide-right" class="secondary sidebar-toggle toolbar-chip" data-hide-side="right" aria-pressed="false" aria-controls="info-col" tabindex="-1" aria-label="Ocultar el panel derecho (])" title="Ocultar el panel derecho (])" data-i18n-aria="hideRight" data-i18n-title="hideRight">
+                    <svg class="sidebar-icon-hide" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.2" width="17.6" height="15.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14.8 4.2v15.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="14.8" y="4.2" width="6" height="15.6" fill="currentColor" opacity="0.22"/></svg>
+                    <svg class="sidebar-icon-show" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="4.2" width="17.6" height="15.6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14.8 4.2v15.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -173,7 +221,7 @@
           </div>
         </section>
 
-        <section class="col info-col" aria-label="Motor y jugadas" data-mode="library">
+        <section class="col info-col" id="info-col" aria-label="Motor y jugadas" data-mode="library">
           <article class="watch-info-card library-card" id="load-card" data-state="empty" data-open="true" aria-label="Cargar partida">
             <div class="card-head library-head">
               <h2 id="library-title" data-i18n="games">Partidas</h2>
@@ -339,5 +387,13 @@
         </div>
       </div>
     </div>
+    <button type="button" id="handle-left" class="sidebar-handle sidebar-handle-left" data-hide-side="left" aria-controls="commentary-col" aria-pressed="false" aria-label="Ocultar el panel izquierdo ([)" title="Ocultar el panel izquierdo ([)" data-i18n-aria="hideLeft" data-i18n-title="hideLeft">
+      <svg class="sidebar-handle-chevron-in" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 6 8 12l6 6"/></svg>
+      <svg class="sidebar-handle-chevron-out" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10 6l6 6-6 6"/></svg>
+    </button>
+    <button type="button" id="handle-right" class="sidebar-handle sidebar-handle-right" data-hide-side="right" aria-controls="info-col" aria-pressed="false" aria-label="Ocultar el panel derecho (])" title="Ocultar el panel derecho (])" data-i18n-aria="hideRight" data-i18n-title="hideRight">
+      <svg class="sidebar-handle-chevron-in" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M10 6l6 6-6 6"/></svg>
+      <svg class="sidebar-handle-chevron-out" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M14 6 8 12l6 6"/></svg>
+    </button>
   </body>
 </html>

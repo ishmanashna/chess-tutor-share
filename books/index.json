@@ -1,0 +1,15 @@
+{
+  "books": [
+    {
+      "slug": "capablanca-chess-fundamentals-1921",
+      "id": "capablanca-chess-fundamentals-1921",
+      "title": "Chess Fundamentals",
+      "author": "J. R. Capablanca",
+      "year": 1921,
+      "lang": "en",
+      "license": "public-domain",
+      "unitCount": 14,
+      "addedAt": "2026-11-14T14:47:27.533Z"
+    }
+  ]
+}
