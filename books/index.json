@@ -1,6 +1,52 @@
 {
   "books": [
     {
+      "slug": "philidor-studies-of-chess-1803",
+      "id": "philidor-studies-of-chess-1803",
+      "title": "Studies of Chess (Philidor’s own games)",
+      "subtitle": "Analysis of Chess, First–Fourth Party",
+      "author": "F. D. Philidor (Peter Pratt, ed.)",
+      "year": 1803,
+      "lang": "en",
+      "license": "public-domain",
+      "unitCount": 5,
+      "addedAt": "2026-11-19T17:56:59.823Z"
+    },
+    {
+      "slug": "staunton-blue-book-of-chess-1910",
+      "id": "staunton-blue-book-of-chess-1910",
+      "title": "The Blue Book of Chess (Philidor games)",
+      "subtitle": "Chapter I and four illustrative games of Philidor’s Defence",
+      "author": "Howard Staunton (revised edition)",
+      "year": 1910,
+      "lang": "en",
+      "license": "public-domain",
+      "unitCount": 7,
+      "addedAt": "2026-11-19T17:46:29.595Z"
+    },
+    {
+      "slug": "edward-lasker-chess-checkers-1918",
+      "id": "edward-lasker-chess-checkers-1918",
+      "title": "Chess and Checkers: The Way to Mastership",
+      "author": "Edward Lasker",
+      "year": 1918,
+      "lang": "en",
+      "license": "public-domain",
+      "unitCount": 153,
+      "addedAt": "2026-11-19T17:15:15.444Z"
+    },
+    {
+      "slug": "edward-lasker-chess-strategy-1915",
+      "id": "edward-lasker-chess-strategy-1915",
+      "title": "Chess Strategy",
+      "author": "Edward Lasker",
+      "year": 1915,
+      "lang": "en",
+      "license": "public-domain",
+      "unitCount": 154,
+      "addedAt": "2026-11-19T16:35:23.301Z"
+    },
+    {
       "slug": "capablanca-chess-fundamentals-1921",
       "id": "capablanca-chess-fundamentals-1921",
       "title": "Chess Fundamentals",
@@ -9,7 +55,7 @@
       "lang": "en",
       "license": "public-domain",
       "unitCount": 14,
-      "addedAt": "2026-11-14T14:47:27.533Z"
+      "addedAt": "2026-11-19T16:33:59.918Z"
     }
   ]
 }

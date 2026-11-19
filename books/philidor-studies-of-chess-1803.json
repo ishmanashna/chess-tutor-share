@@ -1,0 +1,5062 @@
+{
+  "format": "chess-tutor-book/1",
+  "book": {
+    "id": "philidor-studies-of-chess-1803",
+    "title": "Studies of Chess (Philidor’s own games)",
+    "subtitle": "Analysis of Chess, First–Fourth Party",
+    "author": "F. D. Philidor (Peter Pratt, ed.)",
+    "year": 1803,
+    "lang": "en",
+    "license": "public-domain",
+    "provenance": {
+      "intake": "text",
+      "gutenberg": 78804,
+      "sourceUrl": "https://gutenberg.pglaf.org/cache/epub/78804/pg78804.txt"
+    },
+    "pipeline": {
+      "version": "0.1",
+      "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+      "procedure": "pipeline"
+    }
+  },
+  "units": [
+    {
+      "id": "u-p1-b41344ce",
+      "kind": "text",
+      "title": "Analysis of Chess — Philidor’s own Games",
+      "region": {
+        "notation": "descriptive-en"
+      },
+      "pipeline": {
+        "version": "0.1",
+        "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+        "procedure": "pipeline"
+      },
+      "segments": [],
+      "passages": [
+        {
+          "at": {
+            "segment": 0,
+            "ply": 0,
+            "variation": "main"
+          },
+          "text": "ANALYSIS OF _CHESS_.\r\n\r\n                       =_Philidor’s own Games_=.",
+          "span": {
+            "page": 1,
+            "from": 136530,
+            "to": 136602
+          }
+        }
+      ],
+      "variations": [],
+      "checkpoints": [],
+      "skips": [],
+      "readings": 0,
+      "status": "ok",
+      "flags": [],
+      "source": {
+        "startPage": 1,
+        "startOffset": 136530,
+        "endPage": 1,
+        "endOffset": 136606
+      }
+    },
+    {
+      "id": "u-p1-4831a71d",
+      "kind": "game",
+      "title": "FIRST PARTY",
+      "region": {
+        "notation": "descriptive-en",
+        "lang": "en"
+      },
+      "pipeline": {
+        "version": "0.1",
+        "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+        "procedure": "pipeline"
+      },
+      "segments": [
+        {
+          "id": "s0",
+          "start": {
+            "start": true
+          },
+          "positionFrom": "standard",
+          "moves": [
+            {
+              "san": "e4",
+              "src": "The king’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 136819,
+                "to": 136845
+              },
+              "printedNumber": 1
+            },
+            {
+              "san": "e5",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 136854,
+                "to": 136863
+              },
+              "printedNumber": 1
+            },
+            {
+              "san": "Bc4",
+              "src": "The king’s bishop at his queen’s bishop’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 136898,
+                "to": 136951
+              },
+              "printedNumber": 2
+            },
+            {
+              "san": "Bc5",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 136960,
+                "to": 136969
+              },
+              "printedNumber": 2
+            },
+            {
+              "san": "c3",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 137004,
+                "to": 137035
+              },
+              "printedNumber": 3
+            },
+            {
+              "san": "Nf6",
+              "src": "King’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 137044,
+                "to": 137084
+              },
+              "printedNumber": 3
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 137119,
+                "to": 137141
+              },
+              "printedNumber": 4
+            },
+            {
+              "san": "exd4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 137154,
+                "to": 137178
+              },
+              "printedNumber": 4
+            },
+            {
+              "san": "cxd4",
+              "src": "The pawn takes the pawn",
+              "span": {
+                "page": 1,
+                "from": 137449,
+                "to": 137472
+              },
+              "printedNumber": 5
+            },
+            {
+              "san": "Bb6",
+              "src": "The bishop at his queen’s knight’s 3d",
+              "span": {
+                "page": 1,
+                "from": 137485,
+                "to": 137522
+              },
+              "printedNumber": 5
+            },
+            {
+              "san": "Nc3",
+              "src": "Queen’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 137561,
+                "to": 137602
+              },
+              "printedNumber": 6
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles.",
+              "span": {
+                "page": 1,
+                "from": 137611,
+                "to": 137628
+              },
+              "printedNumber": 6
+            },
+            {
+              "san": "Nge2",
+              "src": "King’s knight at his king’s 2d",
+              "span": {
+                "page": 1,
+                "from": 137663,
+                "to": 137693
+              },
+              "printedNumber": 7
+            },
+            {
+              "san": "c6",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 137706,
+                "to": 137737
+              },
+              "printedNumber": 7
+            },
+            {
+              "san": "Bd3",
+              "src": "King’s bishop at his queen’s 3d",
+              "span": {
+                "page": 1,
+                "from": 138553,
+                "to": 138584
+              },
+              "printedNumber": 8
+            },
+            {
+              "san": "d5",
+              "src": "Queen’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 138597,
+                "to": 138620
+              },
+              "printedNumber": 8
+            },
+            {
+              "san": "e5",
+              "src": "King’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 138655,
+                "to": 138676
+              },
+              "printedNumber": 9
+            },
+            {
+              "san": "Ne8",
+              "src": "King’s knight at his king’s square.",
+              "span": {
+                "page": 1,
+                "from": 138685,
+                "to": 138720
+              },
+              "printedNumber": 9
+            },
+            {
+              "san": "Be3",
+              "src": "Queen’s bishop at his king’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 138756,
+                "to": 138788
+              },
+              "printedNumber": 10
+            },
+            {
+              "san": "f6",
+              "src": "King’s bishop’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 138797,
+                "to": 138826
+              },
+              "printedNumber": 10
+            },
+            {
+              "san": "Qd2",
+              "src": "The queen at her 2d square",
+              "span": {
+                "page": 1,
+                "from": 138866,
+                "to": 138892
+              },
+              "printedNumber": 11
+            },
+            {
+              "san": "fxe5",
+              "src": "The pawn takes the pawn",
+              "span": {
+                "page": 1,
+                "from": 138905,
+                "to": 138928
+              },
+              "printedNumber": 11
+            },
+            {
+              "san": "dxe5",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 139639,
+                "to": 139663
+              },
+              "printedNumber": 12
+            },
+            {
+              "san": "Be6",
+              "src": "Queen’s bishop at his king’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 139672,
+                "to": 139710
+              },
+              "printedNumber": 12
+            },
+            {
+              "san": "Nf4",
+              "src": "King’s knight at his king’s bishop’s 4th",
+              "span": {
+                "page": 1,
+                "from": 139750,
+                "to": 139790
+              },
+              "printedNumber": 13
+            },
+            {
+              "san": "Qe7",
+              "src": "The queen at her king’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 139803,
+                "to": 139837
+              },
+              "printedNumber": 13
+            },
+            {
+              "san": "Bxb6",
+              "src": "Queen’s bishop takes the black bishop",
+              "span": {
+                "page": 1,
+                "from": 139873,
+                "to": 139910
+              },
+              "printedNumber": 14
+            },
+            {
+              "san": "axb6",
+              "src": "The pawn takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 139923,
+                "to": 139949
+              },
+              "printedNumber": 14
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles with his rook",
+              "span": {
+                "page": 1,
+                "from": 140998,
+                "to": 141028
+              },
+              "printedNumber": 15
+            },
+            {
+              "san": "Nd7",
+              "src": "Queen’s knight at his queen’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 141041,
+                "to": 141081
+              },
+              "printedNumber": 15
+            },
+            {
+              "san": "Nxe6",
+              "src": "King’s knight takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 141117,
+                "to": 141148
+              },
+              "printedNumber": 16
+            },
+            {
+              "san": "Qxe6",
+              "src": "The queen takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 141157,
+                "to": 141184
+              },
+              "printedNumber": 16
+            },
+            {
+              "san": "f4",
+              "src": "The king’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 141220,
+                "to": 141255
+              },
+              "printedNumber": 17
+            },
+            {
+              "san": "Nc7",
+              "src": "King’s knight at his queen’s bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 141264,
+                "to": 141312
+              },
+              "printedNumber": 17
+            },
+            {
+              "san": "Rae1",
+              "src": "The queen’s rook at its king’s square.",
+              "span": {
+                "page": 1,
+                "from": 141348,
+                "to": 141386
+              },
+              "printedNumber": 18
+            },
+            {
+              "san": "g6",
+              "src": "The king’s knight’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 141395,
+                "to": 141428
+              },
+              "printedNumber": 18
+            },
+            {
+              "san": "h3",
+              "src": "The king’s rook’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 141468,
+                "to": 141499
+              },
+              "printedNumber": 19
+            },
+            {
+              "san": "d4",
+              "src": "The queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 141512,
+                "to": 141538
+              },
+              "printedNumber": 19
+            },
+            {
+              "san": "Ne4",
+              "src": "The knight at his king’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 142006,
+                "to": 142042
+              },
+              "printedNumber": 20
+            },
+            {
+              "san": "h6",
+              "src": "The king’s rook’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 142051,
+                "to": 142082
+              },
+              "printedNumber": 20
+            },
+            {
+              "san": "b3",
+              "src": "The queen’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 142122,
+                "to": 142157
+              },
+              "printedNumber": 21
+            },
+            {
+              "san": "b5",
+              "src": "The 1st of the double pawns 1 square.",
+              "span": {
+                "page": 1,
+                "from": 142166,
+                "to": 142203
+              },
+              "printedNumber": 21
+            },
+            {
+              "san": "g4",
+              "src": "The king’s knight’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 142239,
+                "to": 142274
+              },
+              "printedNumber": 22
+            },
+            {
+              "san": "Nd5",
+              "src": "King’s knight at his queen’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 142283,
+                "to": 142323
+              },
+              "printedNumber": 22
+            },
+            {
+              "san": "Ng3",
+              "src": "The knight at his king’s knight’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 142359,
+                "to": 142402
+              },
+              "printedNumber": 23
+            },
+            {
+              "san": "Ne3",
+              "src": "King’s knight at the white king’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 142415,
+                "to": 142458
+              },
+              "printedNumber": 23
+            },
+            {
+              "san": "Rxe3",
+              "src": "Queen’s rook takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 143080,
+                "to": 143110
+              },
+              "printedNumber": 24
+            },
+            {
+              "san": "dxe3",
+              "src": "The pawn takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 143119,
+                "to": 143143
+              },
+              "printedNumber": 24
+            },
+            {
+              "san": "Qxe3",
+              "src": "The queen takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 143179,
+                "to": 143204
+              },
+              "printedNumber": 25
+            },
+            {
+              "san": "Rxa2",
+              "src": "Queen’s rook takes the rook’s pawn.",
+              "span": {
+                "page": 1,
+                "from": 143213,
+                "to": 143248
+              },
+              "printedNumber": 25
+            },
+            {
+              "san": "Re1",
+              "src": "The rook at its king’s square",
+              "span": {
+                "page": 1,
+                "from": 143284,
+                "to": 143313
+              },
+              "printedNumber": 26
+            },
+            {
+              "san": "Qxb3",
+              "src": "The queen takes the queen’s knight’s pawn.",
+              "span": {
+                "page": 1,
+                "from": 143326,
+                "to": 143368
+              },
+              "printedNumber": 26
+            },
+            {
+              "san": "Qe4",
+              "src": "The queen at her king’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 143404,
+                "to": 143439
+              },
+              "printedNumber": 27
+            },
+            {
+              "san": "Qe6",
+              "src": "The queen at her king’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 143448,
+                "to": 143481
+              },
+              "printedNumber": 27
+            },
+            {
+              "san": "f5",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 143521,
+                "to": 143551
+              },
+              "printedNumber": 28
+            },
+            {
+              "san": "gxf5",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 143560,
+                "to": 143584
+              },
+              "printedNumber": 28
+            },
+            {
+              "san": "gxf5",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 143620,
+                "to": 143644
+              },
+              "printedNumber": 29
+            },
+            {
+              "san": "Qd5",
+              "src": "The queen at her 4th square",
+              "span": {
+                "page": 1,
+                "from": 143653,
+                "to": 143680
+              },
+              "printedNumber": 29
+            },
+            {
+              "san": "Qxd5+",
+              "src": "The queen takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 144098,
+                "to": 144124
+              },
+              "printedNumber": 30
+            },
+            {
+              "san": "cxd5",
+              "src": "The pawn takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 144133,
+                "to": 144158
+              },
+              "printedNumber": 30
+            },
+            {
+              "san": "Bxb5",
+              "src": "The bishop takes the pawn in his way.",
+              "span": {
+                "page": 1,
+                "from": 144194,
+                "to": 144231
+              },
+              "printedNumber": 31
+            },
+            {
+              "san": "Nb6",
+              "src": "The knight at his 3d square.",
+              "span": {
+                "page": 1,
+                "from": 144240,
+                "to": 144268
+              },
+              "printedNumber": 31
+            },
+            {
+              "san": "f6",
+              "src": "King’s bishop’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 144304,
+                "to": 144333
+              },
+              "printedNumber": 32
+            },
+            {
+              "san": "Rb2",
+              "src": "Queen’s rook at the white queen’s knight’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 144346,
+                "to": 144399
+              },
+              "printedNumber": 32
+            },
+            {
+              "san": "Bd3",
+              "src": "The bishop at the queen’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 144435,
+                "to": 144471
+              },
+              "printedNumber": 33
+            },
+            {
+              "san": "Kf7",
+              "src": "The king at his bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 144480,
+                "to": 144515
+              },
+              "printedNumber": 33
+            },
+            {
+              "san": "Bf5",
+              "src": "The bishop at the black king’s bishop’s 4th square",
+              "span": {
+                "page": 1,
+                "from": 145051,
+                "to": 145101
+              },
+              "printedNumber": 34
+            },
+            {
+              "san": "Nc4",
+              "src": "The knight at the white queen’s bishop’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 145114,
+                "to": 145166
+              },
+              "printedNumber": 34
+            },
+            {
+              "san": "Nh5",
+              "src": "The knight at the black king’s rook’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 145202,
+                "to": 145251
+              },
+              "printedNumber": 35
+            },
+            {
+              "san": "Rg8+",
+              "src": "King’s rook gives check.",
+              "span": {
+                "page": 1,
+                "from": 145260,
+                "to": 145284
+              },
+              "printedNumber": 35
+            },
+            {
+              "san": "Bg4",
+              "src": "The bishop covers the check.",
+              "span": {
+                "page": 1,
+                "from": 145320,
+                "to": 145348
+              },
+              "printedNumber": 36
+            },
+            {
+              "san": "Nd2",
+              "src": "Knight at the white queen’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 145357,
+                "to": 145395
+              },
+              "printedNumber": 36
+            },
+            {
+              "san": "e6+",
+              "src": "King’s pawn gives check.",
+              "span": {
+                "page": 1,
+                "from": 145431,
+                "to": 145455
+              },
+              "printedNumber": 37
+            },
+            {
+              "san": "Kg6",
+              "src": "King at his knight’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 145464,
+                "to": 145494
+              },
+              "printedNumber": 37
+            },
+            {
+              "san": "f7",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 145536,
+                "to": 145566
+              },
+              "printedNumber": 38
+            },
+            {
+              "san": "Rf8",
+              "src": "The rook at his king’s bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 145575,
+                "to": 145614
+              },
+              "printedNumber": 38
+            },
+            {
+              "san": "Nf4+",
+              "src": "The knight gives check at the 4th square of his king’s bishop.",
+              "span": {
+                "page": 1,
+                "from": 145650,
+                "to": 145712
+              },
+              "printedNumber": 39
+            },
+            {
+              "san": "Kg7",
+              "src": "The king at his knight’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 145721,
+                "to": 145756
+              },
+              "printedNumber": 39
+            },
+            {
+              "san": "Bh5",
+              "src": "The bishop at the black king’s rook 4th square.",
+              "span": {
+                "page": 1,
+                "from": 146032,
+                "to": 146079
+              },
+              "printedNumber": 40
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "at": {
+            "segment": 0,
+            "ply": 7,
+            "variation": "main"
+          },
+          "text": "(a) This pawn, is pushed two steps, for two reasons: the first, to\r\nhinder the adversary’s king’s bishop from attacking your king’s\r\nbishop’s pawn; the second, to bring the strength of your pawns into the\r\ncentre of the chess-board.",
+          "span": {
+            "page": 1,
+            "from": 137182,
+            "to": 137414
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 9,
+            "variation": "main"
+          },
+          "text": "(b) When you find your game in the present situation, _viz._ two pawns\r\nin a front line, you must take care not to push either of them, before\r\nyour adversary proposes to change one for the other: which you will\r\nthen avoid, by pushing forwards the attacked pawn.",
+          "span": {
+            "page": 1,
+            "from": 137741,
+            "to": 138004
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 10,
+            "variation": "main"
+          },
+          "text": "(c) If, instead of being withdrawn, this bishop gives check, you are to\r\ncover the check with the bishop; and, in case he takes your bishop, you\r\nmust take his bishop with your knight, who will then defend your king’s\r\npawn.",
+          "span": {
+            "page": 1,
+            "from": 138008,
+            "to": 138232
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 13,
+            "variation": "main"
+          },
+          "text": "(d) Before the bishop’s pawn has been pushed two squares, avoid playing\r\nthe knight at the bishop’s 3d, when it will answer the purpose to play\r\nhim any where else; for the obstruction which the knight gives to the\r\nmotion of the pawn, is sometimes inconvenient in its consequences.",
+          "span": {
+            "page": 1,
+            "from": 138236,
+            "to": 138518
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 15,
+            "variation": "main"
+          },
+          "text": "(e) The bishop retires, to avoid being attacked by the adversary’s\r\nqueen’s pawn, because that would force you to take his pawn with yours,\r\nand separate your pawns.",
+          "span": {
+            "page": 1,
+            "from": 138936,
+            "to": 139101
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 20,
+            "variation": "main"
+          },
+          "text": "(f) He plays this pawn to give an opening to the rook; and this cannot\r\nbe hindered, whether he or you take.",
+          "span": {
+            "page": 1,
+            "from": 139105,
+            "to": 139213
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 21,
+            "variation": "main"
+          },
+          "text": "(g) You should not take the pawn which is offered you, because your\r\nking’s pawn would then lose its file; whereas, leaving yours to be\r\ntaken, you supply its place by the pawn of your queen, and sustain it\r\nafterwards with your king’s bishop’s pawn. These two pawns united will\r\nundoubtedly win the game.",
+          "span": {
+            "page": 1,
+            "from": 139217,
+            "to": 139522
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 22,
+            "variation": "main"
+          },
+          "text": "(h) He takes the pawn to pursue his design of giving an opening to his\r\nrook.",
+          "span": {
+            "page": 1,
+            "from": 139526,
+            "to": 139603
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 24,
+            "variation": "main"
+          },
+          "text": "(i) He plays this bishop to add to the security of his queen’s pawn,\r\nand to enable him to push afterwards his queen’s bishop’s pawn: you\r\ncould, it is true, oblige him to double a pawn in the knight’s file, by\r\ntaking his king’s bishop with your queen’s bishop, but this would make\r\nan opening to his king’s rook: besides a doubled pawn, when connected\r\nwith others, as his would be, is by no means disadvantageous; however,\r\nthe present attitude of the pieces will be the subject of a back game,\r\nmaking him take your queen’s bishop with that of his king.",
+          "span": {
+            "page": 1,
+            "from": 139953,
+            "to": 140510
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 25,
+            "variation": "main"
+          },
+          "text": "(k) Your king’s pawn being as yet in no danger, your knight attacks his\r\nbishop, in order to take him, or have him removed.",
+          "span": {
+            "page": 1,
+            "from": 140514,
+            "to": 140637
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 27,
+            "variation": "main"
+          },
+          "text": "(l) It is always dangerous to let the adversary’s king’s bishop command\r\nthe diagonal of your king’s bishop’s pawn; and therefore when your\r\nqueen’s pawn cannot form a bar to his action, it is necessary to oppose\r\nhim with your queen’s bishop, and to exchange him for that piece, if\r\nyou cannot procure him for a smaller.",
+          "span": {
+            "page": 1,
+            "from": 140641,
+            "to": 140962
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 29,
+            "variation": "main"
+          },
+          "text": "(m) You castle on that side, in order to sustain and strengthen your\r\nking’s bishop’s pawn, which you will advance two squares as soon as\r\nyour king’s pawn is attacked.",
+          "span": {
+            "page": 1,
+            "from": 141542,
+            "to": 141710
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 36,
+            "variation": "main"
+          },
+          "text": "(n) He is forced to push this pawn, to hinder you from playing your\r\nking’s bishop’s pawn upon his queen, which would give you two pawns in\r\na front line upon his field.",
+          "span": {
+            "page": 1,
+            "from": 141714,
+            "to": 141883
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 37,
+            "variation": "main"
+          },
+          "text": "(o) This pawn is played to enable you to push your king’s knight’s pawn\r\ntwo steps.",
+          "span": {
+            "page": 1,
+            "from": 141887,
+            "to": 141970
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 40,
+            "variation": "main"
+          },
+          "text": "(p) He plays this pawn to hinder your knight entering his game, and\r\nforcing his queen to remove, which would immediately make an opening\r\nfor your pawns.",
+          "span": {
+            "page": 1,
+            "from": 142466,
+            "to": 142620
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 45,
+            "variation": "main"
+          },
+          "text": "(q) You play this knight to enable yourself to push your king’s\r\nbishop’s pawn next, which will be then supported by three pieces, the\r\nrook, the bishop, and the knight.",
+          "span": {
+            "page": 1,
+            "from": 142624,
+            "to": 142793
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 46,
+            "variation": "main"
+          },
+          "text": "(r) He plays this knight, in order to cut off the communication between\r\nyour pieces, and break the strength of your pawns; which he would\r\nundoubtedly do, by pushing his king’s knight’s pawn; but you prevent\r\nhis design, by sacrificing your rook.",
+          "span": {
+            "page": 1,
+            "from": 142797,
+            "to": 143044
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 51,
+            "variation": "main"
+          },
+          "text": "(s) You play the rook to support your king’s pawn, which would be left\r\nwithout adequate support, were you to push your king’s bishop’s pawn.",
+          "span": {
+            "page": 1,
+            "from": 143688,
+            "to": 143829
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 54,
+            "variation": "main"
+          },
+          "text": "(t) The queen returns to this square, in order to hinder the\r\ncheck-mate, now prepared.",
+          "span": {
+            "page": 1,
+            "from": 143833,
+            "to": 143920
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 58,
+            "variation": "main"
+          },
+          "text": "(u) The queen offers to be exchanged with the other queen, in order to\r\nbreak the scheme of a check-mate, by the adverse bishop and queen.",
+          "span": {
+            "page": 1,
+            "from": 143924,
+            "to": 144062
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 63,
+            "variation": "main"
+          },
+          "text": "(x) You are to observe, that when your bishop runs upon the white\r\nsquares, you must put your pawns upon the black ones; or, if your\r\nbishop runs upon the black, you must have your pawns upon the white; by\r\nwhich course the bishop prevents the adversary’s pieces from intruding\r\nbetween your pawns. This rule is hardly ever to be dispensed with,\r\nin case you attack, and have some pawns advanced; but, in case of a\r\ndefence, the rule must be reversed, and the pawns set upon the bishop’s\r\ncolour.",
+          "span": {
+            "page": 1,
+            "from": 144519,
+            "to": 145015
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 67,
+            "variation": "main"
+          },
+          "text": "(y) Here is an example of the above note: if your bishop run black,\r\nyour adversary’s king might insinuate between your two pawns.",
+          "span": {
+            "page": 1,
+            "from": 145760,
+            "to": 145890
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 74,
+            "variation": "main"
+          },
+          "text": "(z) As the king may retire to his bishop’s square, we will make it the\r\nsubject of a second back game.",
+          "span": {
+            "page": 1,
+            "from": 145894,
+            "to": 145996
+          }
+        }
+      ],
+      "variations": [
+        {
+          "id": "v-1",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 23,
+          "moves": [
+            {
+              "san": "Bxe3",
+              "src": "King’s bishop takes the queen’s bishop.",
+              "span": {
+                "page": 1,
+                "from": 146288,
+                "to": 146327
+              },
+              "uci": "b6e3"
+            },
+            {
+              "san": "Qxe3",
+              "src": "The queen takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 146363,
+                "to": 146390
+              },
+              "uci": "d2e3"
+            },
+            {
+              "san": "Be6",
+              "src": "Queen’s bishop at his king’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 146399,
+                "to": 146438
+              },
+              "uci": "c8e6"
+            },
+            {
+              "san": "Nf4",
+              "src": "King’s knight at his king’s bishop’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 146474,
+                "to": 146522
+              },
+              "uci": "e2f4"
+            },
+            {
+              "san": "Qe7",
+              "src": "Queen at her king’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 146531,
+                "to": 146561
+              },
+              "uci": "d8e7"
+            },
+            {
+              "san": "Nxe6",
+              "src": "The knight takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 146597,
+                "to": 146625
+              },
+              "uci": "f4e6"
+            },
+            {
+              "san": "Qxe6",
+              "src": "The queen takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 146634,
+                "to": 146661
+              },
+              "uci": "e7e6"
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles with his rook.",
+              "span": {
+                "page": 1,
+                "from": 146697,
+                "to": 146728
+              },
+              "uci": "e1h1"
+            },
+            {
+              "san": "Nd7",
+              "src": "Queen’s knight at his queen’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 146737,
+                "to": 146777
+              },
+              "uci": "b8d7"
+            },
+            {
+              "san": "f4",
+              "src": "King’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 146813,
+                "to": 146844
+              },
+              "uci": "f2f4"
+            },
+            {
+              "san": "g6",
+              "src": "King’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 146853,
+                "to": 146883
+              },
+              "uci": "g7g6"
+            },
+            {
+              "san": "h3",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 146919,
+                "to": 146947
+              },
+              "uci": "h2h3"
+            },
+            {
+              "san": "Ng7",
+              "src": "King’s knight at his 2d square.",
+              "span": {
+                "page": 1,
+                "from": 146956,
+                "to": 146987
+              },
+              "uci": "e8g7"
+            },
+            {
+              "san": "g4",
+              "src": "King’s knight’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 147023,
+                "to": 147054
+              },
+              "uci": "g2g4"
+            },
+            {
+              "san": "c5",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 147063,
+                "to": 147094
+              },
+              "uci": "c6c5"
+            },
+            {
+              "san": "Ne2",
+              "src": "The knight at his king’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 147130,
+                "to": 147165
+              },
+              "uci": "c3e2"
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 147174,
+                "to": 147196
+              },
+              "uci": "d5d4"
+            },
+            {
+              "san": "Qd2",
+              "src": "The queen at her 2d square.",
+              "span": {
+                "page": 1,
+                "from": 147232,
+                "to": 147259
+              },
+              "uci": "e3d2"
+            },
+            {
+              "san": "Nb6",
+              "src": "Queen’s knight at his 3d square.",
+              "span": {
+                "page": 1,
+                "from": 147268,
+                "to": 147300
+              },
+              "uci": "d7b6"
+            },
+            {
+              "san": "Ng3",
+              "src": "The knight at his king’s knight’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 147336,
+                "to": 147380
+              },
+              "uci": "e2g3"
+            },
+            {
+              "san": "Nd5",
+              "src": "Queen’s knight at his queen’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 147389,
+                "to": 147430
+              },
+              "uci": "b6d5"
+            },
+            {
+              "san": "Rae1",
+              "src": "Queen’s rook at its king’s square.",
+              "span": {
+                "page": 1,
+                "from": 147466,
+                "to": 147500
+              },
+              "uci": "a1e1"
+            },
+            {
+              "san": "Ne3",
+              "src": "Queen’s knight at the white king’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 147509,
+                "to": 147554
+              },
+              "uci": "d5e3"
+            },
+            {
+              "san": "Rxe3",
+              "src": "The rook takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 147590,
+                "to": 147616
+              },
+              "uci": "e1e3"
+            },
+            {
+              "san": "dxe3",
+              "src": "The pawn takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 147625,
+                "to": 147649
+              },
+              "uci": "d4e3"
+            },
+            {
+              "san": "Qxe3",
+              "src": "The queen takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 147685,
+                "to": 147710
+              },
+              "uci": "d2e3"
+            },
+            {
+              "san": "Qxa2",
+              "src": "The queen takes the queen’s rook’s pawn.",
+              "span": {
+                "page": 1,
+                "from": 147719,
+                "to": 147759
+              },
+              "uci": "e6a2"
+            },
+            {
+              "san": "f5",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 147795,
+                "to": 147825
+              },
+              "uci": "f4f5"
+            },
+            {
+              "san": "Qxb2",
+              "src": "The queen takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 147834,
+                "to": 147859
+              },
+              "uci": "a2b2"
+            },
+            {
+              "san": "f6",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 147895,
+                "to": 147925
+              },
+              "uci": "f5f6"
+            },
+            {
+              "san": "Ne8",
+              "src": "The knight at his king’s square.",
+              "span": {
+                "page": 1,
+                "from": 147934,
+                "to": 147966
+              },
+              "uci": "g7e8"
+            },
+            {
+              "san": "g5",
+              "src": "King’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 148002,
+                "to": 148032
+              },
+              "uci": "g4g5"
+            },
+            {
+              "san": "Qd4",
+              "src": "The queen at the white queen’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 148041,
+                "to": 148083
+              },
+              "uci": "b2d4"
+            },
+            {
+              "san": "Qxd4",
+              "src": "The queen takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 148119,
+                "to": 148145
+              },
+              "uci": "e3d4"
+            },
+            {
+              "san": "cxd4",
+              "src": "The pawn takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 148154,
+                "to": 148179
+              },
+              "uci": "c5d4"
+            },
+            {
+              "san": "e6",
+              "src": "King’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 148215,
+                "to": 148236
+              },
+              "uci": "e5e6"
+            },
+            {
+              "san": "Nd6",
+              "src": "The knight at his queen’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 148245,
+                "to": 148281
+              },
+              "uci": "e8d6"
+            },
+            {
+              "san": "Ne4",
+              "src": "The knight at his king’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 148317,
+                "to": 148353
+              },
+              "uci": "g3e4"
+            },
+            {
+              "san": "Nf5",
+              "src": "The knight at his king’s bishop’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 148362,
+                "to": 148407
+              },
+              "uci": "d6f5"
+            },
+            {
+              "san": "Rxf5",
+              "src": "The rook takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 148443,
+                "to": 148469
+              },
+              "uci": "f1f5"
+            },
+            {
+              "san": "gxf5",
+              "src": "The pawn takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 148478,
+                "to": 148502
+              },
+              "uci": "g6f5"
+            },
+            {
+              "san": "Nd6",
+              "src": "The knight at the black queen’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 148538,
+                "to": 148580
+              },
+              "uci": "e4d6"
+            },
+            {
+              "san": "f4",
+              "src": "King’s bishop’s pawn 1 square,",
+              "span": {
+                "page": 1,
+                "from": 148589,
+                "to": 148619
+              },
+              "uci": "f5f4"
+            },
+            {
+              "san": "e7",
+              "src": "King’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 148722,
+                "to": 148743
+              },
+              "uci": "e6e7"
+            },
+            {
+              "san": "Rab8",
+              "src": "Rook at his queen’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 148752,
+                "to": 148788
+              },
+              "uci": "a8b8"
+            },
+            {
+              "san": "Bc4+",
+              "src": "The bishop gives check.",
+              "span": {
+                "page": 1,
+                "from": 148824,
+                "to": 148847
+              },
+              "uci": "d3c4"
+            },
+            {
+              "san": "Kh8",
+              "src": "The king retires, having but one place.",
+              "span": {
+                "page": 1,
+                "from": 148856,
+                "to": 148895
+              },
+              "uci": "g8h8"
+            },
+            {
+              "san": "Nf7+",
+              "src": "The knight gives check.",
+              "span": {
+                "page": 1,
+                "from": 148931,
+                "to": 148954
+              },
+              "uci": "d6f7"
+            },
+            {
+              "san": "Kg8",
+              "src": "The king removes.",
+              "span": {
+                "page": 1,
+                "from": 148963,
+                "to": 148980
+              },
+              "uci": "h8g8"
+            },
+            {
+              "san": "Nd8+",
+              "src": "The knight at the black queen’s square, discovering check.",
+              "span": {
+                "page": 1,
+                "from": 149016,
+                "to": 149074
+              },
+              "uci": "f7d8"
+            },
+            {
+              "san": "Kh8",
+              "src": "The king removes where he can.",
+              "span": {
+                "page": 1,
+                "from": 149083,
+                "to": 149113
+              },
+              "uci": "g8h8"
+            }
+          ]
+        },
+        {
+          "id": "v-2",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 73,
+          "moves": [
+            {
+              "san": "Kf8",
+              "src": "The king at his bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 149364,
+                "to": 149396
+              },
+              "uci": "f7f8"
+            },
+            {
+              "san": "Ra1",
+              "src": "The rook at the queen’s rook’s square.",
+              "span": {
+                "page": 1,
+                "from": 149432,
+                "to": 149470
+              },
+              "uci": "e1a1"
+            },
+            {
+              "san": "Rb1+",
+              "src": "The rook gives check at the white queen’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 149479,
+                "to": 149537
+              },
+              "uci": "b2b1"
+            },
+            {
+              "san": "Rxb1",
+              "src": "The rook takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 149573,
+                "to": 149597
+              },
+              "uci": "a1b1"
+            },
+            {
+              "san": "Nxb1",
+              "src": "The knight takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 149606,
+                "to": 149632
+              },
+              "uci": "d2b1"
+            },
+            {
+              "san": "Kh2",
+              "src": "The king at his rook’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 149668,
+                "to": 149701
+              },
+              "uci": "g1h2"
+            },
+            {
+              "san": "Nc3",
+              "src": "Knight at the white queen’s bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 149710,
+                "to": 149757
+              },
+              "uci": "b1c3"
+            },
+            {
+              "san": "Nf4",
+              "src": "Knight at his king’s bishop’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 149793,
+                "to": 149834
+              },
+              "uci": "h5f4"
+            },
+            {
+              "san": "Ne4",
+              "src": "Knight at the white king’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 149843,
+                "to": 149881
+              },
+              "uci": "c3e4"
+            },
+            {
+              "san": "Nxd5",
+              "src": "The knight takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 149917,
+                "to": 149943
+              },
+              "uci": "f4d5"
+            },
+            {
+              "san": "Rg5",
+              "src": "The rook at his king’s knight’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 149952,
+                "to": 149995
+              },
+              "uci": "g8g5"
+            },
+            {
+              "san": "e7+",
+              "src": "King’s pawn 1 square, and gives check.",
+              "span": {
+                "page": 1,
+                "from": 150031,
+                "to": 150069
+              },
+              "uci": "e6e7"
+            },
+            {
+              "san": "Kf7",
+              "src": "The king at his bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 150078,
+                "to": 150113
+              },
+              "uci": "f8f7"
+            },
+            {
+              "san": "Be6+",
+              "src": "Bishop gives check at the black king’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 150149,
+                "to": 150198
+              },
+              "uci": "g4e6"
+            },
+            {
+              "san": "Kxe6",
+              "src": "The king takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 150207,
+                "to": 150233
+              },
+              "uci": "f7e6"
+            },
+            {
+              "san": "e8=Q+",
+              "src": "King’s pawn becomes a queen, and wins the game.",
+              "span": {
+                "page": 1,
+                "from": 150269,
+                "to": 150316
+              },
+              "uci": "e7e8q"
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "skips": [],
+      "readings": 1,
+      "status": "ok",
+      "flags": [
+        {
+          "kind": "other",
+          "rule": "agent-moves",
+          "note": "SAN/UCI written by the reader; checker replays, does not parse printed notation."
+        }
+      ],
+      "source": {
+        "startPage": 1,
+        "startOffset": 136606,
+        "endPage": 1,
+        "endOffset": 150326
+      }
+    },
+    {
+      "id": "u-p1-d01f1f42",
+      "kind": "game",
+      "title": "SECOND PARTY",
+      "region": {
+        "notation": "descriptive-en",
+        "lang": "en"
+      },
+      "pipeline": {
+        "version": "0.1",
+        "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+        "procedure": "pipeline"
+      },
+      "segments": [
+        {
+          "id": "s0",
+          "start": {
+            "start": true
+          },
+          "positionFrom": "standard",
+          "moves": [
+            {
+              "san": "e4",
+              "src": "The king’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 150507,
+                "to": 150533
+              },
+              "printedNumber": 1
+            },
+            {
+              "san": "e5",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 150542,
+                "to": 150551
+              },
+              "printedNumber": 1
+            },
+            {
+              "san": "Bc4",
+              "src": "King’s bishop at his queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 150586,
+                "to": 150628
+              },
+              "printedNumber": 2
+            },
+            {
+              "san": "c6",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 150637,
+                "to": 150668
+              },
+              "printedNumber": 2
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 150703,
+                "to": 150725
+              },
+              "printedNumber": 3
+            },
+            {
+              "san": "exd4",
+              "src": "The pawn takes the pawn",
+              "span": {
+                "page": 1,
+                "from": 150738,
+                "to": 150761
+              },
+              "printedNumber": 3
+            },
+            {
+              "san": "Qxd4",
+              "src": "The queen takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 150800,
+                "to": 150825
+              },
+              "printedNumber": 4
+            },
+            {
+              "san": "d6",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 150834,
+                "to": 150856
+              },
+              "printedNumber": 4
+            },
+            {
+              "san": "f4",
+              "src": "King’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 151342,
+                "to": 151373
+              },
+              "printedNumber": 5
+            },
+            {
+              "san": "Be6",
+              "src": "Queen’s bishop at his king’s 3d",
+              "span": {
+                "page": 1,
+                "from": 151382,
+                "to": 151413
+              },
+              "printedNumber": 5
+            },
+            {
+              "san": "Bd3",
+              "src": "King’s bishop at his queen’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 151452,
+                "to": 151491
+              },
+              "printedNumber": 6
+            },
+            {
+              "san": "d5",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 151500,
+                "to": 151522
+              },
+              "printedNumber": 6
+            },
+            {
+              "san": "e5",
+              "src": "King’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 151557,
+                "to": 151578
+              },
+              "printedNumber": 7
+            },
+            {
+              "san": "c5",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 151587,
+                "to": 151618
+              },
+              "printedNumber": 7
+            },
+            {
+              "san": "Qf2",
+              "src": "The queen at her king’s bishop’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 151653,
+                "to": 151689
+              },
+              "printedNumber": 8
+            },
+            {
+              "san": "Nc6",
+              "src": "Queen’s knight at his queen’s bishop’s 3d",
+              "span": {
+                "page": 1,
+                "from": 151698,
+                "to": 151739
+              },
+              "printedNumber": 8
+            },
+            {
+              "san": "c3",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 152606,
+                "to": 152637
+              },
+              "printedNumber": 9
+            },
+            {
+              "san": "g6",
+              "src": "King’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 152646,
+                "to": 152676
+              },
+              "printedNumber": 9
+            },
+            {
+              "san": "h3",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 152712,
+                "to": 152740
+              },
+              "printedNumber": 10
+            },
+            {
+              "san": "h5",
+              "src": "King’s rook’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 152749,
+                "to": 152777
+              },
+              "printedNumber": 10
+            },
+            {
+              "san": "g3",
+              "src": "King’s knight’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 152817,
+                "to": 152846
+              },
+              "printedNumber": 11
+            },
+            {
+              "san": "Nh6",
+              "src": "King’s knight at his rook’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 152859,
+                "to": 152890
+              },
+              "printedNumber": 11
+            },
+            {
+              "san": "Nf3",
+              "src": "King’s knight at his bishop’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 152926,
+                "to": 152959
+              },
+              "printedNumber": 12
+            },
+            {
+              "san": "Be7",
+              "src": "King’s bishop at his king’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 152968,
+                "to": 152999
+              },
+              "printedNumber": 12
+            },
+            {
+              "san": "a4",
+              "src": "Queen’s rook’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 153035,
+                "to": 153065
+              },
+              "printedNumber": 13
+            },
+            {
+              "san": "Nf5",
+              "src": "King’s knight at his bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 153074,
+                "to": 153108
+              },
+              "printedNumber": 13
+            },
+            {
+              "san": "Kf1",
+              "src": "The king at his bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 153820,
+                "to": 153852
+              },
+              "printedNumber": 14
+            },
+            {
+              "san": "h4",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 153861,
+                "to": 153889
+              },
+              "printedNumber": 14
+            },
+            {
+              "san": "g4",
+              "src": "King’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 153925,
+                "to": 153955
+              },
+              "printedNumber": 15
+            },
+            {
+              "san": "Ng3+",
+              "src": "The knight gives check to the king, and attacks the rook.",
+              "span": {
+                "page": 1,
+                "from": 153964,
+                "to": 154021
+              },
+              "printedNumber": 15
+            },
+            {
+              "san": "Kg2",
+              "src": "The king at his knight’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 154057,
+                "to": 154092
+              },
+              "printedNumber": 16
+            },
+            {
+              "san": "Nxh1",
+              "src": "The knight takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 154101,
+                "to": 154127
+              },
+              "printedNumber": 16
+            },
+            {
+              "san": "Kxh1",
+              "src": "The king takes the knight",
+              "span": {
+                "page": 1,
+                "from": 154163,
+                "to": 154188
+              },
+              "printedNumber": 17
+            },
+            {
+              "san": "Qd7",
+              "src": "The queen at her 2d square.",
+              "span": {
+                "page": 1,
+                "from": 154201,
+                "to": 154228
+              },
+              "printedNumber": 17
+            },
+            {
+              "san": "Qg1",
+              "src": "The queen at her king’s knight’s square",
+              "span": {
+                "page": 1,
+                "from": 154264,
+                "to": 154303
+              },
+              "printedNumber": 18
+            },
+            {
+              "san": "a5",
+              "src": "Queen’s rook’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 154316,
+                "to": 154346
+              },
+              "printedNumber": 18
+            },
+            {
+              "san": "Be3",
+              "src": "Queen’s bishop at his king’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 154960,
+                "to": 154998
+              },
+              "printedNumber": 19
+            },
+            {
+              "san": "b6",
+              "src": "Queen’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 155011,
+                "to": 155042
+              },
+              "printedNumber": 19
+            },
+            {
+              "san": "Na3",
+              "src": "Queen’s knight at his rook’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 155078,
+                "to": 155117
+              },
+              "printedNumber": 20
+            },
+            {
+              "san": "O-O-O",
+              "src": "The king castles on his queen’s side",
+              "span": {
+                "page": 1,
+                "from": 155126,
+                "to": 155162
+              },
+              "printedNumber": 20
+            },
+            {
+              "san": "Ba6+",
+              "src": "The king’s bishop gives check.",
+              "span": {
+                "page": 1,
+                "from": 155202,
+                "to": 155232
+              },
+              "printedNumber": 21
+            },
+            {
+              "san": "Kc7",
+              "src": "The king at his queen’s bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 155241,
+                "to": 155284
+              },
+              "printedNumber": 21
+            },
+            {
+              "san": "Nc2",
+              "src": "Queen’s knight at his queen’s bishop’s 2d square",
+              "span": {
+                "page": 1,
+                "from": 155320,
+                "to": 155368
+              },
+              "printedNumber": 22
+            },
+            {
+              "san": "Ra8",
+              "src": "Queen’s rook at its own square.",
+              "span": {
+                "page": 1,
+                "from": 155381,
+                "to": 155412
+              },
+              "printedNumber": 22
+            },
+            {
+              "san": "Bb5",
+              "src": "King’s bishop at the black queen’s knight’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 155448,
+                "to": 155503
+              },
+              "printedNumber": 23
+            },
+            {
+              "san": "Qc8",
+              "src": "The queen at her own square",
+              "span": {
+                "page": 1,
+                "from": 155512,
+                "to": 155539
+              },
+              "printedNumber": 23
+            },
+            {
+              "san": "b4",
+              "src": "Queen’s knight’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 156235,
+                "to": 156267
+              },
+              "printedNumber": 24
+            },
+            {
+              "san": "Qf8",
+              "src": "The queen at her king’s bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 156276,
+                "to": 156316
+              },
+              "printedNumber": 24
+            },
+            {
+              "san": "bxa5",
+              "src": "Queen’s knight’s pawn takes the queen’s bishop’s pawn.",
+              "span": {
+                "page": 1,
+                "from": 156352,
+                "to": 156406
+              },
+              "printedNumber": 25
+            },
+            {
+              "san": "bxa5",
+              "src": "Queen’s knight’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 156415,
+                "to": 156452
+              },
+              "printedNumber": 25
+            },
+            {
+              "san": "Nd2",
+              "src": "King’s knight at his queen’s 2d square",
+              "span": {
+                "page": 1,
+                "from": 156488,
+                "to": 156526
+              },
+              "printedNumber": 26
+            },
+            {
+              "san": "c4",
+              "src": "Queen’s bishop’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 156539,
+                "to": 156569
+              },
+              "printedNumber": 26
+            },
+            {
+              "san": "Nf3",
+              "src": "King’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 156609,
+                "to": 156649
+              },
+              "printedNumber": 27
+            },
+            {
+              "san": "f6",
+              "src": "King’s bishop’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 156658,
+                "to": 156687
+              },
+              "printedNumber": 27
+            },
+            {
+              "san": "Bb6+",
+              "src": "The bishop gives check.",
+              "span": {
+                "page": 1,
+                "from": 156727,
+                "to": 156750
+              },
+              "printedNumber": 28
+            },
+            {
+              "san": "Kb7",
+              "src": "The king at his queen’s knight’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 156759,
+                "to": 156802
+              },
+              "printedNumber": 28
+            },
+            {
+              "san": "Bxc6+",
+              "src": "The bishop takes the knight and checks.",
+              "span": {
+                "page": 1,
+                "from": 157244,
+                "to": 157283
+              },
+              "printedNumber": 29
+            },
+            {
+              "san": "Kxc6",
+              "src": "The king takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 157292,
+                "to": 157318
+              },
+              "printedNumber": 29
+            },
+            {
+              "san": "Ncd4+",
+              "src": "King’s knight gives check.",
+              "span": {
+                "page": 1,
+                "from": 157354,
+                "to": 157380
+              },
+              "printedNumber": 30
+            },
+            {
+              "san": "Kd7",
+              "src": "The king at his queen’s 2d square",
+              "span": {
+                "page": 1,
+                "from": 157389,
+                "to": 157422
+              },
+              "printedNumber": 30
+            },
+            {
+              "san": "f5",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 157462,
+                "to": 157492
+              },
+              "printedNumber": 31
+            },
+            {
+              "san": "Bg8",
+              "src": "The bishop at his king’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 157501,
+                "to": 157542
+              },
+              "printedNumber": 31
+            },
+            {
+              "san": "e6+",
+              "src": "The pawn gives check.",
+              "span": {
+                "page": 1,
+                "from": 157578,
+                "to": 157599
+              },
+              "printedNumber": 32
+            },
+            {
+              "san": "Kc8",
+              "src": "The king at his own square.",
+              "span": {
+                "page": 1,
+                "from": 157608,
+                "to": 157635
+              },
+              "printedNumber": 32
+            },
+            {
+              "san": "Nb5",
+              "src": "King’s knight at the black queen’s knight’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 157671,
+                "to": 157726
+              },
+              "printedNumber": 33
+            },
+            {
+              "san": "Bd6",
+              "src": "King’s bishop at his queen’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 157735,
+                "to": 157774
+              },
+              "printedNumber": 33
+            },
+            {
+              "san": "Qd4",
+              "src": "The queen at her 4th square",
+              "span": {
+                "page": 1,
+                "from": 157810,
+                "to": 157837
+              },
+              "printedNumber": 34
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "at": {
+            "segment": 0,
+            "ply": 5,
+            "variation": "main"
+          },
+          "text": "(a) It is absolutely necessary to advance this pawn two squares to\r\nprevent your adversary from bringing his pawns into the centre of the\r\nboard; and this he certainly could effect, by pushing his queen’s pawn\r\ntwo squares against your bishop, which would give him the move and\r\nattack.",
+          "span": {
+            "page": 1,
+            "from": 150860,
+            "to": 151146
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 6,
+            "variation": "main"
+          },
+          "text": "(b) Had he pushed his queen’s pawn two squares instead of taking, it\r\nwould have materially altered the game, so we will make it the subject\r\nof a back game.",
+          "span": {
+            "page": 1,
+            "from": 151150,
+            "to": 151307
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 10,
+            "variation": "main"
+          },
+          "text": "(c) He has two reasons for playing this bishop: the first is, to push\r\nhis queen’s pawn, in order to make room for his king’s bishop; the\r\nsecond, to oppose it to your king’s bishop, and take him from the field\r\nin time, according to the rule prescribed in the first game.",
+          "span": {
+            "page": 1,
+            "from": 151747,
+            "to": 152019
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 16,
+            "variation": "main"
+          },
+          "text": "(d) If, instead of getting out his superior pieces, by playing his\r\nknight, he should continue to advance his pawns, he might with ease be\r\nmade to lose the game. It must be observed, that one or two pawns, too\r\nfar advanced, may be reckoned as lost, except when there is an open\r\nfield for other pieces to protect them, or when the same pawns may be\r\nsustained or supplied by others. By a back game it will convincingly\r\nappear, that two pawns in a front line, situated upon the chess-board’s\r\nfourth square, are better than upon the sixth square.",
+          "span": {
+            "page": 1,
+            "from": 152023,
+            "to": 152571
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 20,
+            "variation": "main"
+          },
+          "text": "(e) He pushes this pawn two squares to prevent your pawns falling upon\r\nhis.—Here observe, two equal bodies of pawns are on the board: you have\r\nfour to three on your king’s side, and he has four to three on his\r\nqueen’s side; the player that is able first to separate his adversary’s\r\npawns, on the side where they are most in number, will undoubtedly win\r\nthe game.",
+          "span": {
+            "page": 1,
+            "from": 153112,
+            "to": 153479
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 21,
+            "variation": "main"
+          },
+          "text": "(f) This move is material, by its seasonable anticipation, because by\r\npushing his king’s rook’s pawn a square, he would have cut off the\r\ncommunication between your pawns; your king’s knight’s pawn being then\r\nunable to join that of your bishop, without being exposed to be taken\r\nby his rook’s pawn.",
+          "span": {
+            "page": 1,
+            "from": 153483,
+            "to": 153784
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 33,
+            "variation": "main"
+          },
+          "text": "(g) Though a rook is commonly more valued than a knight, yet your game\r\nmay be better than his: because, notwithstanding this loss, your king\r\nis safe, and you are the better enabled to form your attack on which\r\never side your adversary may chuse to castle.",
+          "span": {
+            "page": 1,
+            "from": 154350,
+            "to": 154608
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 35,
+            "variation": "main"
+          },
+          "text": "(h) It is essential to play your queen to sustain your king’s knight’s\r\npawn, least he should sacrifice his bishop for your two pawns, which\r\nhe certainly would; because all the strength of your game consisting\r\nin your pawns, the breaking of them would give him the attack, and\r\nprobably make you lose the game.",
+          "span": {
+            "page": 1,
+            "from": 154612,
+            "to": 154924
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 37,
+            "variation": "main"
+          },
+          "text": "(i) In order to engage your adversary to push his queen’s bishop’s\r\npawn, which would give you the victory very soon, by making an opening\r\nfor your knights.",
+          "span": {
+            "page": 1,
+            "from": 155547,
+            "to": 155704
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 40,
+            "variation": "main"
+          },
+          "text": "(k) He castles on that side to avoid the strength of your pawns upon\r\nhis king, which present a menacing front, and are already farther\r\nadvanced than those on the side of your queen.",
+          "span": {
+            "page": 1,
+            "from": 155708,
+            "to": 155891
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 43,
+            "variation": "main"
+          },
+          "text": "(l) Had you given him check with this knight, you would have entangled\r\nyour bishop, and lost many moves: it is therefore better to go back.",
+          "span": {
+            "page": 1,
+            "from": 155895,
+            "to": 156035
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 46,
+            "variation": "main"
+          },
+          "text": "(m) He brings back his queen to her home, with a design to place her\r\nnext at her king’s bishop’s square, to increase the support of his\r\nqueen’s bishop’s pawn.",
+          "span": {
+            "page": 1,
+            "from": 156039,
+            "to": 156199
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 51,
+            "variation": "main"
+          },
+          "text": "(n) With a view to pursue your attack on his pawn.",
+          "span": {
+            "page": 1,
+            "from": 156806,
+            "to": 156856
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 52,
+            "variation": "main"
+          },
+          "text": "(o) In order to gain a move, and to hinder your king’s knight from\r\nplacing himself at your queen’s knight’s third square; but as the\r\ntwenty-sixth move might have been different, it will be the subject of\r\na back game.",
+          "span": {
+            "page": 1,
+            "from": 156860,
+            "to": 157079
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 54,
+            "variation": "main"
+          },
+          "text": "(p) Let him now play as he will, his situation is irretrievable;\r\nbecause your knights have got a free passage into his game.",
+          "span": {
+            "page": 1,
+            "from": 157083,
+            "to": 157208
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 60,
+            "variation": "main"
+          },
+          "text": "(q) If his king takes your queen’s bishop, you have his queen by a\r\ndiscovered check; and if he removes his king elsewhere, he loses his\r\nqueen’s bishop.",
+          "span": {
+            "page": 1,
+            "from": 157871,
+            "to": 158024
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 67,
+            "variation": "main"
+          },
+          "text": "(r) The queen next takes the adversary’s queen’s pawn, exposes every\r\none of his pieces, and wins the game.",
+          "span": {
+            "page": 1,
+            "from": 158028,
+            "to": 158135
+          }
+        }
+      ],
+      "variations": [
+        {
+          "id": "v-1",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 5,
+          "moves": [
+            {
+              "san": "d5",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 158293,
+                "to": 158302
+              },
+              "uci": "d7d5"
+            },
+            {
+              "san": "exd5",
+              "src": "King’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 158337,
+                "to": 158364
+              },
+              "uci": "e4d5"
+            },
+            {
+              "san": "exd4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 158373,
+                "to": 158397
+              },
+              "uci": "e5d4"
+            },
+            {
+              "san": "Bg5",
+              "src": "The bishop gives check.",
+              "span": {
+                "page": 1,
+                "from": 158432,
+                "to": 158455
+              },
+              "uci": "c1g5"
+            },
+            {
+              "san": "Be7",
+              "src": "Queen’s bishop covers the check.",
+              "span": {
+                "page": 1,
+                "from": 158464,
+                "to": 158496
+              },
+              "uci": "f8e7"
+            },
+            {
+              "san": "Bxe7",
+              "src": "King’s bishop takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 158531,
+                "to": 158562
+              },
+              "uci": "g5e7"
+            },
+            {
+              "san": "Nxe7",
+              "src": "Queen’s knight takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 158571,
+                "to": 158603
+              },
+              "uci": "g8e7"
+            },
+            {
+              "san": "dxc6",
+              "src": "Queen’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 158638,
+                "to": 158666
+              },
+              "uci": "d5c6"
+            },
+            {
+              "san": "Nexc6",
+              "src": "The knight takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 158675,
+                "to": 158701
+              },
+              "uci": "e7c6"
+            },
+            {
+              "san": "Qe2+",
+              "src": "The queen at her king’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 158736,
+                "to": 158770
+              },
+              "uci": "d1e2"
+            },
+            {
+              "san": "Qe7",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 158779,
+                "to": 158788
+              },
+              "uci": "d8e7"
+            },
+            {
+              "san": "Nc3",
+              "src": "Queen’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 158823,
+                "to": 158864
+              },
+              "uci": "b1c3"
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles.",
+              "span": {
+                "page": 1,
+                "from": 158873,
+                "to": 158890
+              },
+              "uci": "e8h8"
+            }
+          ]
+        },
+        {
+          "id": "v-2",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 15,
+          "moves": [
+            {
+              "san": "c4",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 160357,
+                "to": 160388
+              },
+              "uci": "c5c4"
+            },
+            {
+              "san": "Be2",
+              "src": "King’s bishop at his king’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 160423,
+                "to": 160454
+              },
+              "uci": "d3e2"
+            },
+            {
+              "san": "d4",
+              "src": "The queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 160463,
+                "to": 160489
+              },
+              "uci": "d5d4"
+            },
+            {
+              "san": "c3",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 160525,
+                "to": 160556
+              },
+              "uci": "c2c3"
+            },
+            {
+              "san": "d3",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 160565,
+                "to": 160587
+              },
+              "uci": "d4d3"
+            },
+            {
+              "san": "Bf3",
+              "src": "King’s bishop at his 3d square.",
+              "span": {
+                "page": 1,
+                "from": 160623,
+                "to": 160654
+              },
+              "uci": "e2f3"
+            },
+            {
+              "san": "Bd5",
+              "src": "Queen’s bishop at his queen’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 160663,
+                "to": 160697
+              },
+              "uci": "e6d5"
+            },
+            {
+              "san": "b3",
+              "src": "Queen’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 160733,
+                "to": 160764
+              },
+              "uci": "b2b3"
+            },
+            {
+              "san": "b5",
+              "src": "Queen’s knight’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 160773,
+                "to": 160805
+              },
+              "uci": "b7b5"
+            },
+            {
+              "san": "a4",
+              "src": "Queen’s rook’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 160841,
+                "to": 160871
+              },
+              "uci": "a2a4"
+            },
+            {
+              "san": "cxb3",
+              "src": "Queen’s bishop’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 160880,
+                "to": 160917
+              },
+              "uci": "c4b3"
+            },
+            {
+              "san": "axb5",
+              "src": "Queen’s rook’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 160953,
+                "to": 160988
+              },
+              "uci": "a4b5"
+            },
+            {
+              "san": "Bxf3",
+              "src": "The bishop takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 160997,
+                "to": 161025
+              },
+              "uci": "d5f3"
+            },
+            {
+              "san": "Nxf3",
+              "src": "King’s knight takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 161061,
+                "to": 161092
+              },
+              "uci": "g1f3"
+            },
+            {
+              "san": "Nd7",
+              "src": "Queen’s knight at his queen’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 161101,
+                "to": 161141
+              },
+              "uci": "b8d7"
+            },
+            {
+              "san": "Be3",
+              "src": "Queen’s bishop at his king’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 161177,
+                "to": 161216
+              },
+              "uci": "c1e3"
+            },
+            {
+              "san": "Rb8",
+              "src": "The rook at his queen’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 161225,
+                "to": 161265
+              },
+              "uci": "a8b8"
+            },
+            {
+              "san": "c4",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 161301,
+                "to": 161332
+              },
+              "uci": "c3c4"
+            },
+            {
+              "san": "Nb6",
+              "src": "Queen’s knight at his 3d square.",
+              "span": {
+                "page": 1,
+                "from": 161341,
+                "to": 161373
+              },
+              "uci": "d7b6"
+            },
+            {
+              "san": "Nbd2",
+              "src": "Queen’s knight at his queen’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 161409,
+                "to": 161442
+              },
+              "uci": "b1d2"
+            },
+            {
+              "san": "Bb4",
+              "src": "King’s bishop at the white queen’s knight’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 161451,
+                "to": 161499
+              },
+              "uci": "f8b4"
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles, and will undoubtedly win the game.",
+              "span": {
+                "page": 1,
+                "from": 161535,
+                "to": 161587
+              },
+              "uci": "e1h1"
+            }
+          ]
+        },
+        {
+          "id": "v-3",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 51,
+          "moves": [
+            {
+              "san": "f6",
+              "src": "King’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 161758,
+                "to": 161788
+              },
+              "uci": "f7f6"
+            },
+            {
+              "san": "Nb3",
+              "src": "King’s knight at his queen’s knight’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 161824,
+                "to": 161872
+              },
+              "uci": "d2b3"
+            },
+            {
+              "san": "c4",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 161881,
+                "to": 161912
+              },
+              "uci": "c5c4"
+            },
+            {
+              "san": "Bb6+",
+              "src": "The queen’s bishop gives check.",
+              "span": {
+                "page": 1,
+                "from": 161948,
+                "to": 161979
+              },
+              "uci": "e3b6"
+            },
+            {
+              "san": "Kb7",
+              "src": "The king at his queen’s knight’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 161988,
+                "to": 162024
+              },
+              "uci": "c7b7"
+            },
+            {
+              "san": "Nc5+",
+              "src": "King’s knight gives check at the black queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 162060,
+                "to": 162120
+              },
+              "uci": "b3c5"
+            },
+            {
+              "san": "Bxc5",
+              "src": "The bishop takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 162129,
+                "to": 162157
+              },
+              "uci": "e7c5"
+            },
+            {
+              "san": "Bxc5",
+              "src": "The bishop takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 162193,
+                "to": 162221
+              },
+              "uci": "b6c5"
+            },
+            {
+              "san": "Qc8",
+              "src": "The queen at her bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 162230,
+                "to": 162263
+              },
+              "uci": "f8c8"
+            },
+            {
+              "san": "Rb1",
+              "src": "The rook at the queen’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 162299,
+                "to": 162339
+              },
+              "uci": "a1b1"
+            },
+            {
+              "san": "Kc7",
+              "src": "The king at his queen’s bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 162348,
+                "to": 162391
+              },
+              "uci": "b7c7"
+            },
+            {
+              "san": "Bd6+",
+              "src": "Queen’s bishop gives check at the black queen’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 162427,
+                "to": 162478
+              },
+              "uci": "c5d6"
+            },
+            {
+              "san": "Kd8",
+              "src": "The king at his queen’s square.",
+              "span": {
+                "page": 1,
+                "from": 162487,
+                "to": 162518
+              },
+              "uci": "c7d8"
+            },
+            {
+              "san": "Qb6+",
+              "src": "The queen gives check at the black queen’s knight’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 162554,
+                "to": 162609
+              },
+              "uci": "g1b6"
+            },
+            {
+              "san": "Kd7",
+              "src": "The king any where, loses the game.",
+              "span": {
+                "page": 1,
+                "from": 162618,
+                "to": 162653
+              },
+              "uci": "d8d7"
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "skips": [],
+      "readings": 1,
+      "status": "ok",
+      "flags": [
+        {
+          "kind": "other",
+          "rule": "agent-moves",
+          "note": "SAN/UCI written by the reader; checker replays, does not parse printed notation."
+        }
+      ],
+      "source": {
+        "startPage": 1,
+        "startOffset": 150326,
+        "endPage": 1,
+        "endOffset": 162663
+      }
+    },
+    {
+      "id": "u-p1-aeef5287",
+      "kind": "game",
+      "title": "THIRD PARTY (Black moving first)",
+      "region": {
+        "notation": "descriptive-en",
+        "lang": "en"
+      },
+      "pipeline": {
+        "version": "0.1",
+        "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+        "procedure": "pipeline"
+      },
+      "segments": [
+        {
+          "id": "s0",
+          "start": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1"
+          },
+          "positionFrom": "prior",
+          "moves": [
+            {
+              "san": "e5",
+              "src": "The king’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 162980,
+                "to": 163006
+              }
+            },
+            {
+              "san": "e4",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 163015,
+                "to": 163024
+              }
+            },
+            {
+              "san": "Nf6",
+              "src": "King’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 163059,
+                "to": 163099
+              }
+            },
+            {
+              "san": "d3",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 163108,
+                "to": 163130
+              }
+            },
+            {
+              "san": "Bc5",
+              "src": "King’s bishop at his queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 163165,
+                "to": 163207
+              }
+            },
+            {
+              "san": "f4",
+              "src": "King’s bishop’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 163216,
+                "to": 163246
+              }
+            },
+            {
+              "san": "d6",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 163285,
+                "to": 163307
+              }
+            },
+            {
+              "san": "c3",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 163316,
+                "to": 163347
+              }
+            },
+            {
+              "san": "exf4",
+              "src": "The pawn takes the pawn",
+              "span": {
+                "page": 1,
+                "from": 163750,
+                "to": 163773
+              }
+            },
+            {
+              "san": "Bxf4",
+              "src": "The bishop takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 163786,
+                "to": 163812
+              }
+            },
+            {
+              "san": "Bg4",
+              "src": "Queen’s bishop at the white king’s knight’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 163847,
+                "to": 163902
+              }
+            },
+            {
+              "san": "Nf3",
+              "src": "King’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 163911,
+                "to": 163951
+              }
+            },
+            {
+              "san": "Nbd7",
+              "src": "Queen’s knight at his queen’s 2d square",
+              "span": {
+                "page": 1,
+                "from": 163988,
+                "to": 164027
+              }
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 164040,
+                "to": 164062
+              }
+            },
+            {
+              "san": "Bb6",
+              "src": "The bishop retires.",
+              "span": {
+                "page": 1,
+                "from": 164097,
+                "to": 164116
+              }
+            },
+            {
+              "san": "Bd3",
+              "src": "King’s bishop at his queen’s 3d square",
+              "span": {
+                "page": 1,
+                "from": 164125,
+                "to": 164163
+              }
+            },
+            {
+              "san": "Qe7",
+              "src": "The queen at her king’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 165139,
+                "to": 165173
+              }
+            },
+            {
+              "san": "Qe2",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 165182,
+                "to": 165191
+              }
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles with his rook",
+              "span": {
+                "page": 1,
+                "from": 165227,
+                "to": 165257
+              }
+            },
+            {
+              "san": "Nbd2",
+              "src": "Queen’s knight at his queen’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 165270,
+                "to": 165310
+              }
+            },
+            {
+              "san": "Nh5",
+              "src": "King’s knight at his rook’s 4th",
+              "span": {
+                "page": 1,
+                "from": 165346,
+                "to": 165377
+              }
+            },
+            {
+              "san": "Qe3",
+              "src": "The queen at her king’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 165390,
+                "to": 165424
+              }
+            },
+            {
+              "san": "Nxf4",
+              "src": "King’s knight takes the bishop",
+              "span": {
+                "page": 1,
+                "from": 166101,
+                "to": 166131
+              }
+            },
+            {
+              "san": "Qxf4",
+              "src": "The queen takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 166144,
+                "to": 166171
+              }
+            },
+            {
+              "san": "Bxf3",
+              "src": "Queen’s bishop takes the knight",
+              "span": {
+                "page": 1,
+                "from": 166207,
+                "to": 166238
+              }
+            },
+            {
+              "san": "gxf3",
+              "src": "The pawn takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 166251,
+                "to": 166277
+              }
+            },
+            {
+              "san": "f5",
+              "src": "King’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 166313,
+                "to": 166344
+              }
+            },
+            {
+              "san": "Qg3",
+              "src": "The queen at her king’s knight’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 166353,
+                "to": 166389
+              }
+            },
+            {
+              "san": "fxe4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 166425,
+                "to": 166449
+              }
+            },
+            {
+              "san": "fxe4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 166458,
+                "to": 166482
+              }
+            },
+            {
+              "san": "Rf6",
+              "src": "King’s rook at his king’s bishop’s 3d",
+              "span": {
+                "page": 1,
+                "from": 167072,
+                "to": 167109
+              }
+            },
+            {
+              "san": "h4",
+              "src": "King’s rook’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 167122,
+                "to": 167150
+              }
+            },
+            {
+              "san": "Raf8",
+              "src": "Queen’s rook at his king’s bishop’s square.",
+              "span": {
+                "page": 1,
+                "from": 167190,
+                "to": 167233
+              }
+            },
+            {
+              "san": "O-O-O",
+              "src": "The king’s castles with his queen’s rook.",
+              "span": {
+                "page": 1,
+                "from": 167242,
+                "to": 167283
+              }
+            },
+            {
+              "san": "c5",
+              "src": "Queen’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 167319,
+                "to": 167351
+              }
+            },
+            {
+              "san": "e5",
+              "src": "King’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 167360,
+                "to": 167380
+              }
+            },
+            {
+              "san": "dxe5",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 169516,
+                "to": 169540
+              }
+            },
+            {
+              "san": "d5",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 169549,
+                "to": 169571
+              }
+            },
+            {
+              "san": "Bc7",
+              "src": "The bishop at his queen’s bishop’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 169607,
+                "to": 169645
+              }
+            },
+            {
+              "san": "Ne4",
+              "src": "The knight at his king’s 4th",
+              "span": {
+                "page": 1,
+                "from": 169654,
+                "to": 169682
+              }
+            },
+            {
+              "san": "Rf3",
+              "src": "King’s rook at the adverse king’s bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 169934,
+                "to": 169987
+              }
+            },
+            {
+              "san": "Qg2",
+              "src": "The queen at her king’s knight’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 169996,
+                "to": 170032
+              }
+            },
+            {
+              "san": "Qf7",
+              "src": "The queen at her king’s bishop’s 2d",
+              "span": {
+                "page": 1,
+                "from": 170068,
+                "to": 170103
+              }
+            },
+            {
+              "san": "Ng5",
+              "src": "The knight at the adverse king’s knight’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 170116,
+                "to": 170162
+              }
+            },
+            {
+              "san": "Qf4+",
+              "src": "The queen gives check.",
+              "span": {
+                "page": 1,
+                "from": 170198,
+                "to": 170220
+              }
+            },
+            {
+              "san": "Kb1",
+              "src": "The king at his queen’s knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 170229,
+                "to": 170269
+              }
+            },
+            {
+              "san": "Rxd3",
+              "src": "The rook takes the bishop",
+              "span": {
+                "page": 1,
+                "from": 170305,
+                "to": 170330
+              }
+            },
+            {
+              "san": "Rxd3",
+              "src": "The rook takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 170343,
+                "to": 170367
+              }
+            },
+            {
+              "san": "Qf5",
+              "src": "The queen at her king’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 170927,
+                "to": 170964
+              }
+            },
+            {
+              "san": "Qe4",
+              "src": "The queen at her king’s 4th",
+              "span": {
+                "page": 1,
+                "from": 170973,
+                "to": 171000
+              }
+            },
+            {
+              "san": "Qxe4",
+              "src": "The queen takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 171040,
+                "to": 171066
+              }
+            },
+            {
+              "san": "Nxe4",
+              "src": "The knight takes the queen.",
+              "span": {
+                "page": 1,
+                "from": 171075,
+                "to": 171102
+              }
+            },
+            {
+              "san": "Rf4",
+              "src": "The rook at the adverse king’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 171138,
+                "to": 171182
+              }
+            },
+            {
+              "san": "Ng5",
+              "src": "The knight at the adverse king’s knight’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 171191,
+                "to": 171237
+              }
+            },
+            {
+              "san": "c4",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 171273,
+                "to": 171304
+              }
+            },
+            {
+              "san": "Rg3",
+              "src": "Queen’s rook at his king’s knight’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 171313,
+                "to": 171352
+              }
+            },
+            {
+              "san": "Nc5",
+              "src": "The knight at his queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 171388,
+                "to": 171427
+              }
+            },
+            {
+              "san": "Ne6",
+              "src": "The knight at the adverse king’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 171436,
+                "to": 171472
+              }
+            },
+            {
+              "san": "Nxe6",
+              "src": "The knight takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 171508,
+                "to": 171536
+              }
+            },
+            {
+              "san": "dxe6",
+              "src": "The pawn takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 171545,
+                "to": 171571
+              }
+            },
+            {
+              "san": "Rf6",
+              "src": "The rook at his king’s bishop’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 171899,
+                "to": 171934
+              }
+            },
+            {
+              "san": "Rd1",
+              "src": "King’s rook at his queen’s square",
+              "span": {
+                "page": 1,
+                "from": 171943,
+                "to": 171976
+              }
+            },
+            {
+              "san": "Rxe6",
+              "src": "The rook takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 172016,
+                "to": 172040
+              }
+            },
+            {
+              "san": "Rd7",
+              "src": "The king’s rook at the adverse queen’s 2d",
+              "span": {
+                "page": 1,
+                "from": 172049,
+                "to": 172090
+              }
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "at": {
+            "segment": 0,
+            "ply": 6,
+            "variation": "main"
+          },
+          "text": "(a) It is always advantageous to change your king’s bishop’s pawn for\r\nthe adversary’s king’s pawn, because, by that means, your king’s and\r\nqueen’s pawns may place themselves in the centre of the chess-board;\r\nbesides, in castling on the right wing, your rook is at liberty to act,\r\nat the beginning of the game, as will be shewn by a back game on the\r\nsame play.",
+          "span": {
+            "page": 1,
+            "from": 163351,
+            "to": 163715
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 9,
+            "variation": "main"
+          },
+          "text": "(b) If your adversary should refuse taking your bishop’s pawn, you\r\nare still to leave it exposed, and not move it forward until he has\r\ncastled; when the pawns of your right wing, must form an attack upon\r\nthe pawns which cover his king, as is explained in a back game on that\r\nmove. You are, in general, to decline shewing hastily whether you have\r\ndetermined to push the pawns on your right or left wing before your\r\nadversary’s king has castled, because he will otherways retire on the\r\nside where your pawns are less advanced, and consequently less able to\r\nhurt him.",
+          "span": {
+            "page": 1,
+            "from": 164171,
+            "to": 164743
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 13,
+            "variation": "main"
+          },
+          "text": "(c) Should he take your knight with his bishop, you must take the\r\nbishop with your pawn, in order to concentre your pawns.",
+          "span": {
+            "page": 1,
+            "from": 164747,
+            "to": 164870
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 16,
+            "variation": "main"
+          },
+          "text": "(d) This is the best square your king’s bishop can chuse, except the\r\nfourth of your queen’s bishop: in that place he may be of use in\r\nforming your attack upon the adverse king’s rook’s pawn, in case he\r\ncastles on his left side.",
+          "span": {
+            "page": 1,
+            "from": 164874,
+            "to": 165104
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 19,
+            "variation": "main"
+          },
+          "text": "(e) If he had castled on his queen’s side, it would then have been your\r\ngame to castle on your king’s side, in order to assail him with all the\r\npawns on your left. It should be observed, that as it is dangerous to\r\nattack the adversary too soon, you should forbear engaging him closely,\r\nuntil your pawns are previously sustained by one another, and the\r\nsupporting pawns by your superior pieces. The unsuccessful result of a\r\npremature assault is exhibited in a back game.",
+          "span": {
+            "page": 1,
+            "from": 165428,
+            "to": 165903
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 21,
+            "variation": "main"
+          },
+          "text": "(f) He plays the knight to make room for his king’s bishop’s pawn, with\r\na design next to advance it two squares, to endeavour to break your\r\ncordon of pawns.",
+          "span": {
+            "page": 1,
+            "from": 165907,
+            "to": 166065
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 23,
+            "variation": "main"
+          },
+          "text": "(g) If he had pushed his king’s bishop’s pawn two squares, instead of\r\ntaking your bishop, you should in the first place have attacked his\r\nqueen with your queen’s bishop, and then have pushed your king’s rook’s\r\npawn upon his bishop, to force him to take your knight; then his bishop\r\nmust be taken with your pawn, in order the better to support your\r\nking’s pawn, and replace it if lost.",
+          "span": {
+            "page": 1,
+            "from": 166486,
+            "to": 166875
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 25,
+            "variation": "main"
+          },
+          "text": "(h) If he did not take this knight, the bishop would remain imprisoned\r\nby your pawns; or his player would lose three moves, which would ruin\r\nhis situation.",
+          "span": {
+            "page": 1,
+            "from": 166879,
+            "to": 167036
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 31,
+            "variation": "main"
+          },
+          "text": "(i) With the design either to attack and remove your queen, or to\r\ndouble it, if necessary, with the other rook.",
+          "span": {
+            "page": 1,
+            "from": 167388,
+            "to": 167500
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 32,
+            "variation": "main"
+          },
+          "text": "(k) To give room to your queen, in case your adversary attacks her with\r\nhis king’s rook.",
+          "span": {
+            "page": 1,
+            "from": 167504,
+            "to": 167593
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 36,
+            "variation": "main"
+          },
+          "text": "(l) The refined motives which produced this move make it difficult\r\nto comprehend and explain. Preparatory to analysing it, let it be\r\nobserved, that when you have a range of pawns extending diagonally, the\r\npawn which is the leader must take his successive stations cautiously,\r\nnot protruding without necessity more than a square before the second\r\nin the range, so as to want support. One project of the adversary, was\r\nto force you to commit your pawns. Seeing your king’s pawn out of the\r\noblique line formed by your other pawns, and unprepared for any useful\r\nco-operation; he proposed, by pushing his queen’s bishop’s pawn, either\r\nto induce your queen’s pawn to advance a square, that its progress\r\nmight be blocked by his pawn, while your king’s pawn was left behind,\r\nor to cause your king’s pawn to move to its support, one effect of\r\nwhich would be, that your own pawn would shield his king’s rook’s pawn\r\nfrom the menacing action of your bishop. Both these designs you defeat\r\nby impelling the king’s pawn against his rook, and it is eligible to\r\nsacrifice it, rather than accomplish his views. Should he take your\r\nking’s pawn, a free passage is obtained for the pawn of your queen,\r\nwhich you are to advance immediately, and sustain in case of need,\r\nwith your others, in order to move it to queen, or engage it in some\r\nexertion that may conduce to the game. ",
+          "span": {
+            "page": 1,
+            "from": 167597,
+            "to": 168972
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 36,
+            "variation": "main"
+          },
+          "text": "It is true that his queen’s\r\npawn, passing, at the capture, into the king’s file, appears to have\r\nthe same advantage of having no opposition from your pawns to make a\r\nqueen; however there is a difference, because his pawn being separated,\r\nand incapable of support from the other pawns, will be in danger, all\r\nalong its passage, of seizure by your pieces. This move, as I observed\r\nbefore, is difficult to comprehend in all its bearings, and it requires\r\na proficiency in play, to see the propriety of it.",
+          "span": {
+            "page": 1,
+            "from": 168972,
+            "to": 169480
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 40,
+            "variation": "main"
+          },
+          "text": "(m) It was expedient to play this knight, to stop his king’s pawn: it\r\nconcerned you the more to stop this pawn, because in its present state,\r\nit blocks the passage of its own bishop, and even of its knight.",
+          "span": {
+            "page": 1,
+            "from": 169690,
+            "to": 169898
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 43,
+            "variation": "main"
+          },
+          "text": "(n) He plays his queen, in order afterwards to give check, but if,\r\ninstead of playing her, he had pushed his king’s rook’s pawn, to hinder\r\nthe attack of your knight, you must have pushed your queen’s pawn one\r\nsquare, which would have insured you the game.",
+          "span": {
+            "page": 1,
+            "from": 170371,
+            "to": 170629
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 47,
+            "variation": "main"
+          },
+          "text": "(o) He takes the bishop to save his king’s rook’s pawn; besides, the\r\nbishop proves more incommodious to him than all your other pieces, and\r\nby this play he keeps your queen’s rook from moving, after capturing\r\nyours, as it would discover check to the king.",
+          "span": {
+            "page": 1,
+            "from": 170633,
+            "to": 170891
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 50,
+            "variation": "main"
+          },
+          "text": "(p) Having the advantage of a rook against a bishop, towards the end of\r\na party, you will gain by changing the queen. His queen is troublesome\r\nto you, and might render him effective service could he keep her, but\r\nas you have placed yours, he is forced to exchange, to avoid check-mate.",
+          "span": {
+            "page": 1,
+            "from": 171575,
+            "to": 171863
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 62,
+            "variation": "main"
+          },
+          "text": "(q) You must seize the open files, to bring the rooks into play,\r\nespecially at the latter end of the game.",
+          "span": {
+            "page": 1,
+            "from": 172109,
+            "to": 172216
+          }
+        }
+      ],
+      "variations": [
+        {
+          "id": "v-1",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 4,
+          "moves": [
+            {
+              "san": "d5",
+              "src": "Queen’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 172337,
+                "to": 172360
+              },
+              "uci": "d7d5"
+            },
+            {
+              "san": "exd5",
+              "src": "Queen’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 172435,
+                "to": 172463
+              },
+              "uci": "e4d5"
+            }
+          ]
+        },
+        {
+          "id": "v-2",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 8,
+          "moves": [
+            {
+              "san": "O-O",
+              "src": "The king castles.",
+              "span": {
+                "page": 1,
+                "from": 176226,
+                "to": 176243
+              },
+              "uci": "e8h8"
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 176317,
+                "to": 176339
+              },
+              "uci": "d3d4"
+            }
+          ]
+        },
+        {
+          "id": "v-3",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 18,
+          "moves": [
+            {
+              "san": "O-O-O",
+              "src": "The king castles with the queen’s rook.",
+              "span": {
+                "page": 1,
+                "from": 177561,
+                "to": 177600
+              },
+              "uci": "e8a8"
+            },
+            {
+              "san": "h3",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 177676,
+                "to": 177704
+              },
+              "uci": "h2h3"
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "skips": [],
+      "readings": 1,
+      "status": "ok",
+      "flags": [
+        {
+          "kind": "other",
+          "rule": "agent-moves",
+          "note": "SAN/UCI written by the reader; checker replays, does not parse printed notation."
+        }
+      ],
+      "source": {
+        "startPage": 1,
+        "startOffset": 162663,
+        "endPage": 1,
+        "endOffset": 179892
+      }
+    },
+    {
+      "id": "u-p1-37ca620d",
+      "kind": "game",
+      "title": "FOURTH PARTY (Black moving first)",
+      "region": {
+        "notation": "descriptive-en",
+        "lang": "en"
+      },
+      "pipeline": {
+        "version": "0.1",
+        "profileHash": "c2150510607e0a68e6cc14d9cffdf63e05e8e5b8c7e07c0e0a6d3d325dcdea21",
+        "procedure": "pipeline"
+      },
+      "segments": [
+        {
+          "id": "s0",
+          "start": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1"
+          },
+          "positionFrom": "prior",
+          "moves": [
+            {
+              "san": "e5",
+              "src": "King’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 180028,
+                "to": 180050
+              }
+            },
+            {
+              "san": "e4",
+              "src": "The same.",
+              "span": {
+                "page": 1,
+                "from": 180059,
+                "to": 180068
+              }
+            },
+            {
+              "san": "c6",
+              "src": "Queen’s bishop’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 180103,
+                "to": 180133
+              }
+            },
+            {
+              "san": "d4",
+              "src": "Queen’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 180146,
+                "to": 180169
+              }
+            },
+            {
+              "san": "exd4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 180204,
+                "to": 180228
+              }
+            },
+            {
+              "san": "Qxd4",
+              "src": "The queen takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 180237,
+                "to": 180262
+              }
+            },
+            {
+              "san": "d6",
+              "src": "Queen’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 180297,
+                "to": 180318
+              }
+            },
+            {
+              "san": "f4",
+              "src": "King’s bishop’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 180331,
+                "to": 180362
+              }
+            },
+            {
+              "san": "f5",
+              "src": "King’s bishop’s pawn 2 squares",
+              "span": {
+                "page": 1,
+                "from": 180770,
+                "to": 180800
+              }
+            },
+            {
+              "san": "e5",
+              "src": "King’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 180813,
+                "to": 180833
+              }
+            },
+            {
+              "san": "d5",
+              "src": "Queen’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 180872,
+                "to": 180893
+              }
+            },
+            {
+              "san": "Qf2",
+              "src": "The queen at her king’s bishop’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 180906,
+                "to": 180942
+              }
+            },
+            {
+              "san": "Be6",
+              "src": "Queen’s bishop at his king’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 182080,
+                "to": 182112
+              }
+            },
+            {
+              "san": "Nf3",
+              "src": "King’s knight at his bishop’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 182121,
+                "to": 182154
+              }
+            },
+            {
+              "san": "Nd7",
+              "src": "Queen’s knight at his queen’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 182189,
+                "to": 182222
+              }
+            },
+            {
+              "san": "Nd4",
+              "src": "King’s knight at his queen’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 182231,
+                "to": 182264
+              }
+            },
+            {
+              "san": "Bc5",
+              "src": "King’s bishop at his queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 182299,
+                "to": 182341
+              }
+            },
+            {
+              "san": "c3",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 182350,
+                "to": 182381
+              }
+            },
+            {
+              "san": "Qb6",
+              "src": "The queen at her knight’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 182417,
+                "to": 182446
+              }
+            },
+            {
+              "san": "Be3",
+              "src": "Queen’s bishop at his king’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 182455,
+                "to": 182487
+              }
+            },
+            {
+              "san": "Bxd4",
+              "src": "King’s bishop takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 182523,
+                "to": 182554
+              }
+            },
+            {
+              "san": "cxd4",
+              "src": "The pawn takes the bishop",
+              "span": {
+                "page": 1,
+                "from": 182563,
+                "to": 182588
+              }
+            },
+            {
+              "san": "Ne7",
+              "src": "King’s knight at his king’s 2d.",
+              "span": {
+                "page": 1,
+                "from": 182628,
+                "to": 182659
+              }
+            },
+            {
+              "san": "Bd3",
+              "src": "King’s bishop at his queen’s 3d.",
+              "span": {
+                "page": 1,
+                "from": 182668,
+                "to": 182700
+              }
+            },
+            {
+              "san": "O-O",
+              "src": "The king castles with his rook.",
+              "span": {
+                "page": 1,
+                "from": 182736,
+                "to": 182767
+              }
+            },
+            {
+              "san": "h3",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 182776,
+                "to": 182804
+              }
+            },
+            {
+              "san": "Qc7",
+              "src": "The queen at her bishop’s 2d square",
+              "span": {
+                "page": 1,
+                "from": 183056,
+                "to": 183091
+              }
+            },
+            {
+              "san": "g4",
+              "src": "King’s knight’s pawn 2 squares.",
+              "span": {
+                "page": 1,
+                "from": 183104,
+                "to": 183135
+              }
+            },
+            {
+              "san": "g6",
+              "src": "King’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 183171,
+                "to": 183201
+              }
+            },
+            {
+              "san": "g5",
+              "src": "The same",
+              "span": {
+                "page": 1,
+                "from": 183210,
+                "to": 183218
+              }
+            },
+            {
+              "san": "b6",
+              "src": "Queen’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 183258,
+                "to": 183289
+              }
+            },
+            {
+              "san": "Nc3",
+              "src": "Queen’s knight at his bishop’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 183298,
+                "to": 183339
+              }
+            },
+            {
+              "san": "c5",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 183375,
+                "to": 183406
+              }
+            },
+            {
+              "san": "O-O-O",
+              "src": "The king castles with his queen’s rook",
+              "span": {
+                "page": 1,
+                "from": 183415,
+                "to": 183453
+              }
+            },
+            {
+              "san": "cxd4",
+              "src": "The pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 184198,
+                "to": 184222
+              }
+            },
+            {
+              "san": "Bxd4",
+              "src": "The bishop takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 184231,
+                "to": 184257
+              }
+            },
+            {
+              "san": "Nc5",
+              "src": "Queen’s knight at his queen’s bishop’s 4th.",
+              "span": {
+                "page": 1,
+                "from": 184293,
+                "to": 184336
+              }
+            },
+            {
+              "san": "h4",
+              "src": "King’s rook’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 184345,
+                "to": 184372
+              }
+            },
+            {
+              "san": "Nxd3+",
+              "src": "The knight takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 184412,
+                "to": 184440
+              }
+            },
+            {
+              "san": "Rxd3",
+              "src": "The rook takes the knight.",
+              "span": {
+                "page": 1,
+                "from": 184449,
+                "to": 184475
+              }
+            },
+            {
+              "san": "Bf7",
+              "src": "The bishop at his king’s bishop’s 2d",
+              "span": {
+                "page": 1,
+                "from": 184511,
+                "to": 184547
+              }
+            },
+            {
+              "san": "h5",
+              "src": "King’s rook’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 184560,
+                "to": 184588
+              }
+            },
+            {
+              "san": "b5",
+              "src": "Queen’s knight’s pawn 1 square",
+              "span": {
+                "page": 1,
+                "from": 184624,
+                "to": 184654
+              }
+            },
+            {
+              "san": "Rdh3",
+              "src": "Queen’s rook at his king’s rook’s 3d square.",
+              "span": {
+                "page": 1,
+                "from": 184667,
+                "to": 184711
+              }
+            },
+            {
+              "san": "b4",
+              "src": "Queen’s knight’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 184747,
+                "to": 184778
+              }
+            },
+            {
+              "san": "e6",
+              "src": "King’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 184787,
+                "to": 184808
+              }
+            },
+            {
+              "san": "Be8",
+              "src": "The bishop at his king’s square",
+              "span": {
+                "page": 1,
+                "from": 185281,
+                "to": 185312
+              }
+            },
+            {
+              "san": "hxg6",
+              "src": "King’s rook’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 185325,
+                "to": 185359
+              }
+            },
+            {
+              "san": "Bxg6",
+              "src": "The bishop takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 185395,
+                "to": 185421
+              }
+            },
+            {
+              "san": "Rxh7",
+              "src": "The rook takes the rook’s pawn.",
+              "span": {
+                "page": 1,
+                "from": 185430,
+                "to": 185461
+              }
+            },
+            {
+              "san": "Bxh7",
+              "src": "The bishop takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 185497,
+                "to": 185523
+              }
+            },
+            {
+              "san": "Rxh7",
+              "src": "The king’s rook takes the bishop.",
+              "span": {
+                "page": 1,
+                "from": 185532,
+                "to": 185565
+              }
+            },
+            {
+              "san": "Kxh7",
+              "src": "The king takes the rook.",
+              "span": {
+                "page": 1,
+                "from": 185601,
+                "to": 185625
+              }
+            },
+            {
+              "san": "Qh4+",
+              "src": "The queen gives check at her king’s rook’s 4th square.",
+              "span": {
+                "page": 1,
+                "from": 185634,
+                "to": 185688
+              }
+            },
+            {
+              "san": "Kg8",
+              "src": "The king at his knight’s square.",
+              "span": {
+                "page": 1,
+                "from": 185724,
+                "to": 185756
+              }
+            },
+            {
+              "san": "Qh8#",
+              "src": "The queen gives check-mate",
+              "span": {
+                "page": 1,
+                "from": 185765,
+                "to": 185791
+              }
+            }
+          ]
+        }
+      ],
+      "passages": [
+        {
+          "at": {
+            "segment": 0,
+            "ply": 3,
+            "variation": "main"
+          },
+          "text": "(a) Ill play of the adversary in these circumstances; because by\r\npushing your queen’s pawn two squares, you regain the advantage of the\r\nmove.",
+          "span": {
+            "page": 1,
+            "from": 180366,
+            "to": 180509
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 7,
+            "variation": "main"
+          },
+          "text": "(b) If, instead of moving the pawn here, he had moved the king’s knight\r\nto the king’s second square, you should have pushed your king’s pawn an\r\nadditional square; sustaining it afterwards with your king’s bishop’s\r\npawn.",
+          "span": {
+            "page": 1,
+            "from": 180513,
+            "to": 180735
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 9,
+            "variation": "main"
+          },
+          "text": "(c) If, instead of pushing this pawn, he had moved his queen’s bishop\r\nto the king’s third, you must have moved your king’s bishop to the\r\nqueen’s third, and then the situation of the game would have been\r\nexactly as it is at the sixth move of the Second Party: but if he had\r\nattacked your queen with his queen’s bishop’s pawn, he would have\r\nplayed very ill, because his queen’s pawn would have been left behind.\r\n_Vide note_ (l) pa. 161.",
+          "span": {
+            "page": 1,
+            "from": 180946,
+            "to": 181386
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 10,
+            "variation": "main"
+          },
+          "text": "(d) It is policy to decline changing your king’s pawn for your\r\nadversary’s king’s bishop’s pawn, or your queen’s pawn for his queen’s\r\nbishop’s pawn; on account of the paramount utility of the royal pawns;\r\noccupying the centre, they preclude the adversary from the most\r\nadvantageous posts.",
+          "span": {
+            "page": 1,
+            "from": 181390,
+            "to": 181682
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 11,
+            "variation": "main"
+          },
+          "text": "(e) If, instead of pushing his queen’s pawn, he had taken your king’s,\r\nyou should have taken his queen; his pawn would have been in your\r\npower afterwards; and by preventing him from castling, you would have\r\nkept the attack in your hands; but as he could seat his queen at her\r\nbishop’s second square, that alternative is traced through a second\r\nback game.",
+          "span": {
+            "page": 1,
+            "from": 181686,
+            "to": 182045
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 22,
+            "variation": "main"
+          },
+          "text": "(f) When you have two bodies of pawns, with an interval between, and\r\nan opportunity of transferring a pawn from one body to another, by\r\nexchange; the pawn should pass to the larger division, to concentre\r\nthem.",
+          "span": {
+            "page": 1,
+            "from": 182808,
+            "to": 183020
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 27,
+            "variation": "main"
+          },
+          "text": "(g) Having no object for the power of his queen as she stood, he\r\nremoves her to make room for his pawns, with an intent to push them\r\nupon you.",
+          "span": {
+            "page": 1,
+            "from": 183461,
+            "to": 183605
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 30,
+            "variation": "main"
+          },
+          "text": "(h) The pushing of this pawn, it is confessed, obstructs the game,\r\nby lessening the facility of exchanging; but the power to make an\r\nopening with your king’s rook’s pawn, is still reserved, and it will\r\nbe expedient to use it, as soon as your pieces are ready to form and\r\nsustain the attack.",
+          "span": {
+            "page": 1,
+            "from": 183609,
+            "to": 183903
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 34,
+            "variation": "main"
+          },
+          "text": "(i) You castle on your queen’s side to acquire more freedom in\r\nattacking on your right. If, instead of castling, you had taken\r\nthe pawn exposed, the result would have united in the centre the\r\nadversary’s pawns, and impeded the operation of your pieces.",
+          "span": {
+            "page": 1,
+            "from": 183907,
+            "to": 184162
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 38,
+            "variation": "main"
+          },
+          "text": "(k) Had you taken the knight with your queen’s bishop, you had fallen\r\ninto the error, above deprecated, of uniting in the centre the\r\nadversary’s pawns.",
+          "span": {
+            "page": 1,
+            "from": 184812,
+            "to": 184965
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 41,
+            "variation": "main"
+          },
+          "text": "(l) He plays this bishop to fill the place of his king’s knight’s pawn,\r\nin case it be taken.",
+          "span": {
+            "page": 1,
+            "from": 184969,
+            "to": 185062
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 43,
+            "variation": "main"
+          },
+          "text": "(m) He plays this pawn to attack the knight that covers your king,\r\nhaving no move that is obviously better; for by taking your pawn he\r\nwould be equally subject to lose the game.",
+          "span": {
+            "page": 1,
+            "from": 185066,
+            "to": 185245
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 47,
+            "variation": "main"
+          },
+          "text": "(n) If he takes the pawn with his bishop, he equally loses the game.",
+          "span": {
+            "page": 1,
+            "from": 185799,
+            "to": 185867
+          }
+        },
+        {
+          "at": {
+            "segment": 0,
+            "ply": 56,
+            "variation": "main"
+          },
+          "text": "(o) It would appear, that if you can succeed in planting round the\r\nretreat of the adverse king two or three pawns, making an approach\r\nfor your powerful pieces, by an exchange, the utmost address of the\r\nadversary, after permitting this, cannot accomplish the king’s safety.",
+          "span": {
+            "page": 1,
+            "from": 185871,
+            "to": 186146
+          }
+        }
+      ],
+      "variations": [
+        {
+          "id": "v-1",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 8,
+          "moves": [
+            {
+              "san": "c5",
+              "src": "Queen’s bishop’s pawn 1 square.",
+              "span": {
+                "page": 1,
+                "from": 186268,
+                "to": 186299
+              },
+              "uci": "c6c5"
+            },
+            {
+              "san": "Bd2",
+              "src": "The bishop covers the check.",
+              "span": {
+                "page": 1,
+                "from": 186369,
+                "to": 186397
+              },
+              "uci": "c1d2"
+            }
+          ]
+        },
+        {
+          "id": "v-2",
+          "parent": "main",
+          "segment": 0,
+          "fromPly": 10,
+          "moves": [
+            {
+              "san": "Qc7",
+              "src": "The queen at her bishop’s 2d square.",
+              "span": {
+                "page": 1,
+                "from": 191446,
+                "to": 191482
+              },
+              "uci": "d8c7"
+            },
+            {
+              "san": "exd6",
+              "src": "The queen’s pawn takes the pawn.",
+              "span": {
+                "page": 1,
+                "from": 191568,
+                "to": 191600
+              },
+              "uci": "e5d6"
+            }
+          ]
+        }
+      ],
+      "checkpoints": [],
+      "skips": [],
+      "readings": 1,
+      "status": "ok",
+      "flags": [
+        {
+          "kind": "other",
+          "rule": "agent-moves",
+          "note": "SAN/UCI written by the reader; checker replays, does not parse printed notation."
+        }
+      ],
+      "source": {
+        "startPage": 1,
+        "startOffset": 179892,
+        "endPage": 1,
+        "endOffset": 193625
+      }
+    }
+  ]
+}
